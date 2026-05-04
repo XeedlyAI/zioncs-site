@@ -90,12 +90,20 @@ TBD — to be developed alongside personas in Phase 1. Anchors:
 
 ## Founders / Team
 
-- **Kevin** (last name pending) — Owner / General Manager
-- **Amy** (last name pending) — Marketing / PR / Office Manager
-- **Josh** (last name pending) — Project Manager
+- **Kevin Handrin** — Owner / General Manager
+- **Amy Carlin** — Marketing / PR / Office Manager
+- **Josh Rowberry** — Project Manager
 - Webflow assets contain photos labeled `Amy pic.png` and `Josh pic.png` — usable for About page
-- "Concrete Dude with team.png" is presumably Kevin or Josh — confirm at next session
+- "Concrete Dude with team.png" is presumably Kevin (or Josh — confirm when team photos are reviewed in detail)
 - Email infrastructure: not yet on Google Workspace; using `admin@zioncs.com` as the active inbox. Workspace migration is a client task; site won't gate on it.
+
+## GBP Description (proposed replacement — replaces current one with WY/MT removed)
+
+Current GBP description claims "expanded services in Wyoming and Montana" — false; added aspirationally. Replace with:
+
+> Zion Concrete Specialists is Utah's trusted concrete flatwork contractor, serving the Wasatch Front from Ogden through Salt Lake Valley to Provo and as far south as St. George. We deliver residential and commercial concrete — from small repair jobs to large-scale projects. Our expertise covers driveways, sport courts, RV pads, splash pads, dumpster pads, sidewalks, decorative finishes, stamped concrete, foundations, and concrete repairs. Based in Sandy, UT and built on a foundation of integrity, hard work, and pride in every pour. Show up on time, keep the worksite clean, get the job done right.
+
+Action: client to update GBP description in their GBP manager. Low-risk fix; eliminates Google policy violation risk; keeps "established / wide-reach" positioning legitimately via Utah depth.
 
 ## Reviews
 

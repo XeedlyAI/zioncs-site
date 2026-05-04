@@ -287,10 +287,9 @@ All 11 questions answered. Decisions locked below.
 ### 3. (handled in #1)
 
 ### 4. Founders / Owners — RESOLVED
-- **Kevin** — Owner / General Manager
-- **Amy** — Marketing / PR / Office Manager
-- **Josh** — Project Manager
-- Last names: pending
+- **Kevin Handrin** — Owner / General Manager
+- **Amy Carlin** — Marketing / PR / Office Manager
+- **Josh Rowberry** — Project Manager
 - **Google Workspace emails: not yet set up.** Booking flow will be **stubbed** — UI exists, calendar integration deferred until emails are provisioned. Submissions go to `admin@zioncs.com` (existing) for now via Resend. Calendar wiring is a Phase 5+ wave.
 
 ### 5. Insurance / Bonding / License — RESOLVED
@@ -339,16 +338,16 @@ All 11 questions answered. Decisions locked below.
   - `discovery-call-commercial` (calendar booking, maps to commercial persona)
   - `discovery-call-enterprise` (calendar booking, maps to enterprise persona)
 
-### Bonus question that emerged: Service Area (WY/MT)
+### Bonus question: Service Area (WY/MT) — RESOLVED
 
-GBP description claims "expanded services in Wyoming and Montana" but the user-provided service area was Utah only.
+WY/MT was added to GBP description aspirationally, to look bigger/more established. **No actual work has been done in Wyoming or Montana.**
 
-**Resolution needed (still pending — minor blocker for Core 30 geo strategy):** Is WY/MT real (B), aspirational (A), or selective-commercial (C)?
+**Decision: Utah-only service area.**
 
-If Utah-only: Core 30 builds Utah Tier 0 pillar (`/utah-concrete`) + city-level Tier 2 pages.
-If multi-state: 3 state pillars, with WY/MT initially shorter / less keyword-dense than Utah.
+- Core 30 geo strategy: single Utah Tier 0 pillar + Wasatch Front Tier 1 metro pillar + city-level Tier 2 pages
+- Utah service depth (Ogden → SLC → Provo → St. George = ~300 miles) is a legitimate "established / wide-reach" positioning angle that doesn't require WY/MT puffery
 
-**Recommend defaulting to A (Utah-only) for v1 unless client confirms B or C** — keeps the Core 30 scope focused. Update GBP description to remove WY/MT claim.
+**Action item: update GBP description to remove WY/MT claim.** False service-area claims are a Google policy violation that can result in profile suspension. Replacement description recommended (see commit message / DELTAS for the proposed text).
 
 ---
 
