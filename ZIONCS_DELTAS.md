@@ -103,7 +103,7 @@ Current GBP description claims "expanded services in Wyoming and Montana" — fa
 
 > Zion Concrete Specialists is Utah's trusted concrete flatwork contractor, serving the Wasatch Front from Ogden through Salt Lake Valley to Provo and as far south as St. George. We deliver residential and commercial concrete — from small repair jobs to large-scale projects. Our expertise covers driveways, sport courts, RV pads, splash pads, dumpster pads, sidewalks, decorative finishes, stamped concrete, foundations, and concrete repairs. Based in Sandy, UT and built on a foundation of integrity, hard work, and pride in every pour. Show up on time, keep the worksite clean, get the job done right.
 
-Action: client to update GBP description in their GBP manager. Low-risk fix; eliminates Google policy violation risk; keeps "established / wide-reach" positioning legitimately via Utah depth.
+**Status: APPLIED 2026-05-04.** Client updated GBP description in their GBP manager. WY/MT claim removed; Utah-only service area now reflected accurately on Google.
 
 ## Reviews
 
