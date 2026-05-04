@@ -10,12 +10,16 @@ Project-specific overrides. Anything not documented here follows the library at 
 
 | Library standard | What ZionCS overrides | Status |
 |---|---|---|
-| `DESIGN_SYSTEM` colors | TBD — current Webflow site uses gold/orange + dark navy. Refining during Phase 3. | OPEN |
-| `DESIGN_SYSTEM` typography | TBD — Inter + JetBrains Mono is the family default; verify against logo character before deviating | OPEN |
+| `DESIGN_SYSTEM` colors | TBD — current Webflow uses bright orange + dark navy + light gray. Refining during Phase 3. | OPEN |
+| `DESIGN_SYSTEM` typography | TBD — Inter + JetBrains Mono is the family default; verify against tiger-logo character before deviating | OPEN |
 | Background system | TBD — concrete texture overlay vs solid washes | OPEN |
-| Photography direction | Move away from "strong worker hard hat" theme toward project-craft photography (the work, the result, scale of jobs). The existing site overdoes the worker-as-mascot tied to logo likeness. | DECIDED |
-| Voice calibration | TBD — flatwork contractor voice: practical, direct, operator-grade. Not corporate, not folksy. | OPEN |
-| Service area | Utah specifically: Salt Lake Valley + Utah Valley + St. George + Davis/Weber County + Ogden, Wasatch Front | DECIDED |
+| Photography direction | **AI-generated project-craft photography for v1** via `image-generation` skill (Gemini Nano Banana / Pro). Move away from worker-as-mascot. ZionCS will provide real project photos post-launch to swap in. | DECIDED |
+| Voice calibration | Practical, direct, operator-grade. Existing brand vocabulary intact: "show up on time, keep the worksite clean, get the job done right" / "honest work, skilled hands, lasting results" / "muscle, grit, and pride." Not corporate, not folksy, not SaaS. | DECIDED |
+| Service area | **Utah** primarily — Wasatch Front + St. George. Sandy, UT 84070 home base. (Note: GBP description currently mentions WY + MT — needs reconciliation; defaulting to Utah-only for v1 unless client confirms otherwise.) | DECIDED |
+| Trust signals | **No license #, insurance limits, or bonding numbers displayed.** Trust comes through reviews + project work + named case studies. | DECIDED |
+| Booking system | **Stubbed for v1.** UI exists but calendar integration deferred until Google Workspace emails are provisioned. Submissions go to `admin@zioncs.com` via Resend until then. Single calendar endpoint with `booking_type` metadata for persona routing. | DECIDED |
+| Pricing posture | **No published pricing.** Quote-only. All conversion paths → project info form / quote request / contact. | DECIDED |
+| Conversion CTAs | Primary: "Request a Quote" (project info form). Secondary: "Contact Us" (contact page) on residential pages; "Book a Discovery Call" on commercial/enterprise pages. Phone always-on in header. | DECIDED |
 
 ---
 
@@ -68,9 +72,40 @@ TBD — to be developed alongside personas in Phase 1. Anchors:
 ## Required custom features (specific to this project)
 
 1. **Dynamic project gallery** — photos AND video; filterable by service type; auto-resize and lazy-load
-2. **Meta social feed scroll** — pulls current posts from Facebook/Instagram, scrolls horizontally on a section of the homepage. Decision needed on: real-time API integration vs scheduled scrape vs manual curation.
+   - **v1 content:** AI-generated mock project content via `image-generation` skill (4-5 mock projects across personas with realistic Utah geography)
+   - **Storage:** Vercel Blob for photos; Mux or Vercel Blob for video
+   - **Data source:** TS file (`src/data/projects.ts`) — version-controlled, no CMS overhead. Move to Sanity later if client wants self-serve.
+
+2. **Meta social feed scroll** — manual curation v1, hardcoded TS file
+   - Facebook: https://www.facebook.com/profile.php?id=61573114690934
+   - Instagram: https://www.instagram.com/zionconcretespecialists/
+   - Component: `<SocialFeedScroll>` — horizontal `scroll-snap-x` row, last 10-15 posts, ISR daily revalidation
+   - Phase 2+: optional Meta Graph API integration after site is live
+
 3. **Standard library features:**
-   - Calendar booking system (Google Calendar service-account + DWD per `skills/CALENDAR-BOOKING.md`)
+   - **Calendar booking system** (stubbed v1) — UI flow per `skills/CALENDAR-BOOKING.md`, but submissions email to `admin@zioncs.com` instead of creating calendar events. Wire up real calendar integration when Kevin/Amy/Josh have Google Workspace emails.
    - Intelligence Console mini + full (per `COMPONENT_PATTERNS.md` § 3-4)
-   - Dual CTA pattern (orange primary "Request Quote" + ghost "Book Discovery Call")
-   - Core 30 SEO content engine (~30 keywords across silos, blog content engine deployment)
+   - Two-CTA pattern (orange "Request a Quote" primary + persona-contextual secondary)
+   - Core 30 SEO content engine (~30 keywords across silos, blog content engine deployment) — minus cost-anchored articles
+
+## Founders / Team
+
+- **Kevin** (last name pending) — Owner / General Manager
+- **Amy** (last name pending) — Marketing / PR / Office Manager
+- **Josh** (last name pending) — Project Manager
+- Webflow assets contain photos labeled `Amy pic.png` and `Josh pic.png` — usable for About page
+- "Concrete Dude with team.png" is presumably Kevin or Josh — confirm at next session
+- Email infrastructure: not yet on Google Workspace; using `admin@zioncs.com` as the active inbox. Workspace migration is a client task; site won't gate on it.
+
+## Reviews
+
+- Currently 6 Google reviews at 5.0 stars
+- Display "⭐ 5.0 / 6 Reviews on Google" in hero social-proof bar (or similar)
+- Plan a polite review-request flow to recent customers post-launch (Wave 9-ish) to grow the base
+
+## Hours
+
+- Mon-Fri 8:00 AM – 5:00 PM Mountain Time (default — confirm with client if different)
+- No emergency / after-hours line
+- Display: footer + LocalBusiness JSON-LD + Contact page
+- "Open now" status pulls from these
