@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Check, Calendar, Phone } from "lucide-react";
+import { Calendar, Phone } from "lucide-react";
 import { CONTACT } from "@/lib/contact";
 import type { BookingTypeConfig } from "@/types/booking";
 
@@ -25,11 +25,17 @@ export function Confirmation({
       role="status"
       aria-live="polite"
     >
-      <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-rebar/15 text-rebar mb-5">
-        <Check size={22} aria-hidden />
-      </div>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/brand/zioncs-mascot.png"
+        alt=""
+        aria-hidden="true"
+        width={170}
+        height={170}
+        className="w-20 h-20 mx-auto mb-4"
+      />
       <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.15em] text-rebar mb-3">
-        BOOKING CONFIRMED
+        BOOKING CONFIRMED · STAMPED
       </p>
       <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-anthracite mb-3 leading-tight">
         See you on the call, {attendeeName.split(" ")[0]}.

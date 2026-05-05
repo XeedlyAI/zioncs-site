@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/pages/PageHero";
@@ -265,6 +266,16 @@ export default function AboutPage() {
           }}
         />
         <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          {/* Brand mark — closes the about page with the full lettered lockup */}
+          <div className="flex justify-center mb-10">
+            <Image
+              src="/brand/zioncs-logo-mascot-white.png"
+              alt="Zion Concrete Specialists"
+              width={820}
+              height={350}
+              className="w-auto h-auto max-w-[400px] opacity-95"
+            />
+          </div>
           <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.15em] text-steel-light mb-4">
             04 / WHERE WE WORK
           </p>

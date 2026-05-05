@@ -13,7 +13,16 @@ interface ConsoleResponseRendererProps {
 
 function ProcessingIndicator() {
   return (
-    <div className="flex items-center gap-2.5 py-3">
+    <div className="flex items-center gap-3 py-3">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/brand/zioncs-mascot.png"
+        alt=""
+        aria-hidden="true"
+        width={28}
+        height={28}
+        className="w-7 h-7 rounded-full animate-bob shrink-0"
+      />
       <span className="relative inline-flex w-2 h-2">
         <span className="absolute inset-0 rounded-full bg-steel-light animate-ping opacity-75" />
         <span className="relative rounded-full w-2 h-2 bg-steel-light" />

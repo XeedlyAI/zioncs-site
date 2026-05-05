@@ -40,10 +40,10 @@ export function Header() {
               scrolled ? "h-14" : "h-20"
             )}
           >
-            {/* Logo */}
+            {/* Logo — horizontal lockup at rest, medallion icon when scrolled */}
             <Link
               href="/"
-              className="flex items-center shrink-0"
+              className="flex items-center shrink-0 relative"
               aria-label="Zion Concrete Specialists — home"
             >
               <Image
@@ -53,8 +53,19 @@ export function Header() {
                 height={48}
                 priority
                 className={cn(
-                  "w-auto transition-all duration-300",
-                  scrolled ? "h-9" : "h-11"
+                  "w-auto transition-opacity duration-300 h-11",
+                  scrolled ? "opacity-0 pointer-events-none" : "opacity-100"
+                )}
+              />
+              <Image
+                src="/brand/zioncs-mascot.png"
+                alt=""
+                aria-hidden="true"
+                width={170}
+                height={170}
+                className={cn(
+                  "absolute left-0 top-1/2 -translate-y-1/2 w-auto transition-opacity duration-300",
+                  scrolled ? "opacity-100 h-9" : "opacity-0 pointer-events-none h-9"
                 )}
               />
             </Link>

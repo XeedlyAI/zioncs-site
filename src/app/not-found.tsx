@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
@@ -55,9 +56,26 @@ export default function NotFound() {
       />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-32 pb-20 w-full">
-        <p className="font-mono text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.18em] text-rebar mb-4">
-          ZIONCS://STATUS · 404 · ROUTE-NOT-FOUND
-        </p>
+        {/* Medallion stamp — anchors the error visually */}
+        <div className="mb-8 flex items-center gap-4">
+          <Image
+            src="/brand/zioncs-mascot.png"
+            alt=""
+            aria-hidden="true"
+            width={170}
+            height={170}
+            className="w-[120px] h-auto opacity-90"
+            priority
+          />
+          <div className="font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.18em] text-stone leading-relaxed">
+            <p className="text-rebar font-semibold mb-1">
+              ZIONCS://STATUS · 404
+            </p>
+            <p>route-not-found</p>
+            <p>request-rejected · stamp #4-0-4</p>
+          </div>
+        </div>
+
         <h1 className="text-[clamp(2.25rem,4.6vw,3.5rem)] font-extrabold tracking-tight leading-[1.05] text-bone max-w-3xl mb-5">
           That page isn&rsquo;t here.
         </h1>

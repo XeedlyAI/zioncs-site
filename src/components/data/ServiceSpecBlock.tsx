@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+
 export type SpecRow = {
   key: string;
   value: string;
@@ -13,7 +15,8 @@ interface ServiceSpecBlockProps {
 /**
  * Engineering-spec card per ZIONCS_DESIGN_CALIBRATION § Component design language.
  * Reads like a code block / spec sheet. Anthracite-elevated surface with
- * 3px-left-border in steel.
+ * 3px-left-border in steel. Medallion stamp in the top-right reads as a
+ * "ZionCS-verified" warranty seal — adds brand presence without competing.
  */
 export function ServiceSpecBlock({
   title,
@@ -22,10 +25,19 @@ export function ServiceSpecBlock({
 }: ServiceSpecBlockProps) {
   return (
     <aside
-      className="card-dark p-6 md:p-7 status-steel font-mono"
+      className="card-dark p-6 md:p-7 status-steel font-mono relative"
       aria-label="Service specifications"
     >
-      <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-steel-light mb-5">
+      {/* Warranty/verification stamp — top-right corner */}
+      <img
+        src="/brand/zioncs-mascot.png"
+        alt=""
+        aria-hidden="true"
+        width={170}
+        height={170}
+        className="absolute top-4 right-4 w-12 h-12 opacity-90 pointer-events-none"
+      />
+      <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-steel-light mb-5 pr-14">
         // SPEC // {title}
       </p>
       <dl className="space-y-3">

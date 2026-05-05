@@ -167,11 +167,17 @@ export function QuoteForm({
         role="status"
         aria-live="polite"
       >
-        <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-rebar/15 text-rebar mb-5">
-          <Check size={22} aria-hidden />
-        </div>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/brand/zioncs-mascot.png"
+          alt=""
+          aria-hidden="true"
+          width={170}
+          height={170}
+          className="w-20 h-20 mx-auto mb-4"
+        />
         <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.15em] text-rebar mb-3">
-          QUOTE REQUEST RECEIVED
+          QUOTE REQUEST RECEIVED · STAMPED
         </p>
         <h3 className="text-2xl font-extrabold tracking-tight text-anthracite mb-3">
           Got it — we&rsquo;ll be in touch.

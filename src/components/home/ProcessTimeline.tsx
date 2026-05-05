@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { EASE, fadeUp, staggerContainer, scrollRevealProps } from "@/lib/motion";
 
@@ -105,6 +106,17 @@ export function ProcessTimeline() {
                 <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-slate-warm">
                   {step.duration}
                 </p>
+                {/* Warranty seal — anchors the final step */}
+                {step.label === "WARRANTY" && (
+                  <Image
+                    src="/brand/zioncs-mascot.png"
+                    alt=""
+                    aria-hidden="true"
+                    width={170}
+                    height={170}
+                    className="absolute -top-2 right-0 w-12 h-12 opacity-90 pointer-events-none"
+                  />
+                )}
               </div>
             </motion.li>
           ))}
