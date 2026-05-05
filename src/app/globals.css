@@ -139,6 +139,45 @@
   animation: bob 1.4s ease-in-out infinite;
 }
 
+/* Homepage hero crossfade + Ken Burns
+   3 images cycle through afternoon -> sunset -> dusk over 21s.
+   Each image is visible solo for ~5.5s with 1.5s crossfade into the next.
+   Subtle 6% scale animation gives "almost video" cinematic feel.
+   Negative animation-delays stagger images so all are mid-cycle at t=0. */
+@keyframes hero-fade {
+  0%, 26%  { opacity: 1; }
+  33%      { opacity: 0; }
+  93%      { opacity: 0; }
+  100%     { opacity: 1; }
+}
+@keyframes hero-kenburns {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.06); }
+}
+.hero-image {
+  opacity: 0;
+  animation:
+    hero-fade 21s ease-in-out infinite,
+    hero-kenburns 21s ease-in-out infinite;
+  will-change: opacity, transform;
+}
+.hero-image-1 {
+  animation-delay: 0s, 0s;
+  transform-origin: center 60%;
+}
+.hero-image-2 {
+  animation-delay: -14s, -14s;
+  transform-origin: 35% 50%;
+}
+.hero-image-3 {
+  animation-delay: -7s, -7s;
+  transform-origin: 55% 40%;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-image-1 { opacity: 1; animation: none; }
+  .hero-image-2, .hero-image-3 { display: none; }
+}
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
