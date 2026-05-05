@@ -4,6 +4,8 @@ import * as whyUtah from "@/content/blog/why-utah-concrete-cracks";
 import * as drivewayReplaceRepair from "@/content/blog/driveway-replacement-vs-repair";
 import * as commonProblems from "@/content/blog/10-common-residential-concrete-problems";
 import * as whatToExpect from "@/content/blog/what-to-expect-when-you-request-a-concrete-quote";
+import * as howToVet from "@/content/blog/how-to-vet-a-concrete-subcontractor";
+import * as subReliability from "@/content/blog/concrete-sub-reliability-vs-lowest-bid";
 
 const POST_MODULES: Record<string, PostModule> = {
   [howToChoose.meta.slug]: howToChoose,
@@ -11,6 +13,8 @@ const POST_MODULES: Record<string, PostModule> = {
   [drivewayReplaceRepair.meta.slug]: drivewayReplaceRepair,
   [commonProblems.meta.slug]: commonProblems,
   [whatToExpect.meta.slug]: whatToExpect,
+  [howToVet.meta.slug]: howToVet,
+  [subReliability.meta.slug]: subReliability,
 };
 
 export function getAllPostSlugs(): string[] {
