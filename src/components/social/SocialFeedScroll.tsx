@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { SocialPost } from "@/data/social-posts";
 
 interface SocialFeedScrollProps {
@@ -69,27 +70,38 @@ export function SocialFeedScroll({ posts }: SocialFeedScrollProps) {
               className="card-light overflow-hidden block group h-full flex flex-col"
               aria-label={`${post.platform === "instagram" ? "Instagram" : "Facebook"} post: ${post.caption}`}
             >
-              {/* 1:1 placeholder — Track A swap-in lands real imagery */}
-              <div
-                className="relative aspect-square border-b border-warm-border overflow-hidden"
-                aria-hidden="true"
-              >
-                <div
-                  className="absolute inset-0"
-                  style={{
-                    background:
-                      "linear-gradient(135deg, #EDE8DC 0%, #F4F0E8 50%, #FFFFFF 100%)",
-                  }}
-                />
-                <div
-                  className="absolute inset-0"
-                  style={{
-                    backgroundImage: "url(/topo-bg-light.svg)",
-                    backgroundSize: "cover",
-                    opacity: 0.4,
-                  }}
-                />
-                <div className="absolute top-3 left-3 flex items-center gap-1.5 px-2 py-1 bg-paper/95 border border-warm-border rounded font-mono text-[10px] uppercase tracking-[0.12em] text-anthracite">
+              {/* 1:1 image — falls back to gradient placeholder when no image set */}
+              <div className="relative aspect-square border-b border-warm-border overflow-hidden">
+                {post.image ? (
+                  <Image
+                    src={post.image}
+                    alt={post.alt}
+                    fill
+                    sizes="(max-width: 640px) 280px, 320px"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                ) : (
+                  <>
+                    <div
+                      aria-hidden="true"
+                      className="absolute inset-0"
+                      style={{
+                        background:
+                          "linear-gradient(135deg, #EDE8DC 0%, #F4F0E8 50%, #FFFFFF 100%)",
+                      }}
+                    />
+                    <div
+                      aria-hidden="true"
+                      className="absolute inset-0"
+                      style={{
+                        backgroundImage: "url(/topo-bg-light.svg)",
+                        backgroundSize: "cover",
+                        opacity: 0.4,
+                      }}
+                    />
+                  </>
+                )}
+                <div className="absolute top-3 left-3 flex items-center gap-1.5 px-2 py-1 bg-paper/95 border border-warm-border rounded font-mono text-[10px] uppercase tracking-[0.12em] text-anthracite shadow-sm">
                   <PlatformIcon platform={post.platform} />
                   <span>{post.platform === "instagram" ? "IG" : "FB"}</span>
                 </div>

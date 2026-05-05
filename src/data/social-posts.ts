@@ -33,6 +33,7 @@ export const SOCIAL_POSTS: readonly SocialPost[] = [
       "Pool deck wrapped up in Alpine. Stamped slate, cobblestone border, non-slip sealer. Pool stayed open the whole time.",
     alt: "Finished pool deck in Alpine, Utah with stamped slate texture",
     url: IG,
+    image: "/images/gallery/img-33-alpine-pool-deck.png",
   },
   {
     id: "fb-2026-04-lehi-townhomes",
@@ -42,6 +43,7 @@ export const SOCIAL_POSTS: readonly SocialPost[] = [
       "22 townhome flatwork project in Lehi — last pour day. Aprons, walks, and patios across all units.",
     alt: "Lehi townhome development driveway pour",
     url: FB,
+    image: "/images/gallery/img-30-lehi-townhome-flatwork.png",
   },
   {
     id: "ig-2026-04-draper-retail",
@@ -51,6 +53,7 @@ export const SOCIAL_POSTS: readonly SocialPost[] = [
       "Phase 4 of the Draper retail center project. ADA ramps poured overnight to keep the storefronts open.",
     alt: "ADA ramp pour at Draper retail center",
     url: IG,
+    image: "/images/gallery/img-31-draper-retail-center.png",
   },
   {
     id: "ig-2026-04-driveway-sandy",
@@ -60,6 +63,7 @@ export const SOCIAL_POSTS: readonly SocialPost[] = [
       "Stamped European fan with cobblestone border in Sandy. Hidden Valley project — replaced a 30-year-old slab.",
     alt: "Stamped concrete driveway with European fan pattern in Sandy, UT",
     url: IG,
+    image: "/images/gallery/img-29-sandy-stamped-driveway.png",
   },
   {
     id: "fb-2026-04-sport-court-draper",
@@ -69,6 +73,7 @@ export const SOCIAL_POSTS: readonly SocialPost[] = [
       "Sport court in Draper foothills — pickleball + basketball overlay. Striped this week.",
     alt: "Backyard sport court in Draper, UT",
     url: FB,
+    image: "/images/gallery/img-34-draper-sport-court.png",
   },
   {
     id: "ig-2026-03-dumpster-pad",
@@ -78,6 +83,7 @@ export const SOCIAL_POSTS: readonly SocialPost[] = [
       "Site 5 of 14 on the multi-site dumpster pad program. Standardized spec across the whole portfolio.",
     alt: "Commercial dumpster pad with steel enclosure",
     url: IG,
+    image: "/images/gallery/img-32-multi-site-dumpster-pads.png",
   },
   {
     id: "ig-2026-03-patio-stamped",
@@ -87,6 +93,7 @@ export const SOCIAL_POSTS: readonly SocialPost[] = [
       "Stamped patio extension in SLC's East Bench. Slate field, broom border to tie into the existing walkway.",
     alt: "Stamped concrete patio extension in Salt Lake City",
     url: IG,
+    image: "/images/services/img-05-stamped-decorative.png",
   },
   {
     id: "fb-2026-03-foundation-pour",
@@ -96,6 +103,7 @@ export const SOCIAL_POSTS: readonly SocialPost[] = [
       "Commercial foundation slab in West Valley. 4,500 PSI, #4 rebar grid, full ADA-compliant edge.",
     alt: "Commercial foundation pour in West Valley City",
     url: FB,
+    image: "/images/services/img-11-industrial-foundations.png",
   },
   {
     id: "ig-2026-03-decorative-border",
@@ -105,6 +113,7 @@ export const SOCIAL_POSTS: readonly SocialPost[] = [
       "Decorative concrete border around a Lehi pool. Custom dye match to the home's stone facade.",
     alt: "Decorative concrete border in Lehi, UT",
     url: IG,
+    image: "/images/services/img-06-pool-decks.png",
   },
   {
     id: "ig-2026-02-driveway-replacement",
@@ -114,6 +123,7 @@ export const SOCIAL_POSTS: readonly SocialPost[] = [
       "Before/after on a Salt Lake driveway replacement. Map cracking → fresh broom finish in 4 days.",
     alt: "Driveway replacement before and after in Salt Lake City",
     url: IG,
+    image: "/images/services/img-08-repair.png",
   },
   {
     id: "fb-2026-02-rv-pad",
@@ -123,6 +133,7 @@ export const SOCIAL_POSTS: readonly SocialPost[] = [
       "RV pad in West Jordan. 6 inches, beefed-up rebar — built for the rig the homeowner actually has.",
     alt: "RV pad in West Jordan, Utah",
     url: FB,
+    image: "/images/services/img-35-rv-pads.png",
   },
   {
     id: "ig-2026-02-st-george",
@@ -132,6 +143,7 @@ export const SOCIAL_POSTS: readonly SocialPost[] = [
       "Pool deck rebuild in St. George. Heat-tolerant sealer, lighter color to keep the surface walkable in summer.",
     alt: "Pool deck rebuild in St. George, Utah",
     url: IG,
+    image: "/images/gallery/img-33-alpine-pool-deck.png",
   },
 ];
 
