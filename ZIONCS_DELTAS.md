@@ -26,24 +26,30 @@ Project-specific overrides. Anything not documented here follows the library at 
 
 ## Color overrides — LOCKED
 
+Industrial-precise palette. Engineering-drawing energy, not SaaS-electric. Built around concrete itself: anthracite, concrete, bone — with sparing data accents (steel, rebar) for techy precision.
+
 | Role | Hex |
 |---|---|
 | Brand orange (primary CTA) | `#E85A19` |
 | Brand orange hover | `#C44A12` |
 | Brand orange muted | `#FCEBE0` |
-| Charcoal (foreground) | `#1F1A14` |
-| Charcoal hover | `#2D2620` |
-| Cream (page bg) | `#FAF8F2` |
+| Anthracite (deep dark / foreground) | `#1A1814` |
+| Anthracite elevated | `#26221C` |
+| Anthracite overlay | `#322D26` |
+| Concrete (mid neutral) | `#8A857C` |
+| Bone (page bg) | `#F4F0E8` |
 | Paper (card surface) | `#FFFFFF` |
-| Sand (section wash) | `#F5F2EA` |
-| Warm border | `#E8E4DA` |
+| Sand (section wash) | `#EDE8DC` |
+| Warm border | `#E0DBCF` |
 | Stone (muted text) | `#6B6760` |
-| Slate (subtle text) | `#8C8478` |
-| Forest (positive) | `#2D7A3F` |
+| Slate-warm (subtle) | `#8C8478` |
+| Steel (data accent) | `#3F6B7D` |
+| Steel light | `#5C8FA3` |
+| Rebar (live signal / positive) | `#7DA84F` |
 | Gold (caution) | `#C49A2C` |
-| Steel (info) | `#4A6B8C` |
+| Brick (critical) | `#A84426` |
 
-Avoid: pure black `#000000`, pure white as page bg, cool slates, bright Webflow orange `#ED7D31`.
+Avoid: pure black/white, cool Tailwind slates, electric data blue (Pando-keyed), bright Webflow orange `#ED7D31`, neon SaaS greens.
 
 Full palette rationale in `ZIONCS_DESIGN_CALIBRATION.md`.
 
@@ -51,15 +57,22 @@ Full palette rationale in `ZIONCS_DESIGN_CALIBRATION.md`.
 
 ## Background overrides — LOCKED
 
-Five-wash rotation:
+Six-wash rotation, weighted toward more dark sections than my prior calibration to reflect the data-infused IP balance.
 
-1. **`cream-page` (`#FAF8F2`)** — default page background
+1. **`bone-page` (`#F4F0E8`)** — default page background
 2. **`paper-card` (`#FFFFFF`)** — card surfaces only
-3. **`sand-wash` (`#F5F2EA`)** — quiet sections (process, FAQ, secondary content)
-4. **`charcoal-dark` (`#1F1A14`)** — hero, KPI bands, footer
-5. **`orange-tinted` (`#FDF1EA`)** — one section per page max (USPs, key CTA-adjacent panel)
+3. **`sand-wash` (`#EDE8DC`)** — quiet sections (FAQ, secondary content)
+4. **`anthracite-base` (`#1A1814`)** — hero, KPI ribbon, footer, deep-dark sections
+5. **`anthracite-elevated` (`#26221C`)** — cards on dark sections, mid-layer surfaces
+6. **`anthracite-overlay` (`#322D26`)** — glass cards, console panels, hover states
 
-Page-level wash plans live in the calibration doc.
+Plus optional accent: orange-tinted (`#FDF1EA` light / `#322822` dark) — one section per page max.
+
+Background overlays:
+- **`topo-bg-dark.svg` / `topo-bg-light.svg`** — Wasatch elevation lines at 5-8% opacity on anthracite/bone surfaces
+- **`engineer-grid.svg`** — optional 1/8" grid at 4-6% opacity on technical content surfaces
+
+Page-level wash plans live in the calibration doc. Wash distribution shifted to roughly **45% dark / 45% light / 10% accent**.
 
 ---
 
@@ -73,11 +86,35 @@ Type scale (clamp-based fluid sizing), eyebrow style (uppercase tracking-`[0.15e
 
 ---
 
-## Component pattern overrides
+## Component pattern overrides — LOCKED
 
-TBD. Anticipated overrides:
-- **Project gallery** — new feature; not currently in `COMPONENT_PATTERNS.md`. Will be ZionCS-specific until pattern repeats on a second project.
-- **Social media thread (Meta feed scroll)** — new feature; ZionCS-specific.
+Project-specific data-infused components beyond the library defaults. Each may eventually graduate into a library standard if the pattern repeats; for now, ZionCS-specific.
+
+### NEW custom components (ZionCS-specific for v1)
+
+| Component | Purpose |
+|---|---|
+| **Service-spec block** | Code-block-style technical spec card on each service detail page (concrete grade, PSI, thickness, reinforcement, finish, cure time, warranty). Mono typography. Looks like an engineering spec sheet. |
+| **Project card with timeline** | Project gallery card with structured Day 1 / Day 2 / Day 3 timeline data + scale stats. Replaces marketing-tile aesthetic with engineering-brief feel. |
+| **Service area map** | Utah outline + Wasatch Front highlighted region + dot markers for served cities + optional "currently working at..." live pin. Replaces a static "we serve these cities" list with a vector data viz. |
+| **Climate data overlay components** | Freeze-thaw cycle chart, soil composition diagram, frost depth diagram. Used on Utah-climate articles to elevate them from blog post to engineering brief. |
+| **Live indicator components** | Pulsing dots (`<LiveDot status="active|busy|complete" />`), status chips with 3px-left-border accent, live timestamps with auto-update |
+| **Data-overlay on photography** | Subtle GPS coordinates / scale indicators / dimension callouts / soil annotations layered over select hero and feature photos. Reads as "project briefing," not "marketing image." |
+
+### Library components used (no override)
+
+Per `COMPONENT_PATTERNS.md`:
+- Intelligence Console mini + full (foregrounded — hero placement + dedicated section)
+- KPI Ticker (extended with sparklines per ZionCS)
+- Console Action System (calendar / contact_info / intake / direct_chat — routed for ZionCS personas)
+
+### Other custom components (operational features)
+
+- **Project gallery** with filter chips by service type (driveways / sport courts / commercial / etc.)
+- **Social media feed scroll** — horizontal scroll with `scroll-snap-x`, manual curation per `briefs/zioncs.md` § 7
+- **Numbered service grid** — homepage layout, 11 services in 2-column grid with VCASS-inspired numbered prefix system
+
+Detailed specs in `ZIONCS_DESIGN_CALIBRATION.md`.
 
 ---
 
