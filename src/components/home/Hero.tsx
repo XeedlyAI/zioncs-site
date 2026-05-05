@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Phone } from "lucide-react";
 import { CONTACT } from "@/lib/contact";
@@ -13,17 +14,18 @@ export function Hero() {
       className="relative overflow-hidden text-bone"
       aria-labelledby="hero-heading"
     >
-      {/* Placeholder background — IMG-01 lands in Track A Session 1 and replaces this gradient.
-          When real photo arrives: swap to Image with parallax (background-attachment: fixed on desktop). */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 bg-anthracite"
-        style={{
-          background:
-            "radial-gradient(ellipse at 50% 20%, #322D26 0%, #26221C 45%, #1A1814 100%)",
-        }}
-      />
-      {/* Topo overlay */}
+      {/* Hero photo — IMG-01: golden-hour Utah suburban driveway with Wasatch backdrop. */}
+      <div aria-hidden="true" className="absolute inset-0 bg-anthracite">
+        <Image
+          src="/images/hero/img-01-homepage.png"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+      </div>
+      {/* Topo overlay — softer over real photography */}
       <div
         aria-hidden="true"
         className="absolute inset-0 pointer-events-none"
@@ -31,19 +33,18 @@ export function Hero() {
           backgroundImage: "url(/topo-bg-dark.svg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
-          opacity: 0.7,
+          opacity: 0.25,
         }}
       />
-      {/* Subtle vignette */}
+      {/* Anthracite tint over the photo so headline + body copy stay readable */}
       <div
         aria-hidden="true"
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "linear-gradient(180deg, rgba(26,24,20,0.0) 0%, rgba(26,24,20,0.35) 75%, rgba(26,24,20,0.85) 100%)",
+            "linear-gradient(180deg, rgba(26,24,20,0.55) 0%, rgba(26,24,20,0.50) 40%, rgba(26,24,20,0.85) 100%)",
         }}
       />
-
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-32 lg:pt-44 pb-20 lg:pb-28">
         <motion.p
           initial={{ opacity: 0, y: 16 }}

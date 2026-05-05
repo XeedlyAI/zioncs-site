@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Project } from "@/data/projects";
 
 interface ProjectCardProps {
@@ -19,25 +20,41 @@ export function ProjectCard({ project, variant = "full" }: ProjectCardProps) {
       href={`/projects/${project.slug}`}
       className="card-dark overflow-hidden block group h-full flex flex-col"
     >
-      {/* 4:3 image placeholder. Real images land via Track A Session 2 swap-in. */}
-      <div
-        className="relative aspect-[4/3] overflow-hidden border-b border-concrete/20"
-        aria-hidden="true"
-      >
+      {/* 4:3 image — falls back to gradient placeholder when image is unset. */}
+      <div className="relative aspect-[4/3] overflow-hidden border-b border-concrete/20">
+        {project.image ? (
+          <Image
+            src={project.image}
+            alt={`${project.title} — ${project.city}, ${project.state}`}
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+            className="object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+        ) : (
+          <>
+            <div
+              aria-hidden="true"
+              className="absolute inset-0"
+              style={{
+                background:
+                  "linear-gradient(135deg, #322D26 0%, #26221C 50%, #1A1814 100%)",
+              }}
+            />
+            <div
+              aria-hidden="true"
+              className="absolute inset-0"
+              style={{
+                backgroundImage: "url(/topo-bg-dark.svg)",
+                backgroundSize: "cover",
+                opacity: 0.5,
+              }}
+            />
+          </>
+        )}
+        {/* Subtle dark overlay so the chips read on bright photos */}
         <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(135deg, #322D26 0%, #26221C 50%, #1A1814 100%)",
-          }}
-        />
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: "url(/topo-bg-dark.svg)",
-            backgroundSize: "cover",
-            opacity: 0.5,
-          }}
+          aria-hidden="true"
+          className="absolute inset-0 bg-gradient-to-t from-anthracite/60 via-transparent to-anthracite/30 pointer-events-none"
         />
         <div className="absolute top-3 left-3">
           <span className="font-mono text-[10px] uppercase tracking-[0.15em] px-2 py-1 bg-anthracite/85 border border-concrete/30 text-bone/85 rounded">

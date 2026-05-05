@@ -27,6 +27,7 @@ export const meta: PostMeta = {
   articleRole: "diagnostic",
   category: "insights",
   cityAnchor: null,
+  heroImage: "/images/blog/img-16-why-utah-cracks.png",
   relatedSlugs: [
     "residential-concrete-repair-utah",
     "driveway-replacement-vs-repair",

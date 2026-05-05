@@ -26,6 +26,7 @@ export const meta: PostMeta = {
   articleRole: "front-door",
   category: "guides",
   cityAnchor: null,
+  heroImage: "/images/blog/img-15-how-to-choose-contractor.png",
   relatedSlugs: [
     "why-utah-concrete-cracks",
     "10-common-residential-concrete-problems",

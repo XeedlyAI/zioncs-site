@@ -38,6 +38,8 @@ export type Project = {
   specs: readonly { key: string; value: string }[];
   /** Geo for project briefing data overlay */
   geo: { lat: number; lng: number };
+  /** Public-path image (4:3). When omitted, ProjectCard renders its placeholder gradient. */
+  image?: string;
 };
 
 export const PROJECTS: Project[] = [
@@ -76,6 +78,7 @@ export const PROJECTS: Project[] = [
       { key: "WARRANTY", value: "Workmanship — 2 year" },
     ],
     geo: { lat: 40.5849, lng: -111.8275 },
+    image: "/images/gallery/img-29-sandy-stamped-driveway.png",
   },
   {
     slug: "lehi-townhome-flatwork",
@@ -112,6 +115,7 @@ export const PROJECTS: Project[] = [
       { key: "WARRANTY", value: "Workmanship — 2 year" },
     ],
     geo: { lat: 40.3916, lng: -111.8508 },
+    image: "/images/gallery/img-30-lehi-townhome-flatwork.png",
   },
   {
     slug: "draper-retail-center",
@@ -148,6 +152,7 @@ export const PROJECTS: Project[] = [
       { key: "WARRANTY", value: "Workmanship — 2 year" },
     ],
     geo: { lat: 40.5247, lng: -111.8638 },
+    image: "/images/gallery/img-31-draper-retail-center.png",
   },
   {
     slug: "multi-site-dumpster-pad-rollout",
@@ -183,6 +188,7 @@ export const PROJECTS: Project[] = [
       { key: "WARRANTY", value: "Workmanship — 2 year per site" },
     ],
     geo: { lat: 40.6, lng: -111.85 },
+    image: "/images/gallery/img-32-multi-site-dumpster-pads.png",
   },
   {
     slug: "alpine-pool-deck-signature",
@@ -220,6 +226,7 @@ export const PROJECTS: Project[] = [
       { key: "WARRANTY", value: "Workmanship — 2 year" },
     ],
     geo: { lat: 40.4633, lng: -111.7758 },
+    image: "/images/gallery/img-33-alpine-pool-deck.png",
   },
   {
     slug: "draper-backyard-sport-court",
@@ -257,6 +264,7 @@ export const PROJECTS: Project[] = [
       { key: "WARRANTY", value: "Workmanship — 2 year" },
     ],
     geo: { lat: 40.519, lng: -111.86 },
+    image: "/images/gallery/img-34-draper-sport-court.png",
   },
 ];
 
