@@ -24,49 +24,6 @@ export function Footer() {
         }}
       />
 
-      {/* CTA panel — orange-tinted accent over anthracite */}
-      <div className="relative border-b border-concrete/15">
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "linear-gradient(to right, rgba(50, 40, 34, 0.6) 0%, rgba(50, 40, 34, 0.3) 50%, rgba(26, 24, 20, 0) 100%)",
-          }}
-        />
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-20">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-            <div className="md:col-span-7">
-              <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.15em] text-brand-orange mb-4">
-                ZIONCS://START-YOUR-PROJECT
-              </p>
-              <h2 className="text-[clamp(1.75rem,3.5vw,2.5rem)] font-extrabold tracking-tight leading-[1.1] mb-3">
-                Let&rsquo;s talk about your project.
-              </h2>
-              <p className="text-bone/75 max-w-md">
-                Honest work, skilled hands, lasting results. Average response
-                within {FIRM_FACTS.avgResponseTime}.
-              </p>
-            </div>
-            <div className="md:col-span-5 flex flex-col sm:flex-row md:flex-col lg:flex-row gap-3 md:items-end">
-              <Link
-                href="/quote"
-                className="inline-flex items-center justify-center px-7 py-3.5 bg-brand-orange hover:bg-brand-orange-hover text-paper font-semibold text-sm uppercase tracking-tight rounded-lg transition-colors"
-              >
-                Request a Quote
-              </Link>
-              <a
-                href={CONTACT.phoneHref}
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 border border-concrete/40 hover:border-bone/60 text-bone font-medium text-sm rounded-lg transition-colors"
-              >
-                <Phone size={16} />
-                {CONTACT.phone}
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Main footer */}
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-2 md:grid-cols-12 gap-10">
