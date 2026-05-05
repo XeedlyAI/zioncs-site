@@ -14,10 +14,10 @@ export function Hero() {
       className="relative overflow-hidden text-bone"
       aria-labelledby="hero-heading"
     >
-      {/* Hero photo cycle — same property at three times of day:
-            01a: late golden hour (long shadows on the driveway)
-            01b: sunset transition (saturated sky, lights starting)
-            01c: dusk / blue hour (lit landscape, warm windows, Wasatch silhouette)
+      {/* Hero photo cycle — three distinct Utah scenes, three services:
+            01a: golden-hour driveway with Wasatch backdrop
+            01b: stamped pool deck, late afternoon, snow-capped mountains
+            01c: outdoor patio with fire pit + landscape lighting at dusk
           Crossfades + Ken Burns are pure CSS in globals.css.
           Reduced-motion users see only image 1. */}
       <div aria-hidden="true" className="absolute inset-0 bg-anthracite">
@@ -30,14 +30,14 @@ export function Hero() {
           className="object-cover hero-image hero-image-1"
         />
         <Image
-          src="/images/hero/img-01b-homepage-sunset.png"
+          src="/images/hero/img-01b-homepage-pooldeck.png"
           alt=""
           fill
           sizes="100vw"
           className="object-cover hero-image hero-image-2"
         />
         <Image
-          src="/images/hero/img-01c-homepage-dusk.png"
+          src="/images/hero/img-01c-homepage-patio-dusk.png"
           alt=""
           fill
           sizes="100vw"

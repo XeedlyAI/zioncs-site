@@ -140,25 +140,29 @@
 }
 
 /* Homepage hero crossfade + Ken Burns
-   3 images cycle through afternoon -> sunset -> dusk over 21s.
-   Each image is visible solo for ~5.5s with 1.5s crossfade into the next.
-   Subtle 6% scale animation gives "almost video" cinematic feel.
-   Negative animation-delays stagger images so all are mid-cycle at t=0. */
+   3 distinct Utah scenes cycle over 27s:
+     image 1: golden-hour driveway (img-01)
+     image 2: stamped pool deck w/ Wasatch backdrop (img-01b)
+     image 3: outdoor patio + fire pit at dusk (img-01c)
+   Each image visible solo ~6.5s with 2.5s crossfade overlap into the next.
+   Negative animation-delays stagger images so all are mid-cycle at t=0
+   (no boot-up flash). 4% scale Ken Burns is subtle enough to avoid
+   competing with the crossfade itself. */
 @keyframes hero-fade {
-  0%, 26%  { opacity: 1; }
+  0%, 24%  { opacity: 1; }
   33%      { opacity: 0; }
-  93%      { opacity: 0; }
+  91%      { opacity: 0; }
   100%     { opacity: 1; }
 }
 @keyframes hero-kenburns {
   0%, 100% { transform: scale(1); }
-  50%      { transform: scale(1.06); }
+  50%      { transform: scale(1.04); }
 }
 .hero-image {
   opacity: 0;
   animation:
-    hero-fade 21s ease-in-out infinite,
-    hero-kenburns 21s ease-in-out infinite;
+    hero-fade 27s ease-in-out infinite,
+    hero-kenburns 27s ease-in-out infinite;
   will-change: opacity, transform;
 }
 .hero-image-1 {
@@ -166,11 +170,11 @@
   transform-origin: center 60%;
 }
 .hero-image-2 {
-  animation-delay: -14s, -14s;
-  transform-origin: 35% 50%;
+  animation-delay: -18s, -18s;
+  transform-origin: 50% 55%;
 }
 .hero-image-3 {
-  animation-delay: -7s, -7s;
+  animation-delay: -9s, -9s;
   transform-origin: 55% 40%;
 }
 @media (prefers-reduced-motion: reduce) {
