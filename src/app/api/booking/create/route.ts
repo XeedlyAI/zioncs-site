@@ -3,6 +3,7 @@ import { CONTACT } from "@/lib/contact";
 import { FIRM_FACTS } from "@/lib/firm-facts";
 import { getBookingConfig } from "@/lib/booking/config";
 import { createBookingEvent } from "@/lib/booking/google-calendar";
+import { getBookingStore } from "@/lib/booking/store";
 import { checkRateLimit, getClientIp } from "@/lib/rate-limit";
 import type { BookingSubmission } from "@/types/booking";
 
@@ -127,6 +128,20 @@ export async function POST(req: Request) {
 
   // Stub-mode "create" — real Google Calendar event creation lives behind this
   const calendarResult = await createBookingEvent();
+
+  // Persist to the booking store (in-memory v1; Vercel KV / Postgres post-launch)
+  const store = getBookingStore();
+  await store.create({
+    bookingType: config.slug,
+    attendeeName: submission.attendeeName,
+    attendeeEmail: submission.attendeeEmail,
+    attendeePhone: submission.attendeePhone,
+    meetingContext: submission.meetingContext,
+    startISO: submission.startISO,
+    source: "direct-link",
+    googleEventId: calendarResult.eventId,
+    googleMeetLink: calendarResult.meetLink,
+  });
 
   // Always log
   console.log(
