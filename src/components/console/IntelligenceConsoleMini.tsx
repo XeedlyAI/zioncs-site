@@ -148,10 +148,16 @@ function MiniActionsList({ response }: { response: ConsoleResponse }) {
 interface IntelligenceConsoleMiniProps {
   /** Optional override for the suggestion pills shown in compact mode. */
   pillIds?: string[];
+  /**
+   * Hide the "See full response in console ↓" expand link. Use on pages
+   * that don't host the full IntelligenceConsole (e.g. /contact).
+   */
+  hideExpand?: boolean;
 }
 
 export function IntelligenceConsoleMini({
   pillIds,
+  hideExpand,
 }: IntelligenceConsoleMiniProps = {}) {
   const [processing, setProcessing] = useState(false);
   const [response, setResponse] = useState<ConsoleResponse | null>(null);
@@ -299,7 +305,7 @@ export function IntelligenceConsoleMini({
               compact
               renderActions={(r) => <MiniActionsList response={r} />}
               expandSlot={
-                response && (
+                !hideExpand && response ? (
                   <button
                     type="button"
                     onClick={handleSeeFullResponse}
@@ -307,7 +313,7 @@ export function IntelligenceConsoleMini({
                   >
                     See full response in console ↓
                   </button>
-                )
+                ) : null
               }
             />
           </motion.div>

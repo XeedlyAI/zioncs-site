@@ -16,7 +16,8 @@ interface BlogPostLayoutProps {
  *   article body (children — wrapped by Prose inside the post file)
  *   FaqSection (if the post has FAQs)
  *   RelatedPosts (sand-wash, 3-card grid)
- *   PageCTA
+ *
+ * The footer-level CTA panel is rendered globally by Footer, not here.
  */
 export function BlogPostLayout({
   meta,

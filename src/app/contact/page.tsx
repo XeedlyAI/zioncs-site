@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Phone, Mail, Clock, MapPin, ArrowRight } from "lucide-react";
-import { PageHero } from "@/components/pages/PageHero";
+import { Breadcrumbs } from "@/components/pages/Breadcrumbs";
+import { IntelligenceConsoleMini } from "@/components/console/IntelligenceConsoleMini";
 import { ContactPageForm } from "@/components/forms/ContactPageForm";
 import { CONTACT } from "@/lib/contact";
 import {
@@ -81,12 +82,55 @@ export default function ContactPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(lbJsonLd) }}
       />
-      <PageHero
-        breadcrumbs={BREADCRUMBS}
-        eyebrow="ZIONCS://CONTACT"
-        title="Talk to a Utah concrete crew."
-        lead={`Sandy home base. Mon–Fri 8 AM to 5 PM Mountain. Average response within 2 business hours during office hours. ${CONTACT.phone} or ${CONTACT.email}.`}
-      />
+      {/* 2-col hero: intro left, mini console right */}
+      <section className="relative bg-anthracite text-bone overflow-hidden">
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage: "url(/topo-bg-dark.svg)",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            opacity: 0.6,
+          }}
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(38, 34, 28, 0.6) 0%, rgba(26, 24, 20, 0.95) 100%)",
+          }}
+        />
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-32 lg:pt-40 pb-16 lg:pb-20">
+          <div className="mb-6">
+            <Breadcrumbs items={BREADCRUMBS} />
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+            <div className="lg:col-span-6">
+              <p className="font-mono text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.18em] text-steel-light mb-4">
+                ZIONCS://CONTACT
+              </p>
+              <h1 className="text-[clamp(2.25rem,4.6vw,3.5rem)] font-extrabold tracking-tight leading-[1.05] text-bone mb-5">
+                Talk to a Utah concrete crew.
+              </h1>
+              <p className="text-lg text-bone/80 leading-relaxed mb-6">
+                Sandy home base. Mon–Fri 8 AM to 5 PM Mountain. Average
+                response within 2 business hours during office hours.{" "}
+                {CONTACT.phone} or {CONTACT.email}.
+              </p>
+              <p className="font-mono text-[10px] uppercase tracking-[0.15em] text-stone leading-relaxed">
+                Not sure which path is yours? Ask the console — it
+                routes builder, multi-site, and homeowner questions
+                differently. Or skip ahead to the form below.
+              </p>
+            </div>
+            <div className="lg:col-span-6">
+              <IntelligenceConsoleMini hideExpand />
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Direct contact info — anthracite band */}
       <section className="bg-anthracite-elevated text-bone border-b border-concrete/15 py-12 md:py-14">

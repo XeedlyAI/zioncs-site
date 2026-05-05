@@ -38,7 +38,8 @@ interface ServicePageTemplateProps {
  *   - 2-column body section: copy on left (children), ServiceSpecBlock on right (sticky on desktop)
  *   - FAQ (sand-wash)
  *   - RelatedServices (sand-wash, 4 sibling cards)
- *   - PageCTA
+ *
+ * The footer-level CTA panel is rendered globally by Footer, not here.
  */
 export function ServicePageTemplate({
   breadcrumbs,

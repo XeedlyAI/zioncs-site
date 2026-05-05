@@ -71,7 +71,8 @@ interface SiloLandingTemplateProps {
  *   Services-in-this-silo grid (bone)
  *   Related articles (sand-wash)
  *   FAQ
- *   PageCTA with the silo-specific CTA variant
+ *
+ * The footer-level CTA panel is rendered globally by Footer, not here.
  */
 export function SiloLandingTemplate({
   breadcrumbs,
