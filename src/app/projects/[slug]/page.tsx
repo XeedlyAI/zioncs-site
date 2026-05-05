@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { PageHero } from "@/components/pages/PageHero";
-import { PageCTA } from "@/components/pages/PageCTA";
 import { ProjectCard } from "@/components/data/ProjectCard";
 import { ServiceSpecBlock } from "@/components/data/ServiceSpecBlock";
 import {
@@ -189,10 +188,6 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         </section>
       )}
 
-      <PageCTA
-        title={`Want similar work in ${project.city}?`}
-        body={`We do this kind of project regularly — ${project.service.toLowerCase()} work across the Wasatch Front and St. George. Tell us about yours.`}
-      />
     </>
   );
 }

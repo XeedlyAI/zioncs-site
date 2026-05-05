@@ -1,6 +1,5 @@
 import { PageHero } from "./PageHero";
 import { FaqSection, type FaqItem } from "./FaqSection";
-import { PageCTA } from "./PageCTA";
 import { RelatedServices } from "./RelatedServices";
 import { ServiceSpecBlock, type SpecRow } from "@/components/data/ServiceSpecBlock";
 import { type Crumb } from "./Breadcrumbs";
@@ -20,9 +19,13 @@ interface ServicePageTemplateProps {
   faqs: FaqItem[];
   relatedSlugs: string[];
   currentSlug: string;
+  /** @deprecated — page-level CTAs were retired in favor of the universal Footer CTA. */
   ctaTitle?: string;
+  /** @deprecated */
   ctaBody?: string;
+  /** @deprecated */
   ctaSecondaryHref?: string;
+  /** @deprecated */
   ctaSecondaryLabel?: string;
 }
 
@@ -45,10 +48,6 @@ export function ServicePageTemplate({
   faqs,
   relatedSlugs,
   currentSlug,
-  ctaTitle,
-  ctaBody,
-  ctaSecondaryHref,
-  ctaSecondaryLabel,
 }: ServicePageTemplateProps) {
   return (
     <>
@@ -79,12 +78,6 @@ export function ServicePageTemplate({
 
       <FaqSection items={faqs} />
       <RelatedServices slugs={relatedSlugs} currentSlug={currentSlug} />
-      <PageCTA
-        title={ctaTitle}
-        body={ctaBody}
-        secondaryHref={ctaSecondaryHref}
-        secondaryLabel={ctaSecondaryLabel}
-      />
     </>
   );
 }

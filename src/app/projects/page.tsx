@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/pages/PageHero";
-import { PageCTA } from "@/components/pages/PageCTA";
 import { ProjectGallery } from "@/components/gallery/ProjectGallery";
 import { getAllProjects } from "@/data/projects";
 import { breadcrumbListSchema } from "@/lib/structured-data";
@@ -52,10 +51,6 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      <PageCTA
-        title="Got a project?"
-        body="We work residential, builder, commercial, and enterprise. Tell us about yours — we'll send a written quote within 7 days."
-      />
     </>
   );
 }

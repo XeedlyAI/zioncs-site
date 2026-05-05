@@ -2,7 +2,6 @@ import Link from "next/link";
 import { ArrowRight, Calendar } from "lucide-react";
 import { PageHero } from "./PageHero";
 import { FaqSection, type FaqItem } from "./FaqSection";
-import { PageCTA } from "./PageCTA";
 import { type Crumb } from "./Breadcrumbs";
 
 export type SiloProof = {
@@ -48,10 +47,13 @@ interface SiloLandingTemplateProps {
   /** Related blog articles in the silo */
   relatedTitle?: string;
   related: SiloRelated[];
-  /** Builder/Commercial/Enterprise CTA — defaults to "Book a Discovery Call" */
+  /** Silo-tier CTA label — used in the dual-CTA band under the hero. */
   ctaPrimaryLabel?: string;
+  /** Silo-tier CTA href — used in the dual-CTA band under the hero. */
   ctaPrimaryHref?: string;
+  /** @deprecated — page-level CTAs were retired in favor of the universal Footer CTA. */
   ctaTitle?: string;
+  /** @deprecated */
   ctaBody?: string;
   /** FAQs at the bottom */
   faqs: FaqItem[];
@@ -86,8 +88,6 @@ export function SiloLandingTemplate({
   related,
   ctaPrimaryLabel = "Book a Discovery Call",
   ctaPrimaryHref = "/book/discovery-call-builder",
-  ctaTitle,
-  ctaBody,
   faqs,
 }: SiloLandingTemplateProps) {
   return (
@@ -253,16 +253,6 @@ export function SiloLandingTemplate({
       </section>
 
       <FaqSection items={faqs} />
-
-      <PageCTA
-        title={ctaTitle ?? "Ready to talk through your project?"}
-        body={
-          ctaBody ??
-          "Book a discovery call or send a quote request — whichever fits your timeline."
-        }
-        secondaryHref={ctaPrimaryHref}
-        secondaryLabel={ctaPrimaryLabel}
-      />
     </>
   );
 }

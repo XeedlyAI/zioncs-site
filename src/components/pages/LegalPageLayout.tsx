@@ -1,5 +1,4 @@
 import { PageHero } from "./PageHero";
-import { PageCTA } from "./PageCTA";
 import type { Crumb } from "./Breadcrumbs";
 
 interface LegalPageLayoutProps {
@@ -107,11 +106,6 @@ export function LegalPageLayout({
           </div>
         </div>
       </article>
-
-      <PageCTA
-        title="Questions about this document?"
-        body="Email us — we'll route to the right person. We don't have in-house legal, so substantive questions may need to wait for counsel review."
-      />
     </>
   );
 }

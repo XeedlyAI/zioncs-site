@@ -1,6 +1,5 @@
 import { PageHero } from "./PageHero";
 import { FaqSection, type FaqItem } from "./FaqSection";
-import { PageCTA } from "./PageCTA";
 import { type Crumb } from "./Breadcrumbs";
 
 interface LocationPageTemplateProps {
@@ -10,15 +9,19 @@ interface LocationPageTemplateProps {
   lead?: string;
   children: React.ReactNode;
   faqs: FaqItem[];
+  /** @deprecated — page-level CTAs were retired in favor of the universal Footer CTA. */
   ctaTitle?: string;
+  /** @deprecated */
   ctaBody?: string;
+  /** @deprecated */
   ctaSecondaryHref?: string;
+  /** @deprecated */
   ctaSecondaryLabel?: string;
 }
 
 /**
  * Shared template for Tier 2 city / location pages.
- * Same chrome as the pillar template but tuned for shorter, more local copy.
+ * Hero + body slot + FAQ. Universal close lives in the Footer.
  */
 export function LocationPageTemplate({
   breadcrumbs,
@@ -27,10 +30,6 @@ export function LocationPageTemplate({
   lead,
   children,
   faqs,
-  ctaTitle,
-  ctaBody,
-  ctaSecondaryHref,
-  ctaSecondaryLabel,
 }: LocationPageTemplateProps) {
   return (
     <>
@@ -42,12 +41,6 @@ export function LocationPageTemplate({
       />
       {children}
       <FaqSection items={faqs} />
-      <PageCTA
-        title={ctaTitle}
-        body={ctaBody}
-        secondaryHref={ctaSecondaryHref}
-        secondaryLabel={ctaSecondaryLabel}
-      />
     </>
   );
 }

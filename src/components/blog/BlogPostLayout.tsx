@@ -2,7 +2,6 @@ import type { ReactNode } from "react";
 import { PostHero } from "./PostHero";
 import { RelatedPosts } from "./RelatedPosts";
 import { FaqSection } from "@/components/pages/FaqSection";
-import { PageCTA } from "@/components/pages/PageCTA";
 import type { PostMeta } from "@/types/post";
 
 interface BlogPostLayoutProps {
@@ -47,11 +46,6 @@ export function BlogPostLayout({
       )}
 
       <RelatedPosts posts={related} />
-
-      <PageCTA
-        title="Got a project?"
-        body="Tell us what you want done and where. We'll send a written quote within 7 days. No high-pressure follow-up."
-      />
     </>
   );
 }

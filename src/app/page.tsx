@@ -8,7 +8,6 @@ import { WhyZionCS } from "@/components/home/WhyZionCS";
 import { ProjectGalleryPreview } from "@/components/home/ProjectGalleryPreview";
 import { ProcessTimeline } from "@/components/home/ProcessTimeline";
 import { SocialFeedPreview } from "@/components/home/SocialFeedPreview";
-import { HomeCTA } from "@/components/home/HomeCTA";
 import {
   organizationSchema,
   localBusinessSchema,
@@ -70,7 +69,6 @@ export default function Home() {
       <ProjectGalleryPreview />
       <ProcessTimeline />
       <SocialFeedPreview />
-      <HomeCTA />
     </>
   );
 }

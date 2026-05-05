@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/pages/PageHero";
-import { PageCTA } from "@/components/pages/PageCTA";
 import { PostCard } from "@/components/blog/PostCard";
 import { getAllPosts } from "@/data/posts";
 import { breadcrumbListSchema } from "@/lib/structured-data";
@@ -61,10 +60,6 @@ export default function BlogIndexPage() {
         </div>
       </section>
 
-      <PageCTA
-        title="Don't see what you need?"
-        body="Tell us about your project and we'll send a written quote within 7 days. Most articles come from real questions homeowners and builders asked us — yours might be next."
-      />
     </>
   );
 }

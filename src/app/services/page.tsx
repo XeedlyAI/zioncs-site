@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/pages/PageHero";
-import { PageCTA } from "@/components/pages/PageCTA";
 import { SERVICES } from "@/data/services";
 import { breadcrumbListSchema } from "@/lib/structured-data";
 
@@ -212,10 +211,6 @@ export default function ServicesIndexPage() {
         </div>
       </section>
 
-      <PageCTA
-        title="Got a project?"
-        body="Tell us what you want done, where, and roughly when. We'll send a written quote within 7 days. No high-pressure follow-up."
-      />
     </>
   );
 }
