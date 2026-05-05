@@ -42,7 +42,13 @@ Read in this exact order before writing code:
 **Project-specific (always):**
 9. `ZIONCS_DELTAS.md` — project overrides (color palette, voice, etc.)
 10. `briefs/zioncs.md` — the project brief (personas, services, USPs, design direction)
-11. The current wave block in `ZIONCS_BUILD_PLAN.md` (once it exists)
+11. `ZIONCS_DESIGN_CALIBRATION.md` — design system rationale + component specs + image-gen prompts
+12. The current wave block in `ZIONCS_BUILD_PLAN.md`
+
+**Project-specific (read on demand):**
+- `briefs/personas.md` — full persona doc (4 personas with goals/pain/triggers/objections/messaging)
+- `briefs/competitive-walk-through.md` — industry + design intelligence
+- `ZIONCS_CORE_30_MAP.md` — keyword targets, silos, slugs, page assignments — read when working on a Core 30 page
 
 ## Project-Specific Rules
 
