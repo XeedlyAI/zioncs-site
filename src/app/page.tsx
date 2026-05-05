@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Hero } from "@/components/home/Hero";
 import { KpiRibbon } from "@/components/home/KpiRibbon";
 import { HomeIntelligenceConsole } from "@/components/home/HomeIntelligenceConsole";
+import { IntelligenceConsole } from "@/components/console/IntelligenceConsole";
 import { NumberedServiceGrid } from "@/components/home/NumberedServiceGrid";
 import { WhyZionCS } from "@/components/home/WhyZionCS";
 import { ProjectGalleryPreview } from "@/components/home/ProjectGalleryPreview";
@@ -63,6 +64,7 @@ export default function Home() {
       <Hero />
       <KpiRibbon />
       <HomeIntelligenceConsole />
+      <IntelligenceConsole />
       <NumberedServiceGrid />
       <WhyZionCS />
       <ProjectGalleryPreview />
