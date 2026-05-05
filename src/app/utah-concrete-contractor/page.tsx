@@ -309,8 +309,14 @@ export default function UtahConcreteContractorPage() {
             </div>
             <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-stone mt-8">
               Also serving: Draper · Lehi · Provo · Orem · Ogden · Layton ·
-              Bountiful · Park City. Wasatch Front metro pillar lands in Wave
-              11.
+              Bountiful · Park City. Full coverage breakdown on the{" "}
+              <Link
+                href="/wasatch-front-concrete-contractor"
+                className="text-brand-orange hover:text-brand-orange-hover underline-offset-4 hover:underline"
+              >
+                Wasatch Front metro pillar
+              </Link>
+              .
             </p>
           </div>
         </section>

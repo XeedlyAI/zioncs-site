@@ -4,6 +4,7 @@ import { KpiRibbon } from "@/components/home/KpiRibbon";
 import { HomeIntelligenceConsole } from "@/components/home/HomeIntelligenceConsole";
 import { IntelligenceConsole } from "@/components/console/IntelligenceConsole";
 import { NumberedServiceGrid } from "@/components/home/NumberedServiceGrid";
+import { HomeServiceArea } from "@/components/home/HomeServiceArea";
 import { WhyZionCS } from "@/components/home/WhyZionCS";
 import { ProjectGalleryPreview } from "@/components/home/ProjectGalleryPreview";
 import { ProcessTimeline } from "@/components/home/ProcessTimeline";
@@ -66,6 +67,7 @@ export default function Home() {
       <HomeIntelligenceConsole />
       <IntelligenceConsole />
       <NumberedServiceGrid />
+      <HomeServiceArea />
       <WhyZionCS />
       <ProjectGalleryPreview />
       <ProcessTimeline />
