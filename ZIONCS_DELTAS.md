@@ -10,12 +10,13 @@ Project-specific overrides. Anything not documented here follows the library at 
 
 | Library standard | What ZionCS overrides | Status |
 |---|---|---|
-| `DESIGN_SYSTEM` colors | TBD — current Webflow uses bright orange + dark navy + light gray. Refining during Phase 3. | OPEN |
-| `DESIGN_SYSTEM` typography | TBD — Inter + JetBrains Mono is the family default; verify against tiger-logo character before deviating | OPEN |
-| Background system | TBD — concrete texture overlay vs solid washes | OPEN |
+| `DESIGN_SYSTEM` colors | **LOCKED** — refined orange `#E85A19` + warm charcoal `#1F1A14` + cream `#FAF8F2` system. Full palette in `ZIONCS_DESIGN_CALIBRATION.md`. | DECIDED |
+| `DESIGN_SYSTEM` typography | **LOCKED** — Inter (weights 400-900) + JetBrains Mono (eyebrows, KPIs). Scale defined in calibration doc. No third font. | DECIDED |
+| Background system | **LOCKED** — five-wash rotation: cream-page (default), paper-card (cards), sand-wash (quiet sections), charcoal-dark (hero/footer), orange-tinted (one section per page max). | DECIDED |
 | Photography direction | **AI-generated project-craft photography for v1** via `image-generation` skill (Gemini Nano Banana / Pro). Move away from worker-as-mascot. ZionCS will provide real project photos post-launch to swap in. | DECIDED |
 | Voice calibration | Practical, direct, operator-grade. Existing brand vocabulary intact: "show up on time, keep the worksite clean, get the job done right" / "honest work, skilled hands, lasting results" / "muscle, grit, and pride." Not corporate, not folksy, not SaaS. | DECIDED |
-| Service area | **Utah** primarily — Wasatch Front + St. George. Sandy, UT 84070 home base. (Note: GBP description currently mentions WY + MT — needs reconciliation; defaulting to Utah-only for v1 unless client confirms otherwise.) | DECIDED |
+| Service area | **Utah only** for current operations and copy — Wasatch Front + St. George. Sandy, UT 84070 home base. WY/MT expansion is forward-looking brand vision (in the logo) but not yet operational. | DECIDED |
+| Logo treatment | **Use full circular-emblem horizontal logo** (`zioncs-logo-horizontal.png` + white variant). The WY/UT/MT around the bottom is forward-looking brand vision — ZionCS intends to expand. Site copy stays Utah-only until the expansion happens. | DECIDED |
 | Trust signals | **No license #, insurance limits, or bonding numbers displayed.** Trust comes through reviews + project work + named case studies. | DECIDED |
 | Booking system | **Stubbed for v1.** UI exists but calendar integration deferred until Google Workspace emails are provisioned. Submissions go to `admin@zioncs.com` via Resend until then. Single calendar endpoint with `booking_type` metadata for persona routing. | DECIDED |
 | Pricing posture | **No published pricing.** Quote-only. All conversion paths → project info form / quote request / contact. | DECIDED |
@@ -23,21 +24,52 @@ Project-specific overrides. Anything not documented here follows the library at 
 
 ---
 
-## Color overrides
+## Color overrides — LOCKED
 
-TBD — to be decided in Phase 3 (design calibration). Current Webflow palette under review.
+| Role | Hex |
+|---|---|
+| Brand orange (primary CTA) | `#E85A19` |
+| Brand orange hover | `#C44A12` |
+| Brand orange muted | `#FCEBE0` |
+| Charcoal (foreground) | `#1F1A14` |
+| Charcoal hover | `#2D2620` |
+| Cream (page bg) | `#FAF8F2` |
+| Paper (card surface) | `#FFFFFF` |
+| Sand (section wash) | `#F5F2EA` |
+| Warm border | `#E8E4DA` |
+| Stone (muted text) | `#6B6760` |
+| Slate (subtle text) | `#8C8478` |
+| Forest (positive) | `#2D7A3F` |
+| Gold (caution) | `#C49A2C` |
+| Steel (info) | `#4A6B8C` |
+
+Avoid: pure black `#000000`, pure white as page bg, cool slates, bright Webflow orange `#ED7D31`.
+
+Full palette rationale in `ZIONCS_DESIGN_CALIBRATION.md`.
 
 ---
 
-## Background overrides
+## Background overrides — LOCKED
 
-TBD.
+Five-wash rotation:
+
+1. **`cream-page` (`#FAF8F2`)** — default page background
+2. **`paper-card` (`#FFFFFF`)** — card surfaces only
+3. **`sand-wash` (`#F5F2EA`)** — quiet sections (process, FAQ, secondary content)
+4. **`charcoal-dark` (`#1F1A14`)** — hero, KPI bands, footer
+5. **`orange-tinted` (`#FDF1EA`)** — one section per page max (USPs, key CTA-adjacent panel)
+
+Page-level wash plans live in the calibration doc.
 
 ---
 
-## Typography overrides
+## Typography overrides — LOCKED
 
-TBD. Library default (Inter + JetBrains Mono) is the starting point.
+- **Inter** (weights 400/500/600/700/800/900) via `next/font/google`
+- **JetBrains Mono** (weights 400/500) via `next/font/google`
+- No third font
+
+Type scale (clamp-based fluid sizing), eyebrow style (uppercase tracking-`[0.15em]` JetBrains Mono), and use rules in calibration doc.
 
 ---
 
