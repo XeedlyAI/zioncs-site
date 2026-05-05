@@ -36,6 +36,12 @@
   --color-bg-orange-tinted-light: #FDF1EA;
   --color-bg-orange-tinted-dark: #322822;
 
+  /* Console — cool slate (steel-family) for the tech surface.
+     Hue-aligned with --color-steel (#3F6B7D) so the data accents
+     used inside the console harmonize with the section bg. */
+  --color-bg-console-base: #171E25;
+  --color-bg-console-elevated: #1F262E;
+
   /* Motion */
   --ease-curve: cubic-bezier(0.16, 1, 0.3, 1);
 

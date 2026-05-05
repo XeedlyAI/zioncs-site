@@ -65,7 +65,7 @@ function ActionCardShell({ action, children }: ActionCardShellProps) {
   const accent = ACCENT[action.type];
   return (
     <div
-      className={`border-l-[3px] ${accent.border} bg-anthracite/40 rounded p-5`}
+      className={`border-l-[3px] ${accent.border} bg-black/30 rounded p-5`}
     >
       <div className="flex items-start gap-3 mb-3">
         <span
@@ -201,7 +201,7 @@ function IntakeCard({
             onChange={(e) => setName(e.target.value)}
             placeholder="Name *"
             disabled={state === "sending"}
-            className="px-3 py-2 text-sm bg-anthracite/40 border border-concrete/30 text-bone placeholder:text-stone rounded focus:outline-none focus:border-steel-light/60"
+            className="px-3 py-2 text-sm bg-black/30 border border-bone/15 text-bone placeholder:text-stone rounded focus:outline-none focus:border-steel-light/60"
             aria-label="Your name"
           />
           <input
@@ -211,7 +211,7 @@ function IntakeCard({
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email *"
             disabled={state === "sending"}
-            className="px-3 py-2 text-sm bg-anthracite/40 border border-concrete/30 text-bone placeholder:text-stone rounded focus:outline-none focus:border-steel-light/60"
+            className="px-3 py-2 text-sm bg-black/30 border border-bone/15 text-bone placeholder:text-stone rounded focus:outline-none focus:border-steel-light/60"
             aria-label="Your email"
           />
         </div>
@@ -221,7 +221,7 @@ function IntakeCard({
           onChange={(e) => setPhone(e.target.value)}
           placeholder="Phone (optional)"
           disabled={state === "sending"}
-          className="w-full px-3 py-2 text-sm bg-anthracite/40 border border-concrete/30 text-bone placeholder:text-stone rounded focus:outline-none focus:border-steel-light/60"
+          className="w-full px-3 py-2 text-sm bg-black/30 border border-bone/15 text-bone placeholder:text-stone rounded focus:outline-none focus:border-steel-light/60"
           aria-label="Your phone number"
         />
         <textarea
@@ -230,7 +230,7 @@ function IntakeCard({
           placeholder="Project details (size, location, timeline)"
           rows={3}
           disabled={state === "sending"}
-          className="w-full px-3 py-2 text-sm bg-anthracite/40 border border-concrete/30 text-bone placeholder:text-stone rounded focus:outline-none focus:border-steel-light/60 resize-none"
+          className="w-full px-3 py-2 text-sm bg-black/30 border border-bone/15 text-bone placeholder:text-stone rounded focus:outline-none focus:border-steel-light/60 resize-none"
           aria-label="Project details"
         />
         {error && (
@@ -350,7 +350,7 @@ function DirectChatCard({
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Name *"
                 disabled={state === "sending"}
-                className="px-3 py-2 text-sm bg-anthracite/40 border border-concrete/30 text-bone placeholder:text-stone rounded focus:outline-none focus:border-gold/60"
+                className="px-3 py-2 text-sm bg-black/30 border border-bone/15 text-bone placeholder:text-stone rounded focus:outline-none focus:border-gold/60"
               />
               <input
                 type="email"
@@ -359,7 +359,7 @@ function DirectChatCard({
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Email *"
                 disabled={state === "sending"}
-                className="px-3 py-2 text-sm bg-anthracite/40 border border-concrete/30 text-bone placeholder:text-stone rounded focus:outline-none focus:border-gold/60"
+                className="px-3 py-2 text-sm bg-black/30 border border-bone/15 text-bone placeholder:text-stone rounded focus:outline-none focus:border-gold/60"
               />
             </div>
           )}
@@ -370,7 +370,7 @@ function DirectChatCard({
               onChange={(e) => setDraft(e.target.value)}
               placeholder="Type your message…"
               disabled={state === "sending"}
-              className="flex-1 px-3 py-2 text-sm bg-anthracite/40 border border-concrete/30 text-bone placeholder:text-stone rounded focus:outline-none focus:border-gold/60"
+              className="flex-1 px-3 py-2 text-sm bg-black/30 border border-bone/15 text-bone placeholder:text-stone rounded focus:outline-none focus:border-gold/60"
               aria-label="Message"
             />
             <button

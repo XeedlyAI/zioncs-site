@@ -26,7 +26,7 @@ export function SuggestionPills({
           type="button"
           onClick={() => onSelect(q.id)}
           disabled={disabled}
-          className={`font-mono uppercase tracking-[0.1em] rounded border bg-anthracite/30 border-concrete/25 text-bone/85 hover:text-paper hover:border-steel-light transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${
+          className={`font-mono uppercase tracking-[0.1em] rounded border bg-black/25 border-bone/15 text-bone/85 hover:text-paper hover:border-steel-light hover:bg-steel/10 transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${
             compact
               ? "text-[10px] px-2.5 py-1.5"
               : "text-[11px] px-3 py-2"

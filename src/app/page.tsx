@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Hero } from "@/components/home/Hero";
 import { KpiRibbon } from "@/components/home/KpiRibbon";
-import { HomeIntelligenceConsole } from "@/components/home/HomeIntelligenceConsole";
 import { IntelligenceConsole } from "@/components/console/IntelligenceConsole";
 import { NumberedServiceGrid } from "@/components/home/NumberedServiceGrid";
 import { HomeServiceArea } from "@/components/home/HomeServiceArea";
@@ -64,7 +63,6 @@ export default function Home() {
       />
       <Hero />
       <KpiRibbon />
-      <HomeIntelligenceConsole />
       <IntelligenceConsole />
       <NumberedServiceGrid />
       <HomeServiceArea />

@@ -110,8 +110,12 @@ export function IntelligenceConsole() {
   return (
     <section
       id="console"
-      className="relative bg-bg-anthracite-overlay text-bone py-24 md:py-32 overflow-hidden scroll-mt-24"
+      className="relative bg-bg-console-base text-bone py-24 md:py-32 overflow-hidden scroll-mt-24"
       aria-labelledby="console-full-heading"
+      style={{
+        // Hairline accent at the top edge — marks the warm→cool section transition
+        boxShadow: "inset 0 1px 0 0 rgba(92, 143, 163, 0.25)",
+      }}
     >
       <div
         aria-hidden="true"
@@ -119,7 +123,7 @@ export function IntelligenceConsole() {
         style={{
           backgroundImage: "url(/topo-bg-dark.svg)",
           backgroundSize: "cover",
-          opacity: 0.5,
+          opacity: 0.4,
         }}
       />
       <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
@@ -140,15 +144,15 @@ export function IntelligenceConsole() {
         </div>
 
         <div
-          className="rounded-xl border border-concrete/25 overflow-hidden shadow-2xl"
+          className="rounded-xl border border-steel/30 overflow-hidden shadow-2xl"
           style={{
             background:
-              "linear-gradient(180deg, rgba(50, 45, 38, 0.85) 0%, rgba(38, 34, 28, 0.8) 100%)",
+              "linear-gradient(180deg, rgba(31, 38, 46, 0.85) 0%, rgba(23, 30, 37, 0.8) 100%)",
             backdropFilter: "blur(8px)",
           }}
         >
           {/* Header */}
-          <div className="flex items-center justify-between px-5 py-3 border-b border-concrete/15 bg-anthracite/40">
+          <div className="flex items-center justify-between px-5 py-3 border-b border-steel/20 bg-black/30">
             <div className="flex items-center gap-2">
               <span className="relative inline-flex w-2 h-2">
                 <span className="absolute inset-0 rounded-full bg-rebar animate-ping opacity-70" />
@@ -182,7 +186,7 @@ export function IntelligenceConsole() {
                 e.preventDefault();
                 runFreeform(input);
               }}
-              className="flex items-center gap-2 px-3 py-2 rounded-md border border-concrete/30 bg-anthracite/40 focus-within:border-steel-light/60 transition-colors mb-6"
+              className="flex items-center gap-2 px-3 py-2 rounded-md border border-steel/25 bg-black/30 focus-within:border-steel-light/60 transition-colors mb-6"
             >
               <input
                 type="text"
@@ -204,7 +208,7 @@ export function IntelligenceConsole() {
 
             {/* Active context echo */}
             {activeContext && (
-              <div className="mb-4 pb-3 border-b border-concrete/15">
+              <div className="mb-4 pb-3 border-b border-steel/20">
                 <p className="font-mono text-[10px] uppercase tracking-[0.15em] text-stone mb-1">
                   QUERY
                 </p>
@@ -240,7 +244,7 @@ export function IntelligenceConsole() {
             </div>
 
             {/* Footer */}
-            <div className="flex items-center justify-between mt-6 pt-4 border-t border-concrete/15 font-mono text-[10px] uppercase tracking-[0.12em] text-stone">
+            <div className="flex items-center justify-between mt-6 pt-4 border-t border-steel/20 font-mono text-[10px] uppercase tracking-[0.12em] text-stone">
               <span>latency: &lt;3s</span>
               <div className="flex items-center gap-3">
                 {(response || processing) && (
