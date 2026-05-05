@@ -110,34 +110,34 @@ export function IntelligenceConsole() {
   return (
     <section
       id="console"
-      className="relative bg-bg-console-base text-bone py-24 md:py-32 overflow-hidden scroll-mt-24"
+      className="relative bg-bg-cement text-anthracite py-24 md:py-32 overflow-hidden scroll-mt-24"
       aria-labelledby="console-full-heading"
       style={{
-        // Hairline accent at the top edge — marks the warm→cool section transition
-        boxShadow: "inset 0 1px 0 0 rgba(92, 143, 163, 0.25)",
+        // Hairline accent at the top edge — marks the warm anthracite → cool cement section transition
+        boxShadow: "inset 0 1px 0 0 rgba(63, 107, 125, 0.25)",
       }}
     >
       <div
         aria-hidden="true"
         className="absolute inset-0 pointer-events-none"
         style={{
-          backgroundImage: "url(/topo-bg-dark.svg)",
+          backgroundImage: "url(/topo-bg-light.svg)",
           backgroundSize: "cover",
-          opacity: 0.4,
+          opacity: 0.5,
         }}
       />
       <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
-          <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.15em] text-steel-light mb-4">
+          <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.15em] text-steel mb-4">
             ZIONCS://CONSOLE · FULL
           </p>
           <h2
             id="console-full-heading"
-            className="text-[clamp(1.875rem,3.5vw,2.75rem)] font-extrabold tracking-tight text-bone leading-[1.1] mb-3"
+            className="text-[clamp(1.875rem,3.5vw,2.75rem)] font-extrabold tracking-tight text-anthracite leading-[1.1] mb-3"
           >
             The full console — answers, action cards, real intake.
           </h2>
-          <p className="text-bone/70 leading-relaxed">
+          <p className="text-stone leading-relaxed">
             Ask anything. The console routes you to the right action card —
             quote intake, calendar booking, or a direct line to the team.
           </p>

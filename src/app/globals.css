@@ -36,6 +36,11 @@
   --color-bg-orange-tinted-light: #FDF1EA;
   --color-bg-orange-tinted-dark: #322822;
 
+  /* Cement — slightly cool light gray for tasteful "tech/clinical" injection
+     on light surfaces. Sister anchor to the cool slate dark used by the
+     console card, keeping cool tones consistent across light and dark zones. */
+  --color-bg-cement: #F2F2F2;
+
   /* Console — cool slate (steel-family) for the tech surface.
      Hue-aligned with --color-steel (#3F6B7D) so the data accents
      used inside the console harmonize with the section bg. */
