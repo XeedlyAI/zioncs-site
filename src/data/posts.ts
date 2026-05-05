@@ -9,6 +9,8 @@ import * as subReliability from "@/content/blog/concrete-sub-reliability-vs-lowe
 import * as subFailures from "@/content/blog/common-concrete-sub-failures";
 import * as prePourChecklist from "@/content/blog/pre-pour-checklist-for-builders";
 import * as utahSoil from "@/content/blog/utah-soil-conditions-commercial-foundations";
+import * as commercialScheduling from "@/content/blog/commercial-concrete-pour-scheduling";
+import * as evaluatingCommercialSubs from "@/content/blog/evaluating-commercial-concrete-subs";
 
 const POST_MODULES: Record<string, PostModule> = {
   [howToChoose.meta.slug]: howToChoose,
@@ -21,6 +23,8 @@ const POST_MODULES: Record<string, PostModule> = {
   [subFailures.meta.slug]: subFailures,
   [prePourChecklist.meta.slug]: prePourChecklist,
   [utahSoil.meta.slug]: utahSoil,
+  [commercialScheduling.meta.slug]: commercialScheduling,
+  [evaluatingCommercialSubs.meta.slug]: evaluatingCommercialSubs,
 };
 
 export function getAllPostSlugs(): string[] {
