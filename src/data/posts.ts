@@ -6,6 +6,8 @@ import * as commonProblems from "@/content/blog/10-common-residential-concrete-p
 import * as whatToExpect from "@/content/blog/what-to-expect-when-you-request-a-concrete-quote";
 import * as howToVet from "@/content/blog/how-to-vet-a-concrete-subcontractor";
 import * as subReliability from "@/content/blog/concrete-sub-reliability-vs-lowest-bid";
+import * as subFailures from "@/content/blog/common-concrete-sub-failures";
+import * as prePourChecklist from "@/content/blog/pre-pour-checklist-for-builders";
 
 const POST_MODULES: Record<string, PostModule> = {
   [howToChoose.meta.slug]: howToChoose,
@@ -15,6 +17,8 @@ const POST_MODULES: Record<string, PostModule> = {
   [whatToExpect.meta.slug]: whatToExpect,
   [howToVet.meta.slug]: howToVet,
   [subReliability.meta.slug]: subReliability,
+  [subFailures.meta.slug]: subFailures,
+  [prePourChecklist.meta.slug]: prePourChecklist,
 };
 
 export function getAllPostSlugs(): string[] {
