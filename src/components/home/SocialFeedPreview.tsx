@@ -1,7 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { SocialFeedScroll } from "@/components/social/SocialFeedScroll";
 import { CONTACT } from "@/lib/contact";
+import { getRecentPosts } from "@/data/social-posts";
 import { fadeUp, scrollRevealProps } from "@/lib/motion";
 
 function InstagramIcon({ size = 16 }: { size?: number }) {
@@ -42,11 +44,8 @@ function FacebookIcon({ size = 16 }: { size?: number }) {
   );
 }
 
-/**
- * Wave 2.1 placeholder. Real horizontal scroll-snap feed with
- * src/data/social-posts.ts lands in Wave 5.
- */
 export function SocialFeedPreview() {
+  const posts = getRecentPosts(12);
   return (
     <section className="bg-bone py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -63,9 +62,8 @@ export function SocialFeedPreview() {
               Recently from the field.
             </h2>
             <p className="text-stone leading-relaxed">
-              Job-site progress, finished pours, the occasional sport-court
-              striping shot. Manually curated until we wire up the Meta Graph
-              feed.
+              Job-site progress, finished pours, and the occasional
+              sport-court striping shot. Manually curated.
             </p>
           </div>
           <div className="flex items-center gap-3 shrink-0">
@@ -92,18 +90,8 @@ export function SocialFeedPreview() {
           </div>
         </motion.div>
 
-        <motion.div
-          {...scrollRevealProps}
-          variants={fadeUp}
-          className="rounded-xl border border-warm-border bg-paper p-12 text-center"
-        >
-          <p className="font-mono text-[10px] uppercase tracking-[0.15em] text-stone mb-3">
-            wave-05 · feed renders here
-          </p>
-          <p className="text-stone max-w-md mx-auto">
-            Horizontal scroll-snap row with the last 10–15 posts lands when
-            the project gallery component ships in Wave 5.
-          </p>
+        <motion.div {...scrollRevealProps} variants={fadeUp}>
+          <SocialFeedScroll posts={posts} />
         </motion.div>
       </div>
     </section>
