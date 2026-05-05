@@ -1,25 +1,57 @@
+export const EASE = [0.16, 1, 0.3, 1] as const;
+
 export const DURATION = {
-  instant: 0.1,
   fast: 0.2,
-  normal: 0.35,
-  slow: 0.5,
-  dramatic: 0.8,
-  stagger: 0.08,
-  staggerSlow: 0.12,
-}
+  normal: 0.5,
+  section: 0.6,
+  kpi: 1.4,
+} as const;
 
-export const EASE = {
-  out: [0.16, 1, 0.3, 1] as const,
-  reveal: [0.22, 1, 0.36, 1] as const,
-  snap: [0.25, 0.46, 0.45, 0.94] as const,
-  dramatic: [0.76, 0, 0.24, 1] as const,
-  bounce: [0.34, 1.56, 0.64, 1] as const,
-  linear: [0, 0, 1, 1] as const,
-}
+export const STAGGER = {
+  fast: 0.08,
+  normal: 0.12,
+  slow: 0.15,
+} as const;
 
-export const THRESHOLD = {
-  eager: 0.05,
-  normal: 0.2,
-  patient: 0.4,
-  center: 0.5,
-}
+export const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: DURATION.section, ease: EASE },
+  },
+} as const;
+
+export const fadeUpChild = {
+  hidden: { opacity: 0, y: 16 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: DURATION.normal, ease: EASE },
+  },
+} as const;
+
+export const staggerContainer = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: STAGGER.normal,
+      delayChildren: 0.08,
+    },
+  },
+} as const;
+
+export const fadeRight = {
+  hidden: { opacity: 0, x: 20 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.7, delay: 0.4, ease: EASE },
+  },
+} as const;
+
+export const scrollRevealProps = {
+  initial: "hidden",
+  whileInView: "visible",
+  viewport: { once: true, margin: "-50px" },
+} as const;

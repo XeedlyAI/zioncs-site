@@ -1,0 +1,32 @@
+export const FIRM_FACTS = {
+  yearsInBusiness: "9+",
+  projectsCompleted: "200+",
+  teamSize: "10+",
+  googleReviews: { rating: 5.0, count: 6 },
+  avgResponseTime: "2 business hours",
+  founders: {
+    kevin: { name: "Kevin Handrin", role: "Owner / General Manager" },
+    amy: { name: "Amy Carlin", role: "Marketing / PR / Office Manager" },
+    josh: { name: "Josh Rowberry", role: "Project Manager" },
+  },
+  serviceArea: {
+    primary: "Wasatch Front",
+    secondary: "St. George",
+    cities: [
+      "Sandy",
+      "Salt Lake City",
+      "Draper",
+      "Lehi",
+      "Provo",
+      "Orem",
+      "Ogden",
+      "Layton",
+      "Bountiful",
+      "Park City",
+      "St. George",
+    ],
+    homeBase: "Sandy, UT",
+  },
+  tagline: "Show up on time, keep the worksite clean, get the job done right.",
+  values: "Honest work, skilled hands, lasting results.",
+} as const;
