@@ -74,6 +74,8 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         eyebrow={`ZIONCS://PROJECT · ${project.category}`}
         title={project.title}
         lead={project.excerpt}
+        heroImage={project.image}
+        heroAlt={`${project.title} — ${project.city}, ${project.state}`}
       />
 
       {/* Project briefing block — geo + status + scale + duration on a dark band */}

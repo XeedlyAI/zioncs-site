@@ -42,7 +42,8 @@ export default function ProjectsPage() {
         breadcrumbs={BREADCRUMBS}
         eyebrow="ZIONCS://PROJECT-LOG"
         title="Recent work across four buyer types."
-        lead="Filter by category. Each project shows the timeline, scale, and engineering specs we delivered. Real imagery rolling in as projects publish — placeholder cards in the meantime."
+        lead="Filter by category. Each project shows the timeline, scale, and engineering specs we delivered."
+        heroImage="/images/services/img-14-process.png"
       />
 
       <section className="bg-bone py-20 md:py-24">
