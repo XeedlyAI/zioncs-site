@@ -1,10 +1,16 @@
 import type { PostMeta, PostModule } from "@/types/post";
 import * as howToChoose from "@/content/blog/how-to-choose-a-concrete-contractor-in-utah";
 import * as whyUtah from "@/content/blog/why-utah-concrete-cracks";
+import * as drivewayReplaceRepair from "@/content/blog/driveway-replacement-vs-repair";
+import * as commonProblems from "@/content/blog/10-common-residential-concrete-problems";
+import * as whatToExpect from "@/content/blog/what-to-expect-when-you-request-a-concrete-quote";
 
 const POST_MODULES: Record<string, PostModule> = {
   [howToChoose.meta.slug]: howToChoose,
   [whyUtah.meta.slug]: whyUtah,
+  [drivewayReplaceRepair.meta.slug]: drivewayReplaceRepair,
+  [commonProblems.meta.slug]: commonProblems,
+  [whatToExpect.meta.slug]: whatToExpect,
 };
 
 export function getAllPostSlugs(): string[] {

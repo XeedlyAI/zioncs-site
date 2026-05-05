@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Prose } from "@/components/blog/Prose";
+import { FreezeThawCycleChart } from "@/components/data/FreezeThawCycleChart";
 import type { PostMeta } from "@/types/post";
 
 export const meta: PostMeta = {
@@ -117,18 +118,7 @@ export default function Article() {
         the surface.
       </p>
 
-      {/* Wave 4.2 placeholder — FreezeThawCycleChart drops in here */}
-      <div className="my-8 card-light p-6 status-steel">
-        <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.15em] text-steel mb-2">
-          DATA OVERLAY · COMING WAVE 4.2
-        </p>
-        <p className="text-stone leading-relaxed text-base">
-          Freeze-thaw cycle chart — visualizes the Wasatch Front&rsquo;s
-          12-month cycle pattern with crystals at the worst stretches
-          (December–February) and drops back toward zero by July. Activates
-          when the climate-data-overlay components ship.
-        </p>
-      </div>
+      <FreezeThawCycleChart />
 
       <h2>Clay-heavy soils and subgrade settling</h2>
       <p>
