@@ -93,6 +93,7 @@ export default function AboutPage() {
         eyebrow="ZIONCS://ABOUT"
         title="Started in Sandy. Pool decks first."
         lead="Zion Concrete Specialists started in 2016 as a residential pool-deck crew in Sandy, Utah. Nine years and 200+ projects later, we run four service tracks — residential, builder, commercial, enterprise — across the Wasatch Front and St. George. Same Sandy home base, same standards, same crew."
+        heroImage="/images/hero/img-03-about.png"
       />
 
       {/* Stats band */}

@@ -27,6 +27,7 @@ export const meta: PostMeta = {
   articleRole: "diagnostic",
   category: "insights",
   cityAnchor: null,
+  heroImage: "/images/blog/img-22-sub-failures.png",
   relatedSlugs: [
     "how-to-vet-a-concrete-subcontractor",
     "pre-pour-checklist-for-builders",

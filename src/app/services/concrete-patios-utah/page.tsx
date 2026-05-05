@@ -93,6 +93,7 @@ export default function PatiosPage() {
       <ServicePageTemplate
         breadcrumbs={BREADCRUMBS}
         eyebrow="ZIONCS://SERVICE · 04 / PATIOS"
+        heroImage="/images/services/img-07-patios.png"
         title="Concrete patios — outdoor living built for Utah weather."
         lead="A patio is the most-used outdoor surface a Utah home has — dinners in summer, fire-pit evenings in fall, snow-shoveled walkway in winter, table-and-chairs setup in spring. We size, finish, and detail patios so they hold up to all four seasons and look right against your house."
         spec={{

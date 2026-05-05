@@ -26,6 +26,7 @@ export const meta: PostMeta = {
   articleRole: "decision-framework",
   category: "guides",
   cityAnchor: null,
+  heroImage: "/images/blog/img-17-replacement-vs-repair.png",
   relatedSlugs: [
     "why-utah-concrete-cracks",
     "10-common-residential-concrete-problems",

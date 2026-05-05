@@ -70,6 +70,7 @@ export default function ServicesIndexPage() {
         eyebrow="ZIONCS://SERVICES · 11 OFFERINGS"
         title="Eleven flatwork services. One Utah crew."
         lead="From a backyard patio to a multi-site dumpster pad rollout, we handle residential, builder, commercial, and enterprise concrete across the Wasatch Front and St. George. Pick the service that fits your project — or pick the buyer track if you'd rather start there."
+        heroImage="/images/hero/img-02-services.png"
       />
 
       {/* All services */}

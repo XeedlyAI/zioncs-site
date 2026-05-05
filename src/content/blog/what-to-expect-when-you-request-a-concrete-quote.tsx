@@ -26,6 +26,7 @@ export const meta: PostMeta = {
   articleRole: "process-guide",
   category: "guides",
   cityAnchor: null,
+  heroImage: "/images/blog/img-19-quote-process.png",
   relatedSlugs: [
     "how-to-choose-a-concrete-contractor-in-utah",
     "driveway-replacement-vs-repair",

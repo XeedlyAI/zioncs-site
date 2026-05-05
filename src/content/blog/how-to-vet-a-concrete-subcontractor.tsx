@@ -26,6 +26,7 @@ export const meta: PostMeta = {
   articleRole: "front-door",
   category: "guides",
   cityAnchor: null,
+  heroImage: "/images/blog/img-20-vet-subcontractor.png",
   relatedSlugs: [
     "concrete-sub-reliability-vs-lowest-bid",
     "common-concrete-sub-failures",

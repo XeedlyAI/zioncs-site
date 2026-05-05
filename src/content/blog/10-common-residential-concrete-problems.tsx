@@ -26,6 +26,7 @@ export const meta: PostMeta = {
   articleRole: "magnetizer",
   category: "insights",
   cityAnchor: null,
+  heroImage: "/images/blog/img-18-common-problems.png",
   relatedSlugs: [
     "why-utah-concrete-cracks",
     "driveway-replacement-vs-repair",

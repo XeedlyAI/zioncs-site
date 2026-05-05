@@ -98,6 +98,7 @@ export default function DrivewaysPage() {
       <ServicePageTemplate
         breadcrumbs={BREADCRUMBS}
         eyebrow="ZIONCS://SERVICE · 01 / DRIVEWAYS"
+        heroImage="/images/services/img-04-driveways.png"
         title="Concrete driveways in Utah — installation, replacement, repair."
         lead="The biggest residential project we do, and the one Utah's freeze-thaw cycle is hardest on. We size every driveway for the climate — proper subgrade prep, the right reinforcement grid, and joints cut at intervals that absorb seasonal movement instead of cracking under it."
         spec={{

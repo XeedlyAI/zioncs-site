@@ -95,6 +95,7 @@ export default function StampedPage() {
       <ServicePageTemplate
         breadcrumbs={BREADCRUMBS}
         eyebrow="ZIONCS://SERVICE · 02 / STAMPED & DECORATIVE"
+        heroImage="/images/services/img-05-stamped-decorative.png"
         title="Stamped and decorative concrete across Utah."
         lead="Stamped patterns, integral and topical color, decorative borders, exposed aggregate. The high-margin residential category that turns a flatwork project into the centerpiece of a yard. We do it on driveways, patios, pool decks, and entryways — built for Utah weather, built to look right."
         spec={{

@@ -27,6 +27,7 @@ export const meta: PostMeta = {
   articleRole: "process-guide",
   category: "guides",
   cityAnchor: null,
+  heroImage: "/images/blog/img-23-pre-pour-checklist.png",
   relatedSlugs: [
     "how-to-vet-a-concrete-subcontractor",
     "common-concrete-sub-failures",

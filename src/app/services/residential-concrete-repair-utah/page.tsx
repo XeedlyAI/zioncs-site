@@ -94,6 +94,7 @@ export default function RepairPage() {
       <ServicePageTemplate
         breadcrumbs={BREADCRUMBS}
         eyebrow="ZIONCS://SERVICE · 05 / REPAIR"
+        heroImage="/images/services/img-08-repair.png"
         title="Concrete repair — honest diagnosis, real fix."
         lead="Most concrete-repair calls are misdiagnosed before we get there. The slab's been failing for years; the homeowner sees the crack and calls one contractor for a patch and another for a tear-out. We walk the site, identify the actual failure mode, and quote repair if repair will hold — replacement if it won't. No upsell."
         spec={{

@@ -9,6 +9,8 @@ interface ServicePageTemplateProps {
   eyebrow: string;
   title: string;
   lead?: string;
+  /** Optional hero photo behind the page hero. */
+  heroImage?: string;
   spec: {
     title: string;
     rows: SpecRow[];
@@ -43,6 +45,7 @@ export function ServicePageTemplate({
   eyebrow,
   title,
   lead,
+  heroImage,
   spec,
   children,
   faqs,
@@ -56,6 +59,7 @@ export function ServicePageTemplate({
         eyebrow={eyebrow}
         title={title}
         lead={lead}
+        heroImage={heroImage}
       />
 
       {/* Body + sticky spec sidebar */}

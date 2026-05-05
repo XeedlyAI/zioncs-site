@@ -93,6 +93,7 @@ export default function PoolDecksPage() {
       <ServicePageTemplate
         breadcrumbs={BREADCRUMBS}
         eyebrow="ZIONCS://SERVICE · 03 / POOL DECKS"
+        heroImage="/images/services/img-06-pool-decks.png"
         title="Pool decks — built by pool-deck specialists."
         lead="Pool decks are the origin business. ZionCS started in 2016 as a pool-deck crew and grew outward from there. Driveways, sport courts, foundations — they all came later. Pool decks are still where we apply the most precision: non-slip texture, chlorine-resistant sealer, joints planned around pool geometry, and finishes that hold up to wet feet for the next 20 years."
         spec={{

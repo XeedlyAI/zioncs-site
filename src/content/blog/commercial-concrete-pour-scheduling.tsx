@@ -26,6 +26,7 @@ export const meta: PostMeta = {
   articleRole: "process-guide",
   category: "guides",
   cityAnchor: null,
+  heroImage: "/images/blog/img-25-pour-scheduling.png",
   relatedSlugs: [
     "utah-soil-conditions-commercial-foundations",
     "evaluating-commercial-concrete-subs",

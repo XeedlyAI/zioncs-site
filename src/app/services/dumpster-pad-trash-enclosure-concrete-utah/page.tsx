@@ -94,6 +94,7 @@ export default function DumpsterPadsPage() {
       <ServicePageTemplate
         breadcrumbs={BREADCRUMBS}
         eyebrow="ZIONCS://SERVICE · DUMPSTER PADS"
+        heroImage="/images/services/img-12-dumpster-pads.png"
         title="Dumpster pads + trash enclosures — multi-site or one-off."
         lead="Commercial dumpster pads and trash enclosure concrete across Utah. Designed for waste-truck loads, retail and multi-family code requirements, and multi-site rollouts where consistency across sites matters more than any individual pour."
         spec={{

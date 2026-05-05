@@ -94,6 +94,7 @@ export default function CommercialFlatworkPage() {
       <ServicePageTemplate
         breadcrumbs={BREADCRUMBS}
         eyebrow="ZIONCS://SERVICE · 11 / COMMERCIAL FLATWORK"
+        heroImage="/images/services/img-10-commercial-flatwork.png"
         title="Commercial flatwork — parking lots, sidewalks, ADA ramps."
         lead="Retail centers, multi-family residential, light industrial, ADA upgrades. Phased pours that maintain access during construction, ADA-compliant slopes verified with a digital level, code-correct rebar and mix specs."
         spec={{

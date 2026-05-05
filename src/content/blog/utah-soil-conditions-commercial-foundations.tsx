@@ -28,6 +28,7 @@ export const meta: PostMeta = {
   articleRole: "diagnostic",
   category: "insights",
   cityAnchor: null,
+  heroImage: "/images/blog/img-24-utah-soil.png",
   relatedSlugs: [
     "commercial-concrete-pour-scheduling",
     "evaluating-commercial-concrete-subs",

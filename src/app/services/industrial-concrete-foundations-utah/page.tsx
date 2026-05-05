@@ -96,6 +96,7 @@ export default function IndustrialFoundationsPage() {
       <ServicePageTemplate
         breadcrumbs={BREADCRUMBS}
         eyebrow="ZIONCS://SERVICE · 06 / FOUNDATIONS"
+        heroImage="/images/services/img-11-industrial-foundations.png"
         title="Foundations and footings — built for Utah soil and frost depth."
         lead="Commercial and industrial foundations across the Wasatch Front and St. George. Soil-specific subgrade prep, frost-depth-compliant footings, structural-engineer-stamped drawings poured to spec exactly. The most ground-up foundation work we do."
         spec={{

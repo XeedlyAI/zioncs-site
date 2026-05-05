@@ -27,6 +27,7 @@ export const meta: PostMeta = {
   articleRole: "decision-framework",
   category: "insights",
   cityAnchor: null,
+  heroImage: "/images/blog/img-28-vendor-consolidation.png",
   relatedSlugs: [
     "multi-site-concrete-maintenance-programs",
     "evaluating-commercial-concrete-subs",

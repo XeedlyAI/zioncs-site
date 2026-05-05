@@ -27,6 +27,7 @@ export const meta: PostMeta = {
   articleRole: "front-door",
   category: "guides",
   cityAnchor: null,
+  heroImage: "/images/blog/img-27-multi-site-maintenance.png",
   relatedSlugs: [
     "vendor-consolidation-concrete-contractor",
     "evaluating-commercial-concrete-subs",
