@@ -11,6 +11,8 @@ import * as prePourChecklist from "@/content/blog/pre-pour-checklist-for-builder
 import * as utahSoil from "@/content/blog/utah-soil-conditions-commercial-foundations";
 import * as commercialScheduling from "@/content/blog/commercial-concrete-pour-scheduling";
 import * as evaluatingCommercialSubs from "@/content/blog/evaluating-commercial-concrete-subs";
+import * as multiSitePrograms from "@/content/blog/multi-site-concrete-maintenance-programs";
+import * as vendorConsolidation from "@/content/blog/vendor-consolidation-concrete-contractor";
 
 const POST_MODULES: Record<string, PostModule> = {
   [howToChoose.meta.slug]: howToChoose,
@@ -25,6 +27,8 @@ const POST_MODULES: Record<string, PostModule> = {
   [utahSoil.meta.slug]: utahSoil,
   [commercialScheduling.meta.slug]: commercialScheduling,
   [evaluatingCommercialSubs.meta.slug]: evaluatingCommercialSubs,
+  [multiSitePrograms.meta.slug]: multiSitePrograms,
+  [vendorConsolidation.meta.slug]: vendorConsolidation,
 };
 
 export function getAllPostSlugs(): string[] {
