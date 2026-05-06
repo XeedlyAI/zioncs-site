@@ -141,41 +141,61 @@
 
 /* Homepage hero crossfade + Ken Burns
    3 distinct Utah scenes cycle over 27s:
-     image 1: golden-hour driveway (img-01)
-     image 2: stamped pool deck w/ Wasatch backdrop (img-01b)
-     image 3: outdoor patio + fire pit at dusk (img-01c)
+     image 1: golden-hour driveway (camera dollies forward + slight tilt)
+     image 2: stamped pool deck    (camera dollies forward + reveals right)
+     image 3: dusk patio + fire    (camera pulls BACK — reveals atmosphere)
    Each image visible solo ~6.5s with 2.5s crossfade overlap into the next.
-   Negative animation-delays stagger images so all are mid-cycle at t=0
-   (no boot-up flash). 4% scale Ken Burns is subtle enough to avoid
-   competing with the crossfade itself. */
+
+   Crossfade: ease-in-out (correct for fades — accelerate, decelerate)
+   Ken Burns: linear + alternate (constant velocity = always-visible motion;
+              alternate ping-pongs so motion direction varies between
+              cycles, adding film-like variety)
+   10% scale + 2-3% translation per image — film-trailer amplitude.
+   Negative delays stagger images so all are mid-cycle at t=0. */
 @keyframes hero-fade {
   0%, 24%  { opacity: 1; }
   33%      { opacity: 0; }
   91%      { opacity: 0; }
   100%     { opacity: 1; }
 }
-@keyframes hero-kenburns {
-  0%, 100% { transform: scale(1); }
-  50%      { transform: scale(1.04); }
+/* Image 1 — driveway. Dolly forward, slight pan up-left. */
+@keyframes hero-kenburns-1 {
+  0%   { transform: scale(1.0) translate(0, 0); }
+  100% { transform: scale(1.10) translate(-2%, -1%); }
+}
+/* Image 2 — pool deck. Dolly forward from a right-shifted start, settles centered (reveals mountains). */
+@keyframes hero-kenburns-2 {
+  0%   { transform: scale(1.0) translate(2%, 0); }
+  100% { transform: scale(1.10) translate(0, 1%); }
+}
+/* Image 3 — dusk patio. Camera pulls BACK (zoomed in -> wide), revealing atmosphere. */
+@keyframes hero-kenburns-3 {
+  0%   { transform: scale(1.10) translate(-1%, -0.5%); }
+  100% { transform: scale(1.0) translate(0, 0); }
 }
 .hero-image {
   opacity: 0;
-  animation:
-    hero-fade 27s ease-in-out infinite,
-    hero-kenburns 27s ease-in-out infinite;
+  /* opacity uses ease-in-out for natural fade rhythm;
+     transform uses linear + alternate for constant perceptible motion */
   will-change: opacity, transform;
 }
 .hero-image-1 {
-  animation-delay: 0s, 0s;
-  transform-origin: center 60%;
+  animation:
+    hero-fade 27s ease-in-out 0s infinite,
+    hero-kenburns-1 27s linear 0s infinite alternate;
+  transform-origin: center 65%;
 }
 .hero-image-2 {
-  animation-delay: -18s, -18s;
-  transform-origin: 50% 55%;
+  animation:
+    hero-fade 27s ease-in-out -18s infinite,
+    hero-kenburns-2 27s linear -18s infinite alternate;
+  transform-origin: 60% 50%;
 }
 .hero-image-3 {
-  animation-delay: -9s, -9s;
-  transform-origin: 55% 40%;
+  animation:
+    hero-fade 27s ease-in-out -9s infinite,
+    hero-kenburns-3 27s linear -9s infinite alternate;
+  transform-origin: center 55%;
 }
 @media (prefers-reduced-motion: reduce) {
   .hero-image-1 { opacity: 1; animation: none; }
