@@ -51,10 +51,11 @@ export const metadata: Metadata = {
       follow: true,
     },
   },
-  icons: {
-    icon: [{ url: "/brand/zioncs-icon-32.png" }],
-    apple: [{ url: "/brand/zioncs-icon-256.png" }],
-  },
+  // Icons resolved via Next.js file convention from src/app/:
+  //   favicon.ico (multi-size 16+32) — legacy + modern fallback
+  //   icon.png (512x512)             — modern browsers
+  //   apple-icon.png (180x180)       — iOS home-screen
+  // All three derive from public/brand/zioncs-mascot.png (square-padded).
 };
 
 export default function RootLayout({
