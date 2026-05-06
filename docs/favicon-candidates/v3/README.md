@@ -14,9 +14,9 @@ Dark anthracite (#1A1814) rounded square, orange hat, bone-cream arms.
 Matches the anthracite-elevated card aesthetic used throughout the site.
 Reads strong on light AND dark browser tabs.
 
-- `anthracite-bg-1.png` — dramatic flexing arms, wider footprint
-- `anthracite-bg-2.png` ← **WINNER** — cleaner folded-arms, tighter composition,
-  better 16×16 scaling
+- `anthracite-bg-1.png` ← **WINNER** — dramatic flexing arms, more attitude,
+  matches the mascot's "buff worker" energy
+- `anthracite-bg-2.png` — cleaner folded-arms, tighter composition
 
 ### Cream background (orange hat + black arms)
 Bone-cream (#F5F0E6) rounded square, orange hat, black arms.
@@ -33,7 +33,7 @@ in some themes can clash.
 
 ## Decision
 
-**`anthracite-bg-2.png`** wired into:
+**`anthracite-bg-1.png`** wired into:
 - `src/app/favicon.ico` (16+32 multi-size)
 - `src/app/icon.png` (512×512 modern)
 - `src/app/apple-icon.png` (180×180 iOS home-screen)
