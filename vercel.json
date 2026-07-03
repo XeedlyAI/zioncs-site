@@ -8,6 +8,10 @@
     {
       "path": "/api/cron/booking-followups",
       "schedule": "0 14 * * *"
+    },
+    {
+      "path": "/api/cron/social-sync",
+      "schedule": "0 12 * * *"
     }
   ]
 }
