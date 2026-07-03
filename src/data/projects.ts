@@ -1,3 +1,5 @@
+import type { ProjectMedia } from "@/types/media";
+
 export type ProjectCategory =
   | "RESIDENTIAL"
   | "BUILDER"
@@ -40,6 +42,13 @@ export type Project = {
   geo: { lat: number; lng: number };
   /** Public-path image (4:3). When omitted, ProjectCard renders its placeholder gradient. */
   image?: string;
+  /**
+   * Ordered mixed image/video media for the project-detail reel, gallery
+   * hover cards, and homepage field strip. Optional — when absent, surfaces
+   * fall back to `image` (see getProjectMedia in src/lib/media.ts). Populated
+   * with Veo/Nano-Banana mocks now; real Zion footage swaps in later.
+   */
+  media?: readonly ProjectMedia[];
 };
 
 export const PROJECTS: Project[] = [
@@ -79,6 +88,51 @@ export const PROJECTS: Project[] = [
     ],
     geo: { lat: 40.5849, lng: -111.8275 },
     image: "/images/gallery/img-29-sandy-stamped-driveway.png",
+    media: [
+      {
+        kind: "image",
+        role: "hero",
+        src: "/images/gallery/img-29-sandy-stamped-driveway.png",
+        alt: "Finished stamped driveway with cobblestone border in Sandy, UT",
+        caption: "Final walkthrough — European fan field, cobblestone border.",
+      },
+      {
+        kind: "video",
+        role: "timelapse",
+        src: "/videos/sandy-timelapse.mp4",
+        poster: "/images/gallery/sandy-timelapse-poster.jpg",
+        alt: "Pour-day timelapse of the Sandy stamped driveway project",
+        caption: "Pour day, compressed — forms to finished stamp.",
+        durationSec: 8,
+        markers: [
+          { t: 0, label: "Forms + rebar set" },
+          { t: 2, label: "Pour" },
+          { t: 4.5, label: "Screed + float" },
+          { t: 6.5, label: "Stamp + finish" },
+        ],
+      },
+      {
+        kind: "before-after",
+        role: "before-after",
+        beforeSrc: "/images/gallery/sandy-driveway-before.jpg",
+        afterSrc: "/images/gallery/img-29-sandy-stamped-driveway.png",
+        beforeAlt:
+          "The original 1990s driveway — map cracking, settling, stains",
+        afterAlt: "The finished stamped replacement driveway",
+        caption:
+          "Drag to compare — the 30-year-old slab vs. the stamped replacement.",
+      },
+      {
+        kind: "video",
+        role: "detail",
+        src: "/videos/sandy-loop.mp4",
+        poster: "/images/gallery/img-29-sandy-stamped-driveway.png",
+        alt: "Slow push over the finished stamped driveway surface",
+        caption: "The finished surface in afternoon light.",
+        durationSec: 4,
+        loop: true,
+      },
+    ],
   },
   {
     slug: "lehi-townhome-flatwork",
@@ -153,6 +207,24 @@ export const PROJECTS: Project[] = [
     ],
     geo: { lat: 40.5247, lng: -111.8638 },
     image: "/images/gallery/img-31-draper-retail-center.png",
+    media: [
+      {
+        kind: "image",
+        role: "hero",
+        src: "/images/gallery/img-31-draper-retail-center.png",
+        alt: "Draper retail center — new flatwork, sidewalks, and ADA ramps",
+      },
+      {
+        kind: "video",
+        role: "drone",
+        src: "/videos/draper-drone.mp4",
+        poster: "/images/gallery/img-31-draper-retail-center.png",
+        alt: "Drone pull-back over the completed Draper retail center site",
+        caption: "Aerial pass over the finished phase-4 flatwork.",
+        durationSec: 6,
+        loop: true,
+      },
+    ],
   },
   {
     slug: "multi-site-dumpster-pad-rollout",
@@ -227,6 +299,24 @@ export const PROJECTS: Project[] = [
     ],
     geo: { lat: 40.4633, lng: -111.7758 },
     image: "/images/gallery/img-33-alpine-pool-deck.png",
+    media: [
+      {
+        kind: "image",
+        role: "hero",
+        src: "/images/gallery/img-33-alpine-pool-deck.png",
+        alt: "Stamped pool deck at dusk in Alpine, UT",
+      },
+      {
+        kind: "video",
+        role: "detail",
+        src: "/videos/alpine-loop.mp4",
+        poster: "/images/gallery/img-33-alpine-pool-deck.png",
+        alt: "Water shimmer beside the finished stamped pool deck",
+        caption: "Morning light on the finished deck.",
+        durationSec: 4,
+        loop: true,
+      },
+    ],
   },
   {
     slug: "draper-backyard-sport-court",

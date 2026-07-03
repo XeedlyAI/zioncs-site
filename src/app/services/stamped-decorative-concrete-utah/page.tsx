@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ServicePageTemplate } from "@/components/pages/ServicePageTemplate";
+import { MediaEmbed } from "@/components/media/MediaEmbed";
 import {
   breadcrumbListSchema,
   faqPageSchema,
@@ -144,6 +145,13 @@ export default function StampedPage() {
             pattern stamped while the concrete is plastic, and a UV-rated
             sealer applied after a 7-day cure.
           </p>
+
+          <MediaEmbed
+            src="/videos/stamping-detail.mp4"
+            poster="/images/services/img-05-stamped-decorative.png"
+            alt="Close pass across a stamped slate concrete surface in raking light"
+            caption="STAMPED SLATE · RAKING LIGHT — the relief a stamp mat leaves in the surface."
+          />
 
           <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.15em] text-slate-warm pt-4">
             02 / WHERE STAMPED WORKS BEST

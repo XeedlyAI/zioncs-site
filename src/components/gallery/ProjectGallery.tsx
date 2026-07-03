@@ -2,9 +2,10 @@
 
 import { useState, useMemo } from "react";
 import { ProjectCard } from "@/components/data/ProjectCard";
+import { hasVideo } from "@/lib/media";
 import type { Project, ProjectCategory } from "@/data/projects";
 
-type FilterKey = "ALL" | ProjectCategory;
+type FilterKey = "ALL" | "VIDEO" | ProjectCategory;
 
 const FILTERS: readonly { key: FilterKey; label: string }[] = [
   { key: "ALL", label: "All projects" },
@@ -12,6 +13,7 @@ const FILTERS: readonly { key: FilterKey; label: string }[] = [
   { key: "BUILDER", label: "Builder" },
   { key: "COMMERCIAL", label: "Commercial" },
   { key: "ENTERPRISE", label: "Enterprise" },
+  { key: "VIDEO", label: "With video" },
 ];
 
 interface ProjectGalleryProps {
@@ -23,6 +25,7 @@ export function ProjectGallery({ projects }: ProjectGalleryProps) {
 
   const filtered = useMemo(() => {
     if (filter === "ALL") return projects;
+    if (filter === "VIDEO") return projects.filter(hasVideo);
     return projects.filter((p) => p.category === filter);
   }, [filter, projects]);
 
@@ -34,6 +37,7 @@ export function ProjectGallery({ projects }: ProjectGalleryProps) {
       BUILDER: 0,
       COMMERCIAL: 0,
       ENTERPRISE: 0,
+      VIDEO: projects.filter(hasVideo).length,
     };
     for (const p of projects) c[p.category]++;
     return c;

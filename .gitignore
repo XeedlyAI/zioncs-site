@@ -45,3 +45,6 @@ next-env.d.ts
 
 build-output.log
 dev-server.log
+
+# raw AI-generation outputs (compressed copies live in public/videos)
+/scratch-media/

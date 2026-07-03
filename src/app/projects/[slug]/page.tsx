@@ -8,6 +8,15 @@ import {
   getProjectBySlug,
   getRelatedProjects,
 } from "@/data/projects";
+import {
+  getProjectMedia,
+  hasRichMedia,
+  getTimelapse,
+  getBeforeAfter,
+} from "@/lib/media";
+import { MediaReel } from "@/components/media/MediaReel";
+import { TimelapseScrubber } from "@/components/media/TimelapseScrubber";
+import { BeforeAfterSlider } from "@/components/media/BeforeAfterSlider";
 import { breadcrumbListSchema } from "@/lib/structured-data";
 
 interface PageProps {
@@ -168,6 +177,45 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           </div>
         </div>
       </section>
+
+      {/* Field footage — media reel + featured blocks (only when the project has rich media) */}
+      {hasRichMedia(project) && (
+        <section className="relative bg-anthracite text-bone py-20 md:py-24 overflow-hidden">
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              backgroundImage: "url(/topo-bg-dark.svg)",
+              backgroundSize: "cover",
+              opacity: 0.35,
+            }}
+          />
+          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mb-10">
+              <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.15em] text-stone mb-4">
+                03 / FIELD FOOTAGE
+              </p>
+              <h2 className="text-[clamp(1.5rem,2.5vw,1.875rem)] font-extrabold tracking-tight text-bone leading-[1.15]">
+                From the jobsite.
+              </h2>
+            </div>
+
+            {/* Featured blocks: timelapse synced to the timeline + before/after */}
+            {(getTimelapse(project) || getBeforeAfter(project)) && (
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+                {getTimelapse(project) && (
+                  <TimelapseScrubber media={getTimelapse(project)!} />
+                )}
+                {getBeforeAfter(project) && (
+                  <BeforeAfterSlider media={getBeforeAfter(project)!} />
+                )}
+              </div>
+            )}
+
+            <MediaReel media={getProjectMedia(project)} title={project.title} />
+          </div>
+        </section>
+      )}
 
       {/* Related */}
       {related.length > 0 && (

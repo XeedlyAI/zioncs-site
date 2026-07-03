@@ -1,6 +1,7 @@
 import Link from "next/link";
-import Image from "next/image";
 import type { Project } from "@/data/projects";
+import { CardMedia } from "@/components/media/CardMedia";
+import { getCardPoster, getHoverLoop } from "@/lib/media";
 
 interface ProjectCardProps {
   project: Project;
@@ -20,15 +21,15 @@ export function ProjectCard({ project, variant = "full" }: ProjectCardProps) {
       href={`/projects/${project.slug}`}
       className="card-dark overflow-hidden block group h-full flex flex-col"
     >
-      {/* 4:3 image — falls back to gradient placeholder when image is unset. */}
+      {/* 4:3 media — hover-plays a loop when the project has one; falls back to
+          a static image, then to the gradient placeholder. */}
       <div className="relative aspect-[4/3] overflow-hidden border-b border-concrete/20">
-        {project.image ? (
-          <Image
-            src={project.image}
+        {getCardPoster(project) ? (
+          <CardMedia
+            poster={getCardPoster(project)!}
             alt={`${project.title} — ${project.city}, ${project.state}`}
-            fill
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-            className="object-cover transition-transform duration-700 group-hover:scale-105"
+            loop={getHoverLoop(project)}
           />
         ) : (
           <>

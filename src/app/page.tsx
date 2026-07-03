@@ -6,6 +6,7 @@ import { NumberedServiceGrid } from "@/components/home/NumberedServiceGrid";
 import { HomeServiceArea } from "@/components/home/HomeServiceArea";
 import { WhyZionCS } from "@/components/home/WhyZionCS";
 import { ProjectGalleryPreview } from "@/components/home/ProjectGalleryPreview";
+import { FieldFootageStrip } from "@/components/home/FieldFootageStrip";
 import { ProcessTimeline } from "@/components/home/ProcessTimeline";
 import { SocialFeedPreview } from "@/components/home/SocialFeedPreview";
 import {
@@ -67,6 +68,7 @@ export default function Home() {
       <HomeServiceArea />
       <WhyZionCS />
       <ProjectGalleryPreview />
+      <FieldFootageStrip />
       <ProcessTimeline />
       <SocialFeedPreview />
     </>
