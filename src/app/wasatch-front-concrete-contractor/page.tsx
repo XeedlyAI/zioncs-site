@@ -90,6 +90,57 @@ const CITIES_TIER = [
     name: "St. George",
     label: "Washington County · southern bookend",
   },
+  // Core 60 Tier-2 expansion
+  {
+    href: "/locations/west-jordan",
+    name: "West Jordan",
+    label: "Salt Lake County · west valley",
+  },
+  {
+    href: "/locations/draper",
+    name: "Draper",
+    label: "Salt Lake County · south valley",
+  },
+  {
+    href: "/locations/herriman",
+    name: "Herriman",
+    label: "Salt Lake County · southwest growth",
+  },
+  {
+    href: "/locations/provo",
+    name: "Provo",
+    label: "Utah County · Utah Valley hub",
+  },
+  {
+    href: "/locations/orem",
+    name: "Orem",
+    label: "Utah County · Utah Valley",
+  },
+  {
+    href: "/locations/lehi",
+    name: "Lehi",
+    label: "Utah County · growth corridor",
+  },
+  {
+    href: "/locations/ogden",
+    name: "Ogden",
+    label: "Weber County · northern bookend",
+  },
+  {
+    href: "/locations/layton",
+    name: "Layton",
+    label: "Davis County",
+  },
+  {
+    href: "/locations/bountiful",
+    name: "Bountiful",
+    label: "Davis County · south",
+  },
+  {
+    href: "/locations/park-city",
+    name: "Park City",
+    label: "Summit County · Wasatch Back",
+  },
 ];
 
 const breadcrumbsJsonLd = breadcrumbListSchema([

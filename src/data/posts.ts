@@ -13,6 +13,26 @@ import * as commercialScheduling from "@/content/blog/commercial-concrete-pour-s
 import * as evaluatingCommercialSubs from "@/content/blog/evaluating-commercial-concrete-subs";
 import * as multiSitePrograms from "@/content/blog/multi-site-concrete-maintenance-programs";
 import * as vendorConsolidation from "@/content/blog/vendor-consolidation-concrete-contractor";
+// Core 60 expansion — RESIDENTIAL
+import * as concreteSealing from "@/content/blog/concrete-sealing-utah";
+import * as bestTimeToPour from "@/content/blog/best-time-to-pour-concrete-utah";
+import * as stampedPatterns from "@/content/blog/stamped-concrete-patterns-utah";
+import * as concreteVsPaversVsAsphalt from "@/content/blog/concrete-vs-pavers-vs-asphalt-driveway";
+import * as maintainDriveway from "@/content/blog/how-to-maintain-a-concrete-driveway-utah";
+import * as backyardIdeas from "@/content/blog/backyard-concrete-ideas-utah";
+// Core 60 expansion — BUILDER
+import * as flatworkScheduling from "@/content/blog/concrete-flatwork-scheduling-for-builders";
+import * as readSubBid from "@/content/blog/how-to-read-a-concrete-sub-bid";
+import * as tolerancesCallbacks from "@/content/blog/concrete-tolerances-and-callbacks";
+// Core 60 expansion — COMMERCIAL
+import * as tiltUpVsCastInPlace from "@/content/blog/tilt-up-vs-cast-in-place-concrete-utah";
+import * as commercialMaintenance from "@/content/blog/commercial-concrete-maintenance-program-utah";
+import * as adaRequirements from "@/content/blog/ada-concrete-requirements-utah";
+import * as curingHeatCold from "@/content/blog/curing-concrete-in-utah-heat-and-cold";
+// Core 60 expansion — ENTERPRISE
+import * as maintenanceBudgeting from "@/content/blog/concrete-maintenance-budgeting-for-facility-managers";
+import * as inspectionChecklist from "@/content/blog/multi-site-concrete-inspection-checklist";
+import * as rfpVsPreferredVendor from "@/content/blog/concrete-rfp-vs-preferred-vendor";
 
 const POST_MODULES: Record<string, PostModule> = {
   [howToChoose.meta.slug]: howToChoose,
@@ -29,6 +49,26 @@ const POST_MODULES: Record<string, PostModule> = {
   [evaluatingCommercialSubs.meta.slug]: evaluatingCommercialSubs,
   [multiSitePrograms.meta.slug]: multiSitePrograms,
   [vendorConsolidation.meta.slug]: vendorConsolidation,
+  // Core 60 expansion — RESIDENTIAL
+  [concreteSealing.meta.slug]: concreteSealing,
+  [bestTimeToPour.meta.slug]: bestTimeToPour,
+  [stampedPatterns.meta.slug]: stampedPatterns,
+  [concreteVsPaversVsAsphalt.meta.slug]: concreteVsPaversVsAsphalt,
+  [maintainDriveway.meta.slug]: maintainDriveway,
+  [backyardIdeas.meta.slug]: backyardIdeas,
+  // Core 60 expansion — BUILDER
+  [flatworkScheduling.meta.slug]: flatworkScheduling,
+  [readSubBid.meta.slug]: readSubBid,
+  [tolerancesCallbacks.meta.slug]: tolerancesCallbacks,
+  // Core 60 expansion — COMMERCIAL
+  [tiltUpVsCastInPlace.meta.slug]: tiltUpVsCastInPlace,
+  [commercialMaintenance.meta.slug]: commercialMaintenance,
+  [adaRequirements.meta.slug]: adaRequirements,
+  [curingHeatCold.meta.slug]: curingHeatCold,
+  // Core 60 expansion — ENTERPRISE
+  [maintenanceBudgeting.meta.slug]: maintenanceBudgeting,
+  [inspectionChecklist.meta.slug]: inspectionChecklist,
+  [rfpVsPreferredVendor.meta.slug]: rfpVsPreferredVendor,
 };
 
 export function getAllPostSlugs(): string[] {

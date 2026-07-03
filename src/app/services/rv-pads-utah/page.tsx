@@ -189,6 +189,13 @@ export default function RvPadsPage() {
             >
               Utah concrete contractor
             </Link>
+            . If the pad is part of a bigger backyard plan, see{" "}
+            <Link
+              href="/blog/backyard-concrete-ideas-utah"
+              className="text-brand-orange hover:text-brand-orange-hover underline-offset-4 hover:underline"
+            >
+              12 backyard concrete ideas for Utah homes
+            </Link>
             .
           </p>
         </div>

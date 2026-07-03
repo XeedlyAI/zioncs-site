@@ -206,7 +206,15 @@ export default function SportCourtsPage() {
             </Link>{" "}
             for younger kids. We bid the package together when it makes
             sense — saves a mobilization fee and keeps the joints and
-            finish coordinated across surfaces.
+            finish coordinated across surfaces. Planning the whole yard?
+            Start with{" "}
+            <Link
+              href="/blog/backyard-concrete-ideas-utah"
+              className="text-brand-orange hover:text-brand-orange-hover underline-offset-4 hover:underline"
+            >
+              12 backyard concrete ideas for Utah homes
+            </Link>
+            .
           </p>
         </div>
       </ServicePageTemplate>

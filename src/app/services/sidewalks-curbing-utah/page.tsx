@@ -201,7 +201,15 @@ export default function SidewalksCurbingPage() {
               commercial flatwork
             </Link>{" "}
             on the B2B side. Bidding the package together saves a
-            mobilization fee.
+            mobilization fee. For commercial walks and ramps, the
+            slope and landing rules are covered in{" "}
+            <Link
+              href="/blog/ada-concrete-requirements-utah"
+              className="text-brand-orange hover:text-brand-orange-hover underline-offset-4 hover:underline"
+            >
+              our ADA concrete requirements guide
+            </Link>
+            .
           </p>
         </div>
       </ServicePageTemplate>

@@ -308,8 +308,30 @@ export default function UtahConcreteContractorPage() {
               ))}
             </div>
             <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-stone mt-8">
-              Also serving: Draper · Lehi · Provo · Orem · Ogden · Layton ·
-              Bountiful · Park City. Full coverage breakdown on the{" "}
+              Also serving:{" "}
+              {[
+                { name: "Draper", href: "/locations/draper" },
+                { name: "West Jordan", href: "/locations/west-jordan" },
+                { name: "Herriman", href: "/locations/herriman" },
+                { name: "Lehi", href: "/locations/lehi" },
+                { name: "Provo", href: "/locations/provo" },
+                { name: "Orem", href: "/locations/orem" },
+                { name: "Ogden", href: "/locations/ogden" },
+                { name: "Layton", href: "/locations/layton" },
+                { name: "Bountiful", href: "/locations/bountiful" },
+                { name: "Park City", href: "/locations/park-city" },
+              ].map((c, i, arr) => (
+                <span key={c.href}>
+                  <Link
+                    href={c.href}
+                    className="text-bone/80 hover:text-brand-orange transition-colors underline-offset-4 hover:underline"
+                  >
+                    {c.name}
+                  </Link>
+                  {i < arr.length - 1 && " · "}
+                </span>
+              ))}
+              . Full coverage breakdown on the{" "}
               <Link
                 href="/wasatch-front-concrete-contractor"
                 className="text-brand-orange hover:text-brand-orange-hover underline-offset-4 hover:underline"

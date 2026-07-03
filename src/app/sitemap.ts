@@ -19,7 +19,22 @@ const SERVICE_SLUGS = [
   "sidewalks-curbing-utah",
 ];
 
-const LOCATION_SLUGS = ["sandy-utah", "salt-lake-city", "st-george"];
+const LOCATION_SLUGS = [
+  "sandy-utah",
+  "salt-lake-city",
+  "st-george",
+  // Core 60 Tier-2 expansion
+  "provo",
+  "orem",
+  "ogden",
+  "lehi",
+  "draper",
+  "park-city",
+  "layton",
+  "bountiful",
+  "west-jordan",
+  "herriman",
+];
 
 const STATIC_ROUTES: { path: string; priority: number; changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"] }[] = [
   { path: "", priority: 1.0, changeFrequency: "weekly" },
