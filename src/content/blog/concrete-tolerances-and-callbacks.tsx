@@ -26,6 +26,7 @@ export const meta: PostMeta = {
   articleRole: "diagnostic",
   category: "insights",
   cityAnchor: null,
+  heroImage: "/images/blog/img-48-tolerances-callbacks.jpg",
   relatedSlugs: [
     "common-concrete-sub-failures",
     "pre-pour-checklist-for-builders",

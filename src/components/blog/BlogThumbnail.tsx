@@ -1,4 +1,5 @@
 import type { PostMeta } from "@/types/post";
+import { getAllPostSlugs } from "@/data/posts";
 
 /**
  * Blog post thumbnail — a designed data-artifact in the same visual language
@@ -45,7 +46,25 @@ const ARTIFACT_NUMBER: Record<string, number> = {
   "evaluating-commercial-concrete-subs": 12,
   "multi-site-concrete-maintenance-programs": 13,
   "vendor-consolidation-concrete-contractor": 14,
+  "concrete-sealing-utah": 15,
+  "best-time-to-pour-concrete-utah": 16,
+  "stamped-concrete-patterns-utah": 17,
+  "concrete-vs-pavers-vs-asphalt-driveway": 18,
+  "how-to-maintain-a-concrete-driveway-utah": 19,
+  "backyard-concrete-ideas-utah": 20,
+  "concrete-flatwork-scheduling-for-builders": 21,
+  "how-to-read-a-concrete-sub-bid": 22,
+  "concrete-tolerances-and-callbacks": 23,
+  "tilt-up-vs-cast-in-place-concrete-utah": 24,
+  "commercial-concrete-maintenance-program-utah": 25,
+  "ada-concrete-requirements-utah": 26,
+  "curing-concrete-in-utah-heat-and-cold": 27,
+  "concrete-maintenance-budgeting-for-facility-managers": 28,
+  "multi-site-concrete-inspection-checklist": 29,
+  "concrete-rfp-vs-preferred-vendor": 30,
 };
+
+const TOTAL_POSTS = getAllPostSlugs().length;
 
 // --- Styling tokens used across all artifacts ---
 const C_BONE = "#F5F0E6";
@@ -928,6 +947,1067 @@ function Artifact14({ accent }: { accent: string }) {
 }
 
 // =====================================================================
+// 15 — Concrete Sealing (RES) :: cross-section with water beads
+// =====================================================================
+
+function Artifact15({ accent }: { accent: string }) {
+  return (
+    <g>
+      <text x={20} y={62} {...LABEL_PROPS}>
+        SEALED SURFACE · CROSS-SECTION
+      </text>
+      {/* Water beads sitting on the sealer */}
+      {[90, 160, 230].map((cx) => (
+        <g key={cx}>
+          <path
+            d={`M ${cx - 9} 108 A 9 9 0 0 1 ${cx + 9} 108`}
+            fill={C_STEEL_LIGHT}
+            fillOpacity={0.25}
+            stroke={C_STEEL_LIGHT}
+            strokeWidth={1}
+          />
+        </g>
+      ))}
+      <text x={264} y={100} {...LABEL_DIM} fontSize={7}>
+        H₂O
+      </text>
+      {/* Sealer — thin accent layer */}
+      <rect x={20} y={108} width={280} height={6} fill={accent} fillOpacity={0.45} stroke={accent} strokeWidth={1.25} />
+      <text x={20} y={126} {...LABEL_PROPS} fontSize={7} fill={accent}>
+        SEALER
+      </text>
+      {/* Surface layer */}
+      <rect x={20} y={132} width={280} height={16} fill="none" stroke={C_BONE} strokeWidth={1} />
+      <text x={20} y={160} {...LABEL_DIM} fontSize={7}>
+        SURFACE
+      </text>
+      {/* Slab body */}
+      <rect x={20} y={166} width={280} height={44} fill="none" stroke={C_STONE} strokeWidth={0.75} />
+      <text x={20} y={222} {...LABEL_DIM} fontSize={7}>
+        SLAB
+      </text>
+      {/* Aggregate dots in slab */}
+      {[50, 95, 140, 185, 230, 275].map((cx, i) => (
+        <circle key={cx} cx={cx} cy={180 + (i % 2) * 14} r={1.5} fill={C_STONE} />
+      ))}
+    </g>
+  );
+}
+
+// =====================================================================
+// 16 — Best Time to Pour (RES) :: 12-month pour-window band
+// =====================================================================
+
+function Artifact16({ accent }: { accent: string }) {
+  const months = ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"];
+  const startX = 24;
+  const cellW = 23;
+  const bandY = 116;
+  const bandH = 30;
+  const isWindow = (i: number) => (i >= 3 && i <= 5) || i === 8 || i === 9;
+  return (
+    <g>
+      <text x={20} y={62} {...LABEL_PROPS}>
+        POUR WINDOWS · 12-MONTH BAND
+      </text>
+      {/* Snowflake glyph — left extreme */}
+      <g stroke={C_STEEL_LIGHT} strokeWidth={1} strokeLinecap="round">
+        <line x1={36} y1={82} x2={36} y2={98} />
+        <line x1={29} y1={86} x2={43} y2={94} />
+        <line x1={29} y1={94} x2={43} y2={86} />
+      </g>
+      {/* Sun glyph — right extreme */}
+      <g stroke="#C4421F" strokeWidth={1} strokeLinecap="round">
+        <circle cx={284} cy={90} r={5} fill="none" />
+        {[0, 45, 90, 135, 180, 225, 270, 315].map((deg) => {
+          const rad = (deg * Math.PI) / 180;
+          return (
+            <line
+              key={deg}
+              x1={284 + Math.cos(rad) * 7}
+              y1={90 + Math.sin(rad) * 7}
+              x2={284 + Math.cos(rad) * 10}
+              y2={90 + Math.sin(rad) * 10}
+            />
+          );
+        })}
+      </g>
+      {/* Month cells */}
+      {months.map((m, i) => {
+        const x = startX + i * cellW;
+        const win = isWindow(i);
+        return (
+          <g key={i}>
+            <rect
+              x={x}
+              y={bandY}
+              width={cellW - 2}
+              height={bandH}
+              fill={win ? accent : "none"}
+              fillOpacity={win ? 0.3 : 1}
+              stroke={win ? accent : C_STONE}
+              strokeWidth={win ? 1.25 : 0.6}
+            />
+            <text
+              x={x + (cellW - 2) / 2}
+              y={bandY + bandH / 2 + 3}
+              {...LABEL_PROPS}
+              fontSize={7}
+              textAnchor="middle"
+              fill={win ? accent : C_STONE}
+            >
+              {m}
+            </text>
+          </g>
+        );
+      })}
+      {/* Window labels */}
+      <text x={startX + 4 * cellW - 1} y={bandY + bandH + 16} {...LABEL_PROPS} fontSize={7} fill={accent} textAnchor="middle">
+        APR–JUN
+      </text>
+      <text x={startX + 9 * cellW - 12} y={bandY + bandH + 16} {...LABEL_PROPS} fontSize={7} fill={accent} textAnchor="middle">
+        SEP–OCT
+      </text>
+      <text x={startX} y={bandY + bandH + 34} {...LABEL_DIM} fontSize={7}>
+        FREEZE RISK
+      </text>
+      <text x={startX + 12 * cellW - 2} y={bandY + bandH + 34} {...LABEL_DIM} fontSize={7} textAnchor="end">
+        HEAT RISK
+      </text>
+    </g>
+  );
+}
+
+// =====================================================================
+// 17 — Stamped Patterns (RES) :: 2×3 pattern swatch grid
+// =====================================================================
+
+function Artifact17({ accent }: { accent: string }) {
+  const labels = ["ASHLAR", "COBBLE", "FAN", "PLANK", "HERRING", "SEAMLESS"];
+  const cellW = 88;
+  const cellH = 66;
+  const startX = 26;
+  const startY = 72;
+  return (
+    <g>
+      <text x={20} y={62} {...LABEL_PROPS}>
+        STAMP PATTERN INDEX
+      </text>
+      {labels.map((label, i) => {
+        const col = i % 3;
+        const row = Math.floor(i / 3);
+        const x = startX + col * (cellW + 4);
+        const y = startY + row * (cellH + 6);
+        const isHighlight = i === 0;
+        const stroke = isHighlight ? accent : C_STONE;
+        const inner = isHighlight ? accent : C_BONE_DIM;
+        return (
+          <g key={label}>
+            <rect
+              x={x}
+              y={y}
+              width={cellW}
+              height={cellH - 14}
+              fill="none"
+              stroke={stroke}
+              strokeWidth={isHighlight ? 1.25 : 0.6}
+              rx={1.5}
+            />
+            <g stroke={inner} strokeWidth={0.75} fill="none">
+              {i === 0 && (
+                // Ashlar — offset rectangles
+                <>
+                  <rect x={x + 8} y={y + 8} width={26} height={14} />
+                  <rect x={x + 34} y={y + 8} width={40} height={14} />
+                  <rect x={x + 8} y={y + 22} width={40} height={14} />
+                  <rect x={x + 48} y={y + 22} width={26} height={14} />
+                </>
+              )}
+              {i === 1 && (
+                // Cobble — circles
+                <>
+                  {[0, 1, 2].map((cx) =>
+                    [0, 1].map((cy) => (
+                      <circle
+                        key={`${cx}-${cy}`}
+                        cx={x + 20 + cx * 22}
+                        cy={y + 15 + cy * 18}
+                        r={7}
+                      />
+                    ))
+                  )}
+                </>
+              )}
+              {i === 2 && (
+                // Fan — nested arcs
+                <>
+                  <path d={`M ${x + 12} ${y + 40} A 30 30 0 0 1 ${x + 72} ${y + 40}`} />
+                  <path d={`M ${x + 22} ${y + 40} A 20 20 0 0 1 ${x + 62} ${y + 40}`} />
+                  <path d={`M ${x + 32} ${y + 40} A 10 10 0 0 1 ${x + 52} ${y + 40}`} />
+                </>
+              )}
+              {i === 3 && (
+                // Plank — horizontal lines
+                <>
+                  {[10, 19, 28, 37].map((dy) => (
+                    <line key={dy} x1={x + 8} y1={y + dy} x2={x + 80} y2={y + dy} />
+                  ))}
+                </>
+              )}
+              {i === 4 && (
+                // Herringbone — angled strokes
+                <>
+                  {[0, 1, 2, 3].map((k) => (
+                    <g key={k}>
+                      <line x1={x + 10 + k * 18} y1={y + 30} x2={x + 19 + k * 18} y2={y + 12} />
+                      <line x1={x + 19 + k * 18} y1={y + 12} x2={x + 28 + k * 18} y2={y + 30} />
+                    </g>
+                  ))}
+                </>
+              )}
+              {i === 5 && (
+                // Seamless — sparse texture dots
+                <>
+                  {[
+                    [14, 12], [34, 20], [56, 10], [72, 24],
+                    [22, 34], [46, 38], [66, 36], [12, 26],
+                  ].map(([dx, dy]) => (
+                    <circle key={`${dx}-${dy}`} cx={x + dx} cy={y + dy} r={1} fill={inner} stroke="none" />
+                  ))}
+                </>
+              )}
+            </g>
+            <text
+              x={x + cellW / 2}
+              y={y + cellH - 2}
+              {...LABEL_DIM}
+              fontSize={7}
+              textAnchor="middle"
+              fill={isHighlight ? accent : C_STONE}
+            >
+              {label}
+            </text>
+          </g>
+        );
+      })}
+    </g>
+  );
+}
+
+// =====================================================================
+// 18 — Concrete vs Pavers vs Asphalt (RES) :: lifespan comparison bars
+// =====================================================================
+
+function Artifact18({ accent }: { accent: string }) {
+  const baseY = 196;
+  const cols = [
+    { label: "CONCRETE", x: 90, h: 110, years: "30+" },
+    { label: "PAVERS", x: 175, h: 82, years: "25" },
+    { label: "ASPHALT", x: 260, h: 50, years: "15" },
+  ];
+  return (
+    <g>
+      <text x={20} y={62} {...LABEL_PROPS}>
+        DRIVEWAY LIFESPAN · COMPARISON
+      </text>
+      {/* Axes */}
+      <line x1={44} y1={78} x2={44} y2={baseY} stroke={C_STONE} strokeWidth={0.75} />
+      <line x1={44} y1={baseY} x2={296} y2={baseY} stroke={C_STONE} strokeWidth={0.75} />
+      <text x={36} y={84} {...LABEL_DIM} fontSize={7} textAnchor="end">
+        YEARS
+      </text>
+      {/* Gridline ticks */}
+      {[0, 10, 20, 30].map((yr) => (
+        <g key={yr}>
+          <line x1={41} y1={baseY - yr * 3.7} x2={44} y2={baseY - yr * 3.7} stroke={C_STONE} strokeWidth={0.5} />
+          <text x={36} y={baseY - yr * 3.7 + 2.5} {...LABEL_DIM} fontSize={6} textAnchor="end">
+            {yr}
+          </text>
+        </g>
+      ))}
+      {cols.map((c, i) => {
+        const isAccent = i === 0;
+        const color = isAccent ? accent : C_STONE;
+        return (
+          <g key={c.label}>
+            <rect
+              x={c.x - 22}
+              y={baseY - c.h}
+              width={44}
+              height={c.h}
+              fill={color}
+              fillOpacity={isAccent ? 0.5 : 0.2}
+              stroke={color}
+              strokeWidth={isAccent ? 1.5 : 0.75}
+            />
+            <text x={c.x} y={baseY - c.h - 6} {...LABEL_PROPS} fontSize={7} textAnchor="middle" fill={isAccent ? accent : C_BONE}>
+              {c.years} YR
+            </text>
+            <text x={c.x} y={baseY + 14} {...LABEL_PROPS} fontSize={7} textAnchor="middle" fill={isAccent ? accent : C_BONE}>
+              {c.label}
+            </text>
+          </g>
+        );
+      })}
+    </g>
+  );
+}
+
+// =====================================================================
+// 19 — Maintain a Driveway (RES) :: 4-quadrant season wheel
+// =====================================================================
+
+function Artifact19({ accent }: { accent: string }) {
+  const cx = 160;
+  const cy = 142;
+  const r = 56;
+  const quads = [
+    { label: "SPR", angle: -45 },
+    { label: "SUM", angle: 45 },
+    { label: "FALL", angle: 135 },
+    { label: "WIN", angle: 225 },
+  ];
+  return (
+    <g>
+      <text x={20} y={62} {...LABEL_PROPS}>
+        MAINTENANCE CYCLE · SEASONAL
+      </text>
+      {/* Wheel */}
+      <circle cx={cx} cy={cy} r={r} fill="none" stroke={C_BONE} strokeWidth={1} />
+      <circle cx={cx} cy={cy} r={3} fill={C_BONE} />
+      {/* Quadrant dividers */}
+      <line x1={cx - r} y1={cy} x2={cx + r} y2={cy} stroke={C_STONE} strokeWidth={0.6} />
+      <line x1={cx} y1={cy - r} x2={cx} y2={cy + r} stroke={C_STONE} strokeWidth={0.6} />
+      {/* SPR quadrant highlight arc (top-right) */}
+      <path
+        d={`M ${cx} ${cy - r} A ${r} ${r} 0 0 1 ${cx + r} ${cy}`}
+        fill="none"
+        stroke={accent}
+        strokeWidth={2}
+      />
+      {/* Tick marks — 3 per quadrant */}
+      {Array.from({ length: 12 }, (_, i) => {
+        const rad = ((-82.5 + i * 30) * Math.PI) / 180;
+        const isSpr = i < 3;
+        return (
+          <line
+            key={i}
+            x1={cx + Math.cos(rad) * (r - 6)}
+            y1={cy + Math.sin(rad) * (r - 6)}
+            x2={cx + Math.cos(rad) * r}
+            y2={cy + Math.sin(rad) * r}
+            stroke={isSpr ? accent : C_STONE}
+            strokeWidth={isSpr ? 1.25 : 0.75}
+          />
+        );
+      })}
+      {/* Quadrant labels */}
+      {quads.map((q) => {
+        const rad = (q.angle * Math.PI) / 180;
+        const lx = cx + Math.cos(rad) * (r + 18);
+        const ly = cy + Math.sin(rad) * (r + 16);
+        const isSpr = q.label === "SPR";
+        return (
+          <text
+            key={q.label}
+            x={lx}
+            y={ly + 3}
+            {...LABEL_PROPS}
+            fontSize={7}
+            textAnchor="middle"
+            fill={isSpr ? accent : C_BONE}
+          >
+            {q.label}
+          </text>
+        );
+      })}
+      <text x={cx + r + 26} y={cy - r + 4} {...LABEL_DIM} fontSize={7}>
+        SEAL
+      </text>
+    </g>
+  );
+}
+
+// =====================================================================
+// 20 — Backyard Ideas (RES) :: 12-cell numbered idea grid
+// =====================================================================
+
+function Artifact20({ accent }: { accent: string }) {
+  const filled = [0, 5, 7, 10];
+  const cellW = 70;
+  const cellH = 50;
+  const startX = 20;
+  const startY = 68;
+  return (
+    <g>
+      <text x={20} y={60} {...LABEL_PROPS}>
+        BACKYARD IDEA MATRIX · 12
+      </text>
+      {Array.from({ length: 12 }, (_, i) => {
+        const col = i % 4;
+        const row = Math.floor(i / 4);
+        const x = startX + col * cellW;
+        const y = startY + row * cellH;
+        const isFilled = filled.includes(i);
+        return (
+          <g key={i}>
+            <rect
+              x={x}
+              y={y}
+              width={cellW - 6}
+              height={cellH - 6}
+              fill={isFilled ? accent : "none"}
+              fillOpacity={isFilled ? 0.22 : 1}
+              stroke={isFilled ? accent : C_STONE}
+              strokeWidth={isFilled ? 1.25 : 0.6}
+              rx={1.5}
+            />
+            <text
+              x={x + 6}
+              y={y + 13}
+              {...NUM_PROPS}
+              fill={isFilled ? accent : C_STEEL_LIGHT}
+            >
+              {String(i + 1).padStart(2, "0")}
+            </text>
+            {/* small placeholder mark in each filled cell */}
+            {isFilled && (
+              <line
+                x1={x + 8}
+                y1={y + cellH - 16}
+                x2={x + cellW - 16}
+                y2={y + cellH - 16}
+                stroke={accent}
+                strokeWidth={1}
+                strokeLinecap="round"
+              />
+            )}
+          </g>
+        );
+      })}
+    </g>
+  );
+}
+
+// =====================================================================
+// 21 — Flatwork Scheduling for Builders (BUILDER) :: mini gantt + pour line
+// =====================================================================
+
+function Artifact21({ accent }: { accent: string }) {
+  const phases = [
+    { label: "EXCAVATE", x: 0, w: 60 },
+    { label: "FORM", x: 40, w: 70 },
+    { label: "REBAR", x: 85, w: 45 },
+    { label: "FINISH", x: 130, w: 60 },
+  ];
+  const baseX = 84;
+  const trackW = 200;
+  const norm = 200;
+  const pourX = baseX + (130 / norm) * trackW;
+  return (
+    <g>
+      <text x={20} y={62} {...LABEL_PROPS}>
+        FLATWORK SEQUENCE · LOT SCHEDULE
+      </text>
+      {/* Track axis */}
+      <line x1={baseX} y1={80} x2={baseX + trackW} y2={80} stroke={C_STONE} strokeWidth={0.5} />
+      {/* Phase bars */}
+      {phases.map((p, i) => {
+        const y = 94 + i * 26;
+        const x = baseX + (p.x / norm) * trackW;
+        const w = (p.w / norm) * trackW;
+        return (
+          <g key={p.label}>
+            <text x={baseX - 8} y={y + 10} {...LABEL_PROPS} fontSize={7} textAnchor="end">
+              {p.label}
+            </text>
+            <rect
+              x={x}
+              y={y}
+              width={w}
+              height={13}
+              fill={C_STEEL_LIGHT}
+              fillOpacity={0.35}
+              stroke={C_STEEL_LIGHT}
+              strokeWidth={1}
+              rx={1}
+            />
+          </g>
+        );
+      })}
+      {/* Vertical POUR line crossing all bars */}
+      <line x1={pourX} y1={80} x2={pourX} y2={202} stroke={accent} strokeWidth={1.5} strokeDasharray="4 3" />
+      <text x={pourX} y={214} {...LABEL_PROPS} fontSize={7} fill={accent} textAnchor="middle">
+        POUR
+      </text>
+      <circle cx={pourX} cy={80} r={2.5} fill={accent} />
+    </g>
+  );
+}
+
+// =====================================================================
+// 22 — Read a Sub Bid (BUILDER) :: document outline with flagged line item
+// =====================================================================
+
+function Artifact22({ accent }: { accent: string }) {
+  const rows = [
+    { label: "MOBILIZE", excl: false },
+    { label: "SUBGRADE", excl: false },
+    { label: "REBAR", excl: false },
+    { label: "PUMP FEE", excl: true },
+    { label: "FINISH", excl: false },
+  ];
+  const docX = 66;
+  const docY = 72;
+  const docW = 188;
+  const docH = 140;
+  return (
+    <g>
+      <text x={20} y={62} {...LABEL_PROPS}>
+        SUB BID · LINE-ITEM READ
+      </text>
+      {/* Document outline with folded corner */}
+      <path
+        d={`M ${docX} ${docY} L ${docX + docW - 16} ${docY} L ${docX + docW} ${docY + 16} L ${docX + docW} ${docY + docH} L ${docX} ${docY + docH} Z`}
+        fill="none"
+        stroke={C_BONE}
+        strokeWidth={1}
+      />
+      <path
+        d={`M ${docX + docW - 16} ${docY} L ${docX + docW - 16} ${docY + 16} L ${docX + docW} ${docY + 16}`}
+        fill="none"
+        stroke={C_BONE}
+        strokeWidth={0.75}
+      />
+      {/* Doc header rule */}
+      <line x1={docX + 12} y1={docY + 18} x2={docX + 100} y2={docY + 18} stroke={C_STONE} strokeWidth={1} />
+      {/* Line-item rows */}
+      {rows.map((r, i) => {
+        const y = docY + 38 + i * 20;
+        return (
+          <g key={r.label}>
+            <text x={docX + 12} y={y + 3} {...NUM_PROPS} fontSize={7}>
+              {String(i + 1).padStart(2, "0")}
+            </text>
+            <text x={docX + 30} y={y + 3} {...LABEL_PROPS} fontSize={7} fill={r.excl ? accent : C_BONE}>
+              {r.label}
+            </text>
+            {/* amount tick line */}
+            <line
+              x1={docX + 100}
+              y1={y}
+              x2={docX + docW - 42}
+              y2={y}
+              stroke={r.excl ? accent : C_STONE}
+              strokeWidth={0.6}
+              strokeDasharray="2 2"
+            />
+            {r.excl ? (
+              <text x={docX + docW - 12} y={y + 3} {...LABEL_PROPS} fontSize={6} fill={accent} textAnchor="end">
+                EXCL
+              </text>
+            ) : (
+              <line x1={docX + docW - 34} y1={y} x2={docX + docW - 12} y2={y} stroke={C_BONE_DIM} strokeWidth={1} />
+            )}
+          </g>
+        );
+      })}
+      {/* Flag marker on the excluded row */}
+      <rect
+        x={docX + 6}
+        y={docY + 38 + 3 * 20 - 8}
+        width={docW - 12}
+        height={16}
+        fill={accent}
+        fillOpacity={0.12}
+        stroke={accent}
+        strokeWidth={1}
+        rx={1}
+      />
+    </g>
+  );
+}
+
+// =====================================================================
+// 23 — Tolerances and Callbacks (BUILDER) :: straightedge gap check
+// =====================================================================
+
+function Artifact23({ accent }: { accent: string }) {
+  return (
+    <g>
+      <text x={20} y={62} {...LABEL_PROPS}>
+        FLATNESS CHECK · 10-FT STRAIGHTEDGE
+      </text>
+      {/* Straightedge bar */}
+      <rect x={40} y={116} width={240} height={7} fill={C_BONE} fillOpacity={0.85} />
+      <text x={40} y={110} {...LABEL_DIM} fontSize={7}>
+        STRAIGHTEDGE
+      </text>
+      {/* Wavy surface line beneath — dips in the middle */}
+      <path
+        d="M 40 123 Q 80 124, 110 132 Q 150 142, 190 130 Q 230 124, 280 123"
+        fill="none"
+        stroke={C_STONE}
+        strokeWidth={1.25}
+      />
+      <text x={280} y={140} {...LABEL_DIM} fontSize={7} textAnchor="end">
+        SURFACE
+      </text>
+      {/* Gap dimension callout at max deviation */}
+      <line x1={150} y1={123} x2={150} y2={139} stroke={accent} strokeWidth={1} />
+      <line x1={146} y1={123} x2={154} y2={123} stroke={accent} strokeWidth={1} />
+      <line x1={146} y1={139} x2={154} y2={139} stroke={accent} strokeWidth={1} />
+      <line x1={150} y1={139} x2={186} y2={168} stroke={accent} strokeWidth={0.6} strokeDasharray="2 2" />
+      <text x={190} y={174} {...LABEL_PROPS} fontSize={8} fill={accent}>
+        1/4″ GAP
+      </text>
+      <text x={190} y={186} {...LABEL_DIM} fontSize={7}>
+        SPEC LIMIT
+      </text>
+      {/* Callback marker */}
+      <XMark x={150} y={200} size={4} color={accent} />
+      <text x={160} y={203} {...LABEL_DIM} fontSize={7}>
+        CALLBACK ZONE
+      </text>
+    </g>
+  );
+}
+
+// =====================================================================
+// 24 — Tilt-Up vs Cast-in-Place (COMMERCIAL) :: split method diagram
+// =====================================================================
+
+function Artifact24({ accent }: { accent: string }) {
+  return (
+    <g>
+      <text x={20} y={62} {...LABEL_PROPS}>
+        WALL METHOD · TILT-UP / CAST-IN-PLACE
+      </text>
+      {/* Divider */}
+      <text x={160} y={146} {...LABEL_PROPS} fontSize={9} textAnchor="middle" fill={C_STONE}>
+        VS
+      </text>
+
+      {/* LEFT — tilt-up: flat panel + arc to standing panel */}
+      <line x1={24} y1={196} x2={140} y2={196} stroke={C_STONE} strokeWidth={0.75} />
+      {/* Flat cast panel on ground (dashed = origin) */}
+      <rect x={40} y={188} width={80} height={8} fill="none" stroke={C_STONE} strokeWidth={0.75} strokeDasharray="3 2" />
+      {/* Standing panel (final position) */}
+      <rect x={36} y={110} width={10} height={86} fill={accent} fillOpacity={0.3} stroke={accent} strokeWidth={1.25} />
+      {/* Tilt arc arrow */}
+      <path d="M 112 182 A 74 74 0 0 0 52 116" fill="none" stroke={accent} strokeWidth={1} />
+      <path d="M 52 116 L 60 116 M 52 116 L 55 123" stroke={accent} strokeWidth={1} fill="none" strokeLinecap="round" />
+      <text x={80} y={214} {...LABEL_PROPS} fontSize={7} textAnchor="middle" fill={accent}>
+        TILT-UP
+      </text>
+
+      {/* RIGHT — cast-in-place: formwork with pour hatching */}
+      <line x1={180} y1={196} x2={296} y2={196} stroke={C_STONE} strokeWidth={0.75} />
+      {/* Formwork walls */}
+      <rect x={222} y={104} width={32} height={92} fill="none" stroke={C_BONE} strokeWidth={1.25} />
+      <line x1={216} y1={104} x2={216} y2={196} stroke={C_STONE} strokeWidth={0.75} />
+      <line x1={260} y1={104} x2={260} y2={196} stroke={C_STONE} strokeWidth={0.75} />
+      {/* Pour hatching inside form */}
+      {[0, 1, 2, 3, 4, 5].map((k) => (
+        <line
+          key={k}
+          x1={222}
+          y1={130 + k * 12}
+          x2={254}
+          y2={118 + k * 12}
+          stroke={C_STONE}
+          strokeWidth={0.6}
+        />
+      ))}
+      {/* Pour arrow into form */}
+      <line x1={238} y1={86} x2={238} y2={100} stroke={accent} strokeWidth={1.25} />
+      <path d="M 234 96 L 238 102 L 242 96" fill="none" stroke={accent} strokeWidth={1.25} strokeLinecap="round" />
+      <text x={238} y={214} {...LABEL_PROPS} fontSize={7} textAnchor="middle">
+        CAST-IN-PLACE
+      </text>
+    </g>
+  );
+}
+
+// =====================================================================
+// 25 — Commercial Maintenance Program (COMMERCIAL) :: annual cycle ring
+// =====================================================================
+
+function Artifact25({ accent }: { accent: string }) {
+  const cx = 160;
+  const cy = 144;
+  const r = 52;
+  const nodes = [
+    { label: "INSPECT", deg: -90 },
+    { label: "SEAL", deg: 30 },
+    { label: "REPAIR", deg: 150 },
+  ];
+  return (
+    <g>
+      <text x={20} y={62} {...LABEL_PROPS}>
+        MAINTENANCE PROGRAM · ANNUAL CYCLE
+      </text>
+      {/* Ring */}
+      <circle cx={cx} cy={cy} r={r} fill="none" stroke={C_STONE} strokeWidth={0.75} />
+      {/* Direction arrowhead on ring (right side, pointing down) */}
+      <path
+        d={`M ${cx + r - 4} ${cy - 8} L ${cx + r} ${cy} L ${cx + r + 4} ${cy - 8}`}
+        fill="none"
+        stroke={C_STONE}
+        strokeWidth={1}
+        strokeLinecap="round"
+      />
+      <text x={cx} y={cy + 3} {...LABEL_DIM} fontSize={7} textAnchor="middle">
+        12 MO
+      </text>
+      {/* Cycle nodes */}
+      {nodes.map((n, i) => {
+        const rad = (n.deg * Math.PI) / 180;
+        const nx = cx + Math.cos(rad) * r;
+        const ny = cy + Math.sin(rad) * r;
+        const lx = cx + Math.cos(rad) * (r + 24);
+        const ly = cy + Math.sin(rad) * (r + 20);
+        const isFirst = i === 0;
+        return (
+          <g key={n.label}>
+            <circle
+              cx={nx}
+              cy={ny}
+              r={isFirst ? 6 : 4.5}
+              fill={isFirst ? accent : "#26221C"}
+              stroke={isFirst ? accent : C_BONE}
+              strokeWidth={1.25}
+            />
+            <text
+              x={lx}
+              y={ly + 3}
+              {...LABEL_PROPS}
+              fontSize={7}
+              textAnchor="middle"
+              fill={isFirst ? accent : C_BONE}
+            >
+              {n.label}
+            </text>
+          </g>
+        );
+      })}
+    </g>
+  );
+}
+
+// =====================================================================
+// 26 — ADA Requirements (COMMERCIAL) :: ramp cross-section with slope callout
+// =====================================================================
+
+function Artifact26({ accent }: { accent: string }) {
+  const baseY = 188;
+  return (
+    <g>
+      <text x={20} y={62} {...LABEL_PROPS}>
+        ADA RAMP · SECTION
+      </text>
+      {/* Grade line */}
+      <line x1={24} y1={baseY} x2={296} y2={baseY} stroke={C_STONE} strokeWidth={0.75} />
+      {/* Ramp triangle */}
+      <path
+        d={`M 56 ${baseY} L 212 ${baseY - 40} L 212 ${baseY} Z`}
+        fill={accent}
+        fillOpacity={0.15}
+        stroke={accent}
+        strokeWidth={1.25}
+      />
+      {/* Level landing */}
+      <line x1={212} y1={baseY - 40} x2={288} y2={baseY - 40} stroke={C_BONE} strokeWidth={1.5} />
+      <line x1={288} y1={baseY - 40} x2={288} y2={baseY} stroke={C_STONE} strokeWidth={0.6} strokeDasharray="2 2" />
+      <text x={250} y={baseY - 48} {...LABEL_PROPS} fontSize={7} textAnchor="middle">
+        LANDING · LEVEL
+      </text>
+      {/* Slope callout */}
+      <text x={120} y={baseY - 34} {...LABEL_PROPS} fontSize={8} fill={accent}>
+        1:12 MAX
+      </text>
+      {/* Rise / run dimension ticks */}
+      <line x1={212} y1={baseY - 40} x2={230} y2={baseY - 40} stroke={C_STONE} strokeWidth={0.5} strokeDasharray="2 2" />
+      <line x1={224} y1={baseY - 40} x2={224} y2={baseY} stroke={C_STONE} strokeWidth={0.5} />
+      <text x={230} y={baseY - 16} {...LABEL_DIM} fontSize={7}>
+        RISE 1
+      </text>
+      <line x1={56} y1={baseY + 10} x2={212} y2={baseY + 10} stroke={C_STONE} strokeWidth={0.5} />
+      <line x1={56} y1={baseY + 6} x2={56} y2={baseY + 14} stroke={C_STONE} strokeWidth={0.5} />
+      <line x1={212} y1={baseY + 6} x2={212} y2={baseY + 14} stroke={C_STONE} strokeWidth={0.5} />
+      <text x={134} y={baseY + 22} {...LABEL_DIM} fontSize={7} textAnchor="middle">
+        RUN 12
+      </text>
+    </g>
+  );
+}
+
+// =====================================================================
+// 27 — Curing in Heat and Cold (COMMERCIAL) :: temperature scale + window
+// =====================================================================
+
+function Artifact27({ accent }: { accent: string }) {
+  const scaleY = 140;
+  const x0 = 32;
+  const x1 = 288;
+  // Scale spans 0–110°F
+  const toX = (f: number) => x0 + ((f - 0) / 110) * (x1 - x0);
+  const winA = toX(50);
+  const winB = toX(85);
+  return (
+    <g>
+      <text x={20} y={62} {...LABEL_PROPS}>
+        CURING RANGE · °F
+      </text>
+      {/* Scale line */}
+      <line x1={x0} y1={scaleY} x2={x1} y2={scaleY} stroke={C_BONE} strokeWidth={1} />
+      {/* Degree ticks */}
+      {[0, 32, 50, 85, 110].map((f) => (
+        <g key={f}>
+          <line x1={toX(f)} y1={scaleY - 4} x2={toX(f)} y2={scaleY + 4} stroke={C_BONE} strokeWidth={0.75} />
+          <text x={toX(f)} y={scaleY + 18} {...LABEL_DIM} fontSize={7} textAnchor="middle">
+            {f}°
+          </text>
+        </g>
+      ))}
+      {/* Freeze hatch — left of 32 */}
+      {[0, 1, 2, 3, 4].map((k) => (
+        <line
+          key={`fz-${k}`}
+          x1={x0 + k * 12}
+          y1={scaleY - 14}
+          x2={x0 + 8 + k * 12}
+          y2={scaleY - 4}
+          stroke={C_STEEL_LIGHT}
+          strokeWidth={0.75}
+        />
+      ))}
+      <text x={x0} y={scaleY - 22} {...LABEL_DIM} fontSize={7} fill={C_STEEL_LIGHT}>
+        FREEZE
+      </text>
+      {/* Heat hatch — right of 85 */}
+      {[0, 1, 2, 3].map((k) => (
+        <line
+          key={`ht-${k}`}
+          x1={winB + 8 + k * 12}
+          y1={scaleY - 14}
+          x2={winB + 16 + k * 12}
+          y2={scaleY - 4}
+          stroke={accent}
+          strokeWidth={0.75}
+          strokeOpacity={0.6}
+        />
+      ))}
+      <text x={x1} y={scaleY - 22} {...LABEL_DIM} fontSize={7} textAnchor="end" fill={accent}>
+        HEAT
+      </text>
+      {/* Cure window bracket 50–85 */}
+      <line x1={winA} y1={scaleY - 32} x2={winB} y2={scaleY - 32} stroke={accent} strokeWidth={1.5} />
+      <line x1={winA} y1={scaleY - 32} x2={winA} y2={scaleY - 24} stroke={accent} strokeWidth={1.5} />
+      <line x1={winB} y1={scaleY - 32} x2={winB} y2={scaleY - 24} stroke={accent} strokeWidth={1.5} />
+      <text x={(winA + winB) / 2} y={scaleY - 40} {...LABEL_PROPS} fontSize={7} fill={accent} textAnchor="middle">
+        CURE WINDOW
+      </text>
+      {/* Window shading on scale */}
+      <rect x={winA} y={scaleY - 3} width={winB - winA} height={6} fill={accent} fillOpacity={0.35} />
+      {/* Season note */}
+      <text x={x0} y={scaleY + 46} {...LABEL_DIM} fontSize={7}>
+        BLANKETS BELOW 50°
+      </text>
+      <text x={x1} y={scaleY + 46} {...LABEL_DIM} fontSize={7} textAnchor="end">
+        WET CURE ABOVE 85°
+      </text>
+    </g>
+  );
+}
+
+// =====================================================================
+// 28 — Maintenance Budgeting (ENTERPRISE) :: stacked-segment budget bars
+// =====================================================================
+
+function Artifact28({ accent }: { accent: string }) {
+  const rows = [
+    { label: "YR 1", base: 90, allow: 40, cap: 30 },
+    { label: "YR 2", base: 90, allow: 55, cap: 30 },
+    { label: "YR 3", base: 90, allow: 30, cap: 55 },
+  ];
+  const baseX = 70;
+  return (
+    <g>
+      <text x={20} y={62} {...LABEL_PROPS}>
+        BUDGET MODEL · 3-YEAR
+      </text>
+      {rows.map((r, i) => {
+        const y = 88 + i * 34;
+        const xAllow = baseX + r.base;
+        const xCap = xAllow + r.allow;
+        return (
+          <g key={r.label}>
+            <text x={baseX - 8} y={y + 11} {...LABEL_PROPS} fontSize={7} textAnchor="end">
+              {r.label}
+            </text>
+            {/* BASE segment */}
+            <rect x={baseX} y={y} width={r.base} height={15} fill={C_BONE} fillOpacity={0.35} stroke={C_BONE} strokeWidth={0.75} />
+            {/* ALLOW segment */}
+            <rect x={xAllow} y={y} width={r.allow} height={15} fill={accent} fillOpacity={0.45} stroke={accent} strokeWidth={1} />
+            {/* CAP segment — outline only */}
+            <rect x={xCap} y={y} width={r.cap} height={15} fill="none" stroke={C_STONE} strokeWidth={0.75} strokeDasharray="3 2" />
+          </g>
+        );
+      })}
+      {/* Legend */}
+      <g transform="translate(70, 200)">
+        <rect x={0} y={-8} width={10} height={10} fill={C_BONE} fillOpacity={0.35} stroke={C_BONE} strokeWidth={0.75} />
+        <text x={16} y={0} {...LABEL_DIM} fontSize={7}>
+          BASE
+        </text>
+        <rect x={62} y={-8} width={10} height={10} fill={accent} fillOpacity={0.45} stroke={accent} strokeWidth={1} />
+        <text x={78} y={0} {...LABEL_DIM} fontSize={7}>
+          ALLOW
+        </text>
+        <rect x={132} y={-8} width={10} height={10} fill="none" stroke={C_STONE} strokeWidth={0.75} strokeDasharray="3 2" />
+        <text x={148} y={0} {...LABEL_DIM} fontSize={7}>
+          CAP
+        </text>
+      </g>
+    </g>
+  );
+}
+
+// =====================================================================
+// 29 — Multi-Site Inspection Checklist (ENTERPRISE) :: card + site pins
+// =====================================================================
+
+function Artifact29({ accent }: { accent: string }) {
+  const items = ["JOINTS", "SPALLING", "DRAINAGE", "TRIP EDGES"];
+  const checked = [true, true, true, false];
+  const cardX = 34;
+  const cardY = 76;
+  const cardW = 150;
+  const cardH = 132;
+  const pins = [
+    { x: 236, y: 100 },
+    { x: 268, y: 140 },
+    { x: 242, y: 182 },
+  ];
+  return (
+    <g>
+      <text x={20} y={62} {...LABEL_PROPS}>
+        INSPECTION CHECKLIST · MULTI-SITE
+      </text>
+      {/* Checklist card */}
+      <rect x={cardX} y={cardY} width={cardW} height={cardH} fill="none" stroke={C_BONE} strokeWidth={1} rx={2} />
+      <line x1={cardX + 10} y1={cardY + 18} x2={cardX + 80} y2={cardY + 18} stroke={C_STONE} strokeWidth={1} />
+      {items.map((it, i) => {
+        const y = cardY + 34 + i * 24;
+        return (
+          <g key={it}>
+            <CheckBox x={cardX + 10} y={y} checked={checked[i]} accent={accent} />
+            <text x={cardX + 26} y={y + 8} {...LABEL_PROPS} fontSize={7}>
+              {it}
+            </text>
+          </g>
+        );
+      })}
+      {/* Site pins */}
+      {pins.map((p, i) => (
+        <g key={i}>
+          <line
+            x1={cardX + cardW}
+            y1={cardY + cardH / 2}
+            x2={p.x - 8}
+            y2={p.y}
+            stroke={accent}
+            strokeWidth={0.5}
+            strokeOpacity={0.5}
+            strokeDasharray="2 2"
+          />
+          <circle cx={p.x} cy={p.y} r={3} fill={accent} />
+          <circle cx={p.x} cy={p.y} r={6.5} fill="none" stroke={accent} strokeWidth={0.75} strokeOpacity={0.5} />
+          <text x={p.x + 12} y={p.y + 3} {...LABEL_DIM} fontSize={7}>
+            SITE {String(i + 1).padStart(2, "0")}
+          </text>
+        </g>
+      ))}
+    </g>
+  );
+}
+
+// =====================================================================
+// 30 — RFP vs Preferred Vendor (ENTERPRISE) :: fork with cost ledgers
+// =====================================================================
+
+function Artifact30({ accent }: { accent: string }) {
+  const leftX = 90;
+  const rightX = 230;
+  const boxY = 118;
+  return (
+    <g>
+      <text x={20} y={62} {...LABEL_PROPS}>
+        PROCUREMENT PATH · FORK
+      </text>
+      {/* Root node */}
+      <rect x={124} y={76} width={72} height={20} fill="none" stroke={C_BONE} strokeWidth={1.25} rx={2} />
+      <text x={160} y={89} {...LABEL_PROPS} fontSize={7} textAnchor="middle">
+        SCOPE
+      </text>
+      {/* Fork lines */}
+      <line x1={148} y1={96} x2={leftX + 8} y2={boxY} stroke={C_STONE} strokeWidth={1} />
+      <line x1={172} y1={96} x2={rightX - 8} y2={boxY} stroke={accent} strokeWidth={1.5} />
+      {/* RFP box — stone */}
+      <rect x={leftX - 36} y={boxY} width={80} height={22} fill="none" stroke={C_STONE} strokeWidth={1} rx={2} />
+      <text x={leftX + 4} y={boxY + 14} {...LABEL_PROPS} textAnchor="middle" fill={C_STONE}>
+        RFP
+      </text>
+      {/* VENDOR box — accent */}
+      <rect x={rightX - 48} y={boxY} width={96} height={22} fill="none" stroke={accent} strokeWidth={1.5} rx={2} />
+      <text x={rightX} y={boxY + 14} {...LABEL_PROPS} textAnchor="middle" fill={accent}>
+        VENDOR
+      </text>
+      {/* Cost ledger ticks — RFP: many rows (overhead) */}
+      {[0, 1, 2, 3, 4].map((k) => (
+        <g key={`rfp-${k}`}>
+          <line
+            x1={leftX - 28}
+            y1={boxY + 38 + k * 12}
+            x2={leftX + 28}
+            y2={boxY + 38 + k * 12}
+            stroke={C_STONE}
+            strokeWidth={0.75}
+          />
+          <line
+            x1={leftX + 22}
+            y1={boxY + 35 + k * 12}
+            x2={leftX + 28}
+            y2={boxY + 38 + k * 12}
+            stroke={C_STONE}
+            strokeWidth={0.5}
+          />
+        </g>
+      ))}
+      <text x={leftX} y={boxY + 38 + 5 * 12 + 4} {...LABEL_DIM} fontSize={7} textAnchor="middle">
+        5 COST LINES
+      </text>
+      {/* Cost ledger ticks — VENDOR: 2 rows (consolidated) */}
+      {[0, 1].map((k) => (
+        <line
+          key={`vnd-${k}`}
+          x1={rightX - 28}
+          y1={boxY + 38 + k * 12}
+          x2={rightX + 28}
+          y2={boxY + 38 + k * 12}
+          stroke={accent}
+          strokeWidth={1}
+        />
+      ))}
+      <text x={rightX} y={boxY + 38 + 2 * 12 + 4} {...LABEL_PROPS} fontSize={7} textAnchor="middle" fill={accent}>
+        2 COST LINES
+      </text>
+    </g>
+  );
+}
+
+// =====================================================================
 // Dispatcher
 // =====================================================================
 
@@ -961,6 +2041,38 @@ function Artifact({ slug, accent }: { slug: string; accent: string }) {
       return <Artifact13 accent={accent} />;
     case "vendor-consolidation-concrete-contractor":
       return <Artifact14 accent={accent} />;
+    case "concrete-sealing-utah":
+      return <Artifact15 accent={accent} />;
+    case "best-time-to-pour-concrete-utah":
+      return <Artifact16 accent={accent} />;
+    case "stamped-concrete-patterns-utah":
+      return <Artifact17 accent={accent} />;
+    case "concrete-vs-pavers-vs-asphalt-driveway":
+      return <Artifact18 accent={accent} />;
+    case "how-to-maintain-a-concrete-driveway-utah":
+      return <Artifact19 accent={accent} />;
+    case "backyard-concrete-ideas-utah":
+      return <Artifact20 accent={accent} />;
+    case "concrete-flatwork-scheduling-for-builders":
+      return <Artifact21 accent={accent} />;
+    case "how-to-read-a-concrete-sub-bid":
+      return <Artifact22 accent={accent} />;
+    case "concrete-tolerances-and-callbacks":
+      return <Artifact23 accent={accent} />;
+    case "tilt-up-vs-cast-in-place-concrete-utah":
+      return <Artifact24 accent={accent} />;
+    case "commercial-concrete-maintenance-program-utah":
+      return <Artifact25 accent={accent} />;
+    case "ada-concrete-requirements-utah":
+      return <Artifact26 accent={accent} />;
+    case "curing-concrete-in-utah-heat-and-cold":
+      return <Artifact27 accent={accent} />;
+    case "concrete-maintenance-budgeting-for-facility-managers":
+      return <Artifact28 accent={accent} />;
+    case "multi-site-concrete-inspection-checklist":
+      return <Artifact29 accent={accent} />;
+    case "concrete-rfp-vs-preferred-vendor":
+      return <Artifact30 accent={accent} />;
     default:
       return null;
   }
@@ -1003,7 +2115,7 @@ export function BlogThumbnail({ meta }: BlogThumbnailProps) {
         className="absolute top-2.5 left-3 font-mono text-[9px] font-semibold uppercase tracking-[0.18em] pointer-events-none"
         style={{ color: accent }}
       >
-        // {SILO_LABEL[meta.siloIntent]} // {String(number).padStart(2, "0")} OF 14
+        // {SILO_LABEL[meta.siloIntent]} // {String(number).padStart(2, "0")} OF {String(TOTAL_POSTS).padStart(2, "0")}
       </p>
     </div>
   );

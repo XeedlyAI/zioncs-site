@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Prose } from "@/components/blog/Prose";
+import { MediaEmbed } from "@/components/media/MediaEmbed";
 import type { PostMeta } from "@/types/post";
 
 export const meta: PostMeta = {
@@ -26,6 +27,7 @@ export const meta: PostMeta = {
   articleRole: "process-guide",
   category: "guides",
   cityAnchor: null,
+  heroImage: "/images/blog/img-54-inspection-checklist.jpg",
   relatedSlugs: [
     "concrete-maintenance-budgeting-for-facility-managers",
     "multi-site-concrete-maintenance-programs",
@@ -93,6 +95,12 @@ export default function Article() {
       </ul>
 
       <h2>The checklist</h2>
+
+      <MediaEmbed
+        poster="/images/gallery/img-32-multi-site-dumpster-pads.png"
+        alt="Standardized dumpster pad and enclosure at one site of a multi-site program"
+        caption="MULTI-SITE PROGRAM · SITE 5 OF 14 — the standardized-spec pads this checklist keeps honest."
+      />
 
       <h3>1. Surface condition</h3>
       <ul>

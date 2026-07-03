@@ -26,6 +26,7 @@ export const meta: PostMeta = {
   articleRole: "process-guide",
   category: "guides",
   cityAnchor: null,
+  heroImage: "/images/blog/img-50-commercial-maintenance.jpg",
   relatedSlugs: [
     "utah-soil-conditions-commercial-foundations",
     "multi-site-concrete-maintenance-programs",

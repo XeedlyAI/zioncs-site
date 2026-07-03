@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Prose } from "@/components/blog/Prose";
+import { FreezeThawCycleChart } from "@/components/data/FreezeThawCycleChart";
 import type { PostMeta } from "@/types/post";
 
 export const meta: PostMeta = {
@@ -26,6 +27,7 @@ export const meta: PostMeta = {
   articleRole: "diagnostic",
   category: "insights",
   cityAnchor: "state",
+  heroImage: "/images/blog/img-52-curing-heat-cold.jpg",
   relatedSlugs: [
     "utah-soil-conditions-commercial-foundations",
     "why-utah-concrete-cracks",
@@ -184,6 +186,8 @@ export default function Article() {
       </p>
 
       <h2>Why Utah punishes bad curing twice</h2>
+
+      <FreezeThawCycleChart />
       <p>
         Here&rsquo;s the compounding effect that makes curing a
         bigger deal here than in mild climates: the freeze-thaw

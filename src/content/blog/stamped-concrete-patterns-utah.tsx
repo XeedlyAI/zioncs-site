@@ -25,6 +25,7 @@ export const meta: PostMeta = {
   articleRole: "magnetizer",
   category: "insights",
   cityAnchor: "state",
+  heroImage: "/images/blog/img-42-stamped-patterns.jpg",
   relatedSlugs: [
     "backyard-concrete-ideas-utah",
     "concrete-sealing-utah",

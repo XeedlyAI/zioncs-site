@@ -26,6 +26,7 @@ export const meta: PostMeta = {
   articleRole: "process-guide",
   category: "guides",
   cityAnchor: null,
+  heroImage: "/images/blog/img-53-maintenance-budgeting.jpg",
   relatedSlugs: [
     "multi-site-concrete-maintenance-programs",
     "vendor-consolidation-concrete-contractor",

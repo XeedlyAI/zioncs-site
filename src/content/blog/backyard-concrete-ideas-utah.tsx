@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Prose } from "@/components/blog/Prose";
+import { MediaEmbed } from "@/components/media/MediaEmbed";
 import type { PostMeta } from "@/types/post";
 
 export const meta: PostMeta = {
@@ -24,6 +25,7 @@ export const meta: PostMeta = {
   articleRole: "magnetizer",
   category: "insights",
   cityAnchor: "state",
+  heroImage: "/images/blog/img-45-backyard-ideas.jpg",
   relatedSlugs: [
     "stamped-concrete-patterns-utah",
     "best-time-to-pour-concrete-utah",
@@ -121,6 +123,12 @@ export default function Article() {
       </p>
 
       <h2>The play spaces</h2>
+
+      <MediaEmbed
+        poster="/images/gallery/img-34-draper-sport-court.png"
+        alt="Backyard sport court with pickleball and basketball striping in Draper, Utah"
+        caption="DRAPER FOOTHILLS · SPORT COURT — pickleball + basketball overlay on one reinforced slab."
+      />
 
       <h3>5. Backyard sport court</h3>
       <p>

@@ -39,6 +39,16 @@ export async function generateMetadata({
       publishedTime: post.meta.publishedAt,
       modifiedTime: post.meta.lastReviewedAt,
       authors: [getAuthor(post.meta.authorSlug).name],
+      ...(post.meta.heroImage
+        ? {
+            images: [
+              {
+                url: `https://zioncs.com${post.meta.heroImage}`,
+                alt: post.meta.title,
+              },
+            ],
+          }
+        : {}),
     },
   };
 }
@@ -67,6 +77,9 @@ function articleSchema(slug: string, meta: ReturnType<typeof getPostBySlug> exte
     },
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
     keywords: [meta.targetKeyword, ...meta.secondaryKeywords].join(", "),
+    ...(meta.heroImage
+      ? { image: `https://zioncs.com${meta.heroImage}` }
+      : {}),
   };
 }
 

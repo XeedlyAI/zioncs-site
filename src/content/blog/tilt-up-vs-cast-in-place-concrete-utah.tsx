@@ -26,6 +26,7 @@ export const meta: PostMeta = {
   articleRole: "decision-framework",
   category: "guides",
   cityAnchor: null,
+  heroImage: "/images/blog/img-49-tilt-up-vs-cip.jpg",
   relatedSlugs: [
     "commercial-concrete-pour-scheduling",
     "utah-soil-conditions-commercial-foundations",

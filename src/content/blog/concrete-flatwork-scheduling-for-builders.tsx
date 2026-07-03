@@ -26,6 +26,7 @@ export const meta: PostMeta = {
   articleRole: "process-guide",
   category: "guides",
   cityAnchor: null,
+  heroImage: "/images/blog/img-46-flatwork-scheduling.jpg",
   relatedSlugs: [
     "pre-pour-checklist-for-builders",
     "how-to-vet-a-concrete-subcontractor",

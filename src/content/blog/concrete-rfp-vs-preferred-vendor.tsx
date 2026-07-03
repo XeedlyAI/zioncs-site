@@ -27,6 +27,7 @@ export const meta: PostMeta = {
   articleRole: "decision-framework",
   category: "guides",
   cityAnchor: null,
+  heroImage: "/images/blog/img-55-rfp-vs-vendor.jpg",
   relatedSlugs: [
     "vendor-consolidation-concrete-contractor",
     "multi-site-concrete-maintenance-programs",

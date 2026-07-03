@@ -26,6 +26,7 @@ export const meta: PostMeta = {
   articleRole: "decision-framework",
   category: "guides",
   cityAnchor: null,
+  heroImage: "/images/blog/img-47-read-sub-bid.jpg",
   relatedSlugs: [
     "concrete-sub-reliability-vs-lowest-bid",
     "how-to-vet-a-concrete-subcontractor",

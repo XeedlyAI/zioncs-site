@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Prose } from "@/components/blog/Prose";
+import { PourWindowChart } from "@/components/data/PourWindowChart";
 import type { PostMeta } from "@/types/post";
 
 export const meta: PostMeta = {
@@ -24,6 +25,7 @@ export const meta: PostMeta = {
   articleRole: "process-guide",
   category: "guides",
   cityAnchor: "state",
+  heroImage: "/images/blog/img-41-best-time-to-pour.jpg",
   relatedSlugs: [
     "why-utah-concrete-cracks",
     "concrete-sealing-utah",
@@ -109,6 +111,8 @@ export default function Article() {
       </p>
 
       <h2>The Utah calendar, season by season</h2>
+
+      <PourWindowChart />
 
       <h3>Spring (April–June): the prime window</h3>
       <p>

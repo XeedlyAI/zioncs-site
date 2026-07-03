@@ -100,3 +100,7 @@ Each track lands its own commit(s) + a session doc under `docs/sessions/`.
 Incidental fix: `src/app/favicon.ico` (non-RGBA ICO) broke every dev render under Turbopack — regenerated via ImageMagick and moved to `public/favicon.ico` (bypasses the image pipeline).
 
 Known parked items: original 3 RES articles carry a service slug in `relatedSlugs` (pre-existing, degrades gracefully); real-footage swap + Mux/Stream hosting when client media arrives; Meta flip checklist in `.env.local.example`.
+
+### Session 2 addendum (same day) — visual fill
+
+User flagged missing visuals on staging. Filled: 16 thumbnail artifact SVGs + dynamic `OF 30` counter, 16 Nano Banana hero images wired into metas, 3 new data-viz components (PourWindowChart, AdaRampSpec, MaterialComparisonChart) + FreezeThawCycleChart reuse + 2 photo embeds, and `og:image`/Article JSON-LD image emission for all 30 posts (pre-existing gap). See `docs/sessions/expansion-session-2.md`.

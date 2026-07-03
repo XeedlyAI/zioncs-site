@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Prose } from "@/components/blog/Prose";
+import { MaterialComparisonChart } from "@/components/data/MaterialComparisonChart";
 import type { PostMeta } from "@/types/post";
 
 export const meta: PostMeta = {
@@ -24,6 +25,7 @@ export const meta: PostMeta = {
   articleRole: "decision-framework",
   category: "guides",
   cityAnchor: null,
+  heroImage: "/images/blog/img-43-concrete-vs-pavers-asphalt.jpg",
   relatedSlugs: [
     "why-utah-concrete-cracks",
     "driveway-replacement-vs-repair",
@@ -71,6 +73,8 @@ export default function Article() {
       </p>
 
       <h2>The short version</h2>
+
+      <MaterialComparisonChart />
       <ul>
         <li>
           <strong>Concrete</strong> — the durability-per-dollar pick for

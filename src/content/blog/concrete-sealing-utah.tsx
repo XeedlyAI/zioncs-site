@@ -24,6 +24,7 @@ export const meta: PostMeta = {
   articleRole: "insight",
   category: "insights",
   cityAnchor: "state",
+  heroImage: "/images/blog/img-40-concrete-sealing.jpg",
   relatedSlugs: [
     "why-utah-concrete-cracks",
     "how-to-maintain-a-concrete-driveway-utah",

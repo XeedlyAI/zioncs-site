@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Prose } from "@/components/blog/Prose";
+import { AdaRampSpec } from "@/components/data/AdaRampSpec";
 import type { PostMeta } from "@/types/post";
 
 export const meta: PostMeta = {
@@ -26,6 +27,7 @@ export const meta: PostMeta = {
   articleRole: "insight",
   category: "insights",
   cityAnchor: "state",
+  heroImage: "/images/blog/img-51-ada-requirements.jpg",
   relatedSlugs: [
     "commercial-concrete-maintenance-program-utah",
     "commercial-concrete-pour-scheduling",
@@ -89,6 +91,8 @@ export default function Article() {
       </p>
 
       <h2>The numbers that govern flatwork</h2>
+
+      <AdaRampSpec />
 
       <h3>Walking surfaces: the 5% and 2% lines</h3>
       <p>

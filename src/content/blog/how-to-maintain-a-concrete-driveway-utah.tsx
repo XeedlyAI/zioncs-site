@@ -24,6 +24,7 @@ export const meta: PostMeta = {
   articleRole: "process-guide",
   category: "guides",
   cityAnchor: "state",
+  heroImage: "/images/blog/img-44-maintain-driveway.jpg",
   relatedSlugs: [
     "concrete-sealing-utah",
     "why-utah-concrete-cracks",
