@@ -4,7 +4,7 @@
 
 Zion Concrete Specialists (zioncs.com) is a Utah concrete flatwork contractor serving the Wasatch Front and St. George. This site is a Next.js 16 rebuild of the existing Webflow site, using the XeedlyAI standards library. This file is the session-start contract.
 
-The library at `C:\Users\shadd\Documents\standards` is canonical. Project-specific overrides live in `ZIONCS_DELTAS.md`.
+The library at `C:\Users\shad\Documents\standards` is canonical. Project-specific overrides live in `ZIONCS_DELTAS.md`.
 
 ## Before Starting Any Session
 
@@ -18,16 +18,16 @@ The library at `C:\Users\shadd\Documents\standards` is canonical. Project-specif
 Read in this exact order before writing code:
 
 **Library (always):**
-1. `C:\Users\shadd\Documents\standards\CLAUDE.md` — library read order, precedence rules, cross-product invariants
-2. `C:\Users\shadd\Documents\standards\standards\DESIGN_SYSTEM.md`
-3. `C:\Users\shadd\Documents\standards\standards\COMPONENT_PATTERNS.md`
-4. `C:\Users\shadd\Documents\standards\standards\MOTION_AND_INTERACTION.md`
+1. `C:\Users\shad\Documents\standards\CLAUDE.md` — library read order, precedence rules, cross-product invariants
+2. `C:\Users\shad\Documents\standards\standards\DESIGN_SYSTEM.md`
+3. `C:\Users\shad\Documents\standards\standards\COMPONENT_PATTERNS.md`
+4. `C:\Users\shad\Documents\standards\standards\MOTION_AND_INTERACTION.md`
 
 **Library (public-facing surface):**
-5. `C:\Users\shadd\Documents\standards\standards\ANIMATION.md`
-6. `C:\Users\shadd\Documents\standards\standards\TYPOGRAPHY.md`
-7. `C:\Users\shadd\Documents\standards\standards\INTERACTIVE.md`
-8. `C:\Users\shadd\Documents\standards\standards\SVG-VISUALS.md`
+5. `C:\Users\shad\Documents\standards\standards\ANIMATION.md`
+6. `C:\Users\shad\Documents\standards\standards\TYPOGRAPHY.md`
+7. `C:\Users\shad\Documents\standards\standards\INTERACTIVE.md`
+8. `C:\Users\shad\Documents\standards\standards\SVG-VISUALS.md`
 
 **Library (read on demand for the task at hand):**
 - `skills/SEO-ARCHITECTURE.md` — for silo design and full-site architecture

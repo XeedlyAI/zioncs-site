@@ -16,7 +16,7 @@
  * 4. Drop the service account JSON into a secret (Vercel env
  *    GOOGLE_SERVICE_ACCOUNT_KEY).
  * 5. Replace this file with a real implementation per
- *    `C:\Users\shadd\Documents\standards\skills\CALENDAR-BOOKING.md` §
+ *    `C:\Users\shad\Documents\standards\skills\CALENDAR-BOOKING.md` §
  *    Google Calendar integration.
  * 6. Switch BOOKING_CONFIGS in @/lib/booking/config.ts to per-founder routing
  *    (each booking type maps to a specific zioncs.com email).

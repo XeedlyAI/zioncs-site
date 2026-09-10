@@ -1,6 +1,6 @@
 # ZionCS — Deltas from Xeedly Standards
 
-Project-specific overrides. Anything not documented here follows the library at `C:\Users\shadd\Documents\standards` verbatim.
+Project-specific overrides. Anything not documented here follows the library at `C:\Users\shad\Documents\standards` verbatim.
 
 > **Status:** Phase 0 scaffold. Decisions populate as they're made during intake (Phase 1) and design calibration (Phase 3 of project setup).
 
