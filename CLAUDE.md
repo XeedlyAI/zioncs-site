@@ -88,6 +88,6 @@ Every session ends with a single `[feat|fix|...] Wave N Session M â€” short desc
 
 ## Persistent Memory
 
-This project uses the Obsidian vault (sibling repo `..îdly-internal-tools`) as cross-session memory.
+This project uses the Obsidian vault (sibling repo `..\xeedly-internal-tools`) as cross-session memory.
 Read `CLAUDE-INTEGRATION.md` at session start for the full read/write protocol.
 At minimum, read `projects/ZionCS.md` before starting work.
