@@ -1,0 +1,212 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  /* Brand */
+  --color-brand-orange: #E85A19;
+  --color-brand-orange-hover: #C44A12;
+  --color-brand-orange-muted: #FCEBE0;
+
+  /* Industrial neutrals */
+  --color-anthracite: #1A1814;
+  --color-anthracite-elevated: #26221C;
+  --color-anthracite-overlay: #322D26;
+  --color-concrete: #8A857C;
+  --color-bone: #F4F0E8;
+  --color-paper: #FFFFFF;
+  --color-sand: #EDE8DC;
+  --color-warm-border: #E0DBCF;
+  --color-stone: #6B6760;
+  --color-slate-warm: #8C8478;
+
+  /* Data accents */
+  --color-steel: #3F6B7D;
+  --color-steel-light: #5C8FA3;
+  --color-rebar: #7DA84F;
+  --color-gold: #C49A2C;
+  --color-brick: #A84426;
+
+  /* Wash backgrounds */
+  --color-bg-bone-page: #F4F0E8;
+  --color-bg-paper-card: #FFFFFF;
+  --color-bg-sand-wash: #EDE8DC;
+  --color-bg-anthracite-base: #1A1814;
+  --color-bg-anthracite-elevated: #26221C;
+  --color-bg-anthracite-overlay: #322D26;
+  --color-bg-orange-tinted-light: #FDF1EA;
+  --color-bg-orange-tinted-dark: #322822;
+
+  /* Cement — slightly cool light gray for tasteful "tech/clinical" injection
+     on light surfaces. Sister anchor to the cool slate dark used by the
+     console card, keeping cool tones consistent across light and dark zones. */
+  --color-bg-cement: #F2F2F2;
+
+  /* Console — cool slate (steel-family) for the tech surface.
+     Hue-aligned with --color-steel (#3F6B7D) so the data accents
+     used inside the console harmonize with the section bg. */
+  --color-bg-console-base: #171E25;
+  --color-bg-console-elevated: #1F262E;
+
+  /* Motion */
+  --ease-curve: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+}
+
+@theme inline {
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+  }
+
+  body {
+    background: var(--color-bone);
+    color: var(--color-anthracite);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .font-mono, code, pre, kbd, samp {
+    font-family: var(--font-mono);
+  }
+}
+
+/* Section backgrounds */
+.section-bone { background: #F4F0E8; color: #1A1814; }
+.section-paper { background: #FFFFFF; color: #1A1814; }
+.section-sand { background: #EDE8DC; color: #1A1814; }
+.section-anthracite { background: #1A1814; color: #F4F0E8; }
+.section-anthracite-elevated { background: #26221C; color: #F4F0E8; }
+.section-anthracite-overlay { background: #322D26; color: #F4F0E8; }
+.section-orange-tinted-light { background: #FDF1EA; color: #1A1814; }
+.section-orange-tinted-dark { background: #322822; color: #F4F0E8; }
+
+/* Card treatments (ZionCS-keyed) */
+.card-light {
+  background: #FFFFFF;
+  border: 1px solid #E0DBCF;
+  border-radius: 12px;
+  transition: all 0.2s var(--ease-curve);
+}
+.card-light:hover {
+  box-shadow: 0 4px 12px rgba(26, 24, 20, 0.06), 0 2px 4px rgba(26, 24, 20, 0.03);
+  transform: translateY(-2px);
+}
+
+.card-dark {
+  background: #26221C;
+  border: 1px solid rgba(138, 133, 124, 0.2);
+  border-radius: 12px;
+  transition: all 0.2s var(--ease-curve);
+}
+.card-dark:hover {
+  background: #322D26;
+  border-color: rgba(138, 133, 124, 0.35);
+  transform: translateY(-2px);
+}
+
+/* Status accents (left-border cards) */
+.status-steel { border-left: 3px solid #3F6B7D; }
+.status-rebar { border-left: 3px solid #7DA84F; }
+.status-gold { border-left: 3px solid #C49A2C; }
+.status-brick { border-left: 3px solid #A84426; }
+.status-orange { border-left: 3px solid #E85A19; }
+
+/* Scrollbar (dark surfaces) */
+.scrollbar-dark {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(63, 107, 125, 0.35) transparent;
+}
+.scrollbar-dark::-webkit-scrollbar { width: 6px; height: 6px; }
+.scrollbar-dark::-webkit-scrollbar-track { background: transparent; }
+.scrollbar-dark::-webkit-scrollbar-thumb { background: rgba(63, 107, 125, 0.3); border-radius: 9999px; }
+.scrollbar-dark::-webkit-scrollbar-thumb:hover { background: rgba(63, 107, 125, 0.55); }
+
+/* Mascot bob — used for the IntelligenceConsole processing state */
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+}
+.animate-bob {
+  animation: bob 1.4s ease-in-out infinite;
+}
+
+/* Homepage hero crossfade + Ken Burns
+   3 distinct Utah scenes cycle over 27s:
+     image 1: golden-hour driveway (camera dollies forward + slight tilt)
+     image 2: stamped pool deck    (camera dollies forward + reveals right)
+     image 3: dusk patio + fire    (camera pulls BACK — reveals atmosphere)
+   Each image visible solo ~6.5s with 2.5s crossfade overlap into the next.
+
+   Crossfade: ease-in-out (correct for fades — accelerate, decelerate)
+   Ken Burns: linear + alternate (constant velocity = always-visible motion;
+              alternate ping-pongs so motion direction varies between
+              cycles, adding film-like variety)
+   10% scale + 2-3% translation per image — film-trailer amplitude.
+   Negative delays stagger images so all are mid-cycle at t=0. */
+@keyframes hero-fade {
+  0%, 24%  { opacity: 1; }
+  33%      { opacity: 0; }
+  91%      { opacity: 0; }
+  100%     { opacity: 1; }
+}
+/* Image 1 — driveway. Dolly forward, slight pan up-left. */
+@keyframes hero-kenburns-1 {
+  0%   { transform: scale(1.0) translate(0, 0); }
+  100% { transform: scale(1.10) translate(-2%, -1%); }
+}
+/* Image 2 — pool deck. Dolly forward from a right-shifted start, settles centered (reveals mountains). */
+@keyframes hero-kenburns-2 {
+  0%   { transform: scale(1.0) translate(2%, 0); }
+  100% { transform: scale(1.10) translate(0, 1%); }
+}
+/* Image 3 — dusk patio. Camera pulls BACK (zoomed in -> wide), revealing atmosphere. */
+@keyframes hero-kenburns-3 {
+  0%   { transform: scale(1.10) translate(-1%, -0.5%); }
+  100% { transform: scale(1.0) translate(0, 0); }
+}
+.hero-image {
+  opacity: 0;
+  /* opacity uses ease-in-out for natural fade rhythm;
+     transform uses linear + alternate for constant perceptible motion */
+  will-change: opacity, transform;
+}
+.hero-image-1 {
+  animation:
+    hero-fade 27s ease-in-out 0s infinite,
+    hero-kenburns-1 27s linear 0s infinite alternate;
+  transform-origin: center 65%;
+}
+.hero-image-2 {
+  animation:
+    hero-fade 27s ease-in-out -18s infinite,
+    hero-kenburns-2 27s linear -18s infinite alternate;
+  transform-origin: 60% 50%;
+}
+.hero-image-3 {
+  animation:
+    hero-fade 27s ease-in-out -9s infinite,
+    hero-kenburns-3 27s linear -9s infinite alternate;
+  transform-origin: center 55%;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-image-1 { opacity: 1; animation: none; }
+  .hero-image-2, .hero-image-3 { display: none; }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
