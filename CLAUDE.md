@@ -85,3 +85,9 @@ Every session ends with a single `[feat|fix|...] Wave N Session M — short desc
 - If a build is killed mid-compile, clear `.next/lock` before retrying.
 - Never pipe build output through `tail` — `tail` buffers until EOF, making a running build look hung. Redirect to a file instead.
 - Next 16 warns that the "middleware" file convention is deprecated in favor of "proxy". Rename when touching that area of code.
+
+## Persistent Memory
+
+This project uses the Obsidian vault (sibling repo `..�dly-internal-tools`) as cross-session memory.
+Read `CLAUDE-INTEGRATION.md` at session start for the full read/write protocol.
+At minimum, read `projects/ZionCS.md` before starting work.
