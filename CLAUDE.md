@@ -4,7 +4,7 @@
 
 Zion Concrete Specialists (zioncs.com) is a Utah concrete flatwork contractor serving the Wasatch Front and St. George. This site is a Next.js 16 rebuild of the existing Webflow site, using the XeedlyAI standards library. This file is the session-start contract.
 
-The library at `C:\Users\shad\Documents\standards` is canonical. Project-specific overrides live in `ZIONCS_DELTAS.md`.
+The library at `..\standards` is canonical. Project-specific overrides live in `ZIONCS_DELTAS.md`.
 
 ## Before Starting Any Session
 
@@ -18,16 +18,16 @@ The library at `C:\Users\shad\Documents\standards` is canonical. Project-specifi
 Read in this exact order before writing code:
 
 **Library (always):**
-1. `C:\Users\shad\Documents\standards\CLAUDE.md` — library read order, precedence rules, cross-product invariants
-2. `C:\Users\shad\Documents\standards\standards\DESIGN_SYSTEM.md`
-3. `C:\Users\shad\Documents\standards\standards\COMPONENT_PATTERNS.md`
-4. `C:\Users\shad\Documents\standards\standards\MOTION_AND_INTERACTION.md`
+1. `..\standards\CLAUDE.md` — library read order, precedence rules, cross-product invariants
+2. `..\standards\standards\DESIGN_SYSTEM.md`
+3. `..\standards\standards\COMPONENT_PATTERNS.md`
+4. `..\standards\standards\MOTION_AND_INTERACTION.md`
 
 **Library (public-facing surface):**
-5. `C:\Users\shad\Documents\standards\standards\ANIMATION.md`
-6. `C:\Users\shad\Documents\standards\standards\TYPOGRAPHY.md`
-7. `C:\Users\shad\Documents\standards\standards\INTERACTIVE.md`
-8. `C:\Users\shad\Documents\standards\standards\SVG-VISUALS.md`
+5. `..\standards\standards\ANIMATION.md`
+6. `..\standards\standards\TYPOGRAPHY.md`
+7. `..\standards\standards\INTERACTIVE.md`
+8. `..\standards\standards\SVG-VISUALS.md`
 
 **Library (read on demand for the task at hand):**
 - `skills/SEO-ARCHITECTURE.md` — for silo design and full-site architecture
@@ -85,6 +85,13 @@ Every session ends with a single `[feat|fix|...] Wave N Session M — short desc
 - If a build is killed mid-compile, clear `.next/lock` before retrying.
 - Never pipe build output through `tail` — `tail` buffers until EOF, making a running build look hung. Redirect to a file instead.
 - Next 16 warns that the "middleware" file convention is deprecated in favor of "proxy". Rename when touching that area of code.
+
+## Cloud sessions (claude.ai/code)
+
+- The **environment chip** in the session picker (currently named "Sovvrn") is the container config every XeedlyAI cloud session runs in — network policy, env vars, setup script. It is not a repo, whatever the project.
+- Attach `XeedlyAI/standards` and `XeedlyAI/xeedly-internal-tools` as additional repos (the `+` beside the repo chip). They clone as siblings under `/home/user/`, so `..\standards` and `..\xeedly-internal-tools` resolve exactly as they do locally.
+- The container is ephemeral: vault notes written in a cloud session must be committed and pushed (branch + PR) or they are lost.
+- `npm run build` needs `npm ci` first — the container starts without `node_modules`.
 
 ## Persistent Memory
 
